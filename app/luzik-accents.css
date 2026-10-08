@@ -1,0 +1,15 @@
+/* Yellow highlights complement the blue navigation, links and primary actions. */
+.home-eyebrow::before, .luzik-accent-line { background: var(--color-luzik-yellow); }
+.luzik-hero-underline { background: linear-gradient(90deg, #1383ec 75%, var(--color-luzik-yellow) 75%); }
+.luzik-accent-dot { background: var(--color-luzik-yellow); }
+.home-stat-icon, .home-icon { background: var(--color-luzik-yellow-soft); color: #333019; }
+.home-photo-label, .luzik-subhero-photo-label { border-left-color: var(--color-luzik-yellow); }
+.luzik-category-badge { background: var(--color-luzik-yellow); color: #171819; }
+.luzik-price-card-featured, .luzik-detail-price-card, .luzik-contact-form { border-top-color: var(--color-luzik-yellow); }
+.luzik-course-benefits article { border-top-color: var(--color-luzik-yellow); }
+.luzik-guide-grid > a > span { color: var(--color-luzik-yellow); }
+.luzik-guide-grid > a:hover { border-color: var(--color-luzik-yellow); }
+.luzik-team-hero-portraits a { border-bottom-color: var(--color-luzik-yellow); }
+.luzik-team-detailed .luzik-team-avatar { border-bottom: 3px solid var(--color-luzik-yellow); }
+.luzik-medical-visual > svg, .luzik-medical-visual li > span { color: var(--color-luzik-yellow); }
+.luzik-footer-accent { border-top: 3px solid var(--color-luzik-yellow); }

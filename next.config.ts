@@ -17,6 +17,7 @@ if (
 }
 
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
   images: {
     dangerouslyAllowLocalIP: isDevelopment,
     remotePatterns: [
@@ -32,12 +33,22 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      { source: "/egzamin-teoretyczny-na-prawo-jazdy-ile-trwa-egzamin-i-jak-wyglada", destination: "/jak-wyglada-egzamin-teoretyczny-na-prawo-jazdy-2026", permanent: true },
+      { source: "/feed", destination: "/feed.xml", permanent: true },
+      { source: "/kursy-prawa-jazdy/jazdy-doszkalajace", destination: "/jazdy-doszkalajace", permanent: true },
       {
         source: "/admin",
         destination: new URL("/wp-admin", wordpressUrl).toString(),
         permanent: false,
       },
     ];
+  },
+  async headers() {
+    return [{ source: "/:path*", headers: [
+      { key: "X-Content-Type-Options", value: "nosniff" },
+      { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+      { key: "X-Frame-Options", value: "SAMEORIGIN" },
+    ] }];
   },
 };
 

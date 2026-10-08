@@ -1,98 +1,24 @@
-# CLAUDE.md
+# Project guidance
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This is the Luzik driving-school website, built with Next.js 16 App Router, React 19, TypeScript and Tailwind CSS 4. See README.md for the current structure, editing workflow and release requirements.
 
-## Build Commands
-- `pnpm dev` - Start development server with turbo mode
-- `pnpm build` - Build for production
-- `pnpm start` - Start production server
-- `pnpm lint` - Run ESLint
-- `pnpm test` - Run all tests (Vitest)
-- `pnpm test:watch` - Run tests in watch mode
-- `pnpm vitest run __tests__/lib/utils.test.ts` - Run a single test file
-- `pnpm vitest run -t "test name"` - Run a specific test by name
+- Preserve original Polish copy and established styling unless the user requests changes.
+- `app/(luzik)/` contains completed offer pages; `components/home/` and `components/site/` contain their views.
+- Blog posts use root `/<slug>` URLs. Keep `app/posts/` and `app/pages/` compatibility redirects.
+- WordPress data access is in `lib/wordpress.ts`; shared office/course settings use `lib/luzik-settings-server.ts` and its client context.
+- Default article cache is one hour; settings cache is 60 seconds. Local `WORDPRESS_CACHE_DISABLED=true` bypasses cache.
+- Do not expose `.env.local` or webhook secrets. Local previews must remain unindexed.
+- Forms currently prepare a mailto message; do not claim automatic delivery until a backend and SMTP have been connected and verified.
+- Keep the WordPress plugins in `wordpress/`; they are not part of the Next.js runtime.
+- `pnpm lint`, `pnpm test` and `pnpm build` verify code. `pnpm audit:site` needs a running preview on port 3001; `pnpm audit:settings` uses an isolated fixture on port 3002 after a build.
+- Avoid reverting unrelated work or creating commits without user authorization.
 
-## Architecture Overview
+<!-- BEGIN:nextjs-agent-rules -->
 
-Headless WordPress starter using Next.js 16 App Router with TypeScript.
+# This is NOT the Next.js you know
 
-### Data Layer (`lib/wordpress.ts`)
-- All WordPress REST API interactions centralized here
-- Type definitions in `lib/wordpress.d.ts` (Post, Page, Category, Tag, Author, FeaturedMedia)
-- Two fetch patterns: `wordpressFetch` (throws on error) vs `wordpressFetchGraceful` (returns fallback)
-- `WordPressAPIError` class for consistent error handling
-- Cache tags for granular revalidation: `['wordpress', 'posts', 'post-{id}', 'posts-page-{n}']`
-- Pagination via `getPostsPaginated()` returns `{ data, headers: { total, totalPages } }`
-- Default cache: 1 hour (`revalidate: 3600`)
-- Graceful degradation: builds succeed even when WordPress is unavailable
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
 
-### Routing
-- Dynamic: `/posts/[slug]`, `/pages/[slug]`
-- Archives: `/posts`, `/posts/authors`, `/posts/categories`, `/posts/tags`
-- API: `/api/revalidate` (webhook), `/api/og` (OG images)
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
-### Data Fetching Patterns
-- Server Components with parallel `Promise.all()` calls
-- `generateStaticParams()` uses `getAllPostSlugs()` for static generation
-- URL-based state for search/filters via `searchParams`
-- Debounced search (300ms) in `SearchInput` component
-- Next.js 15+ async params pattern: `params: Promise<{ slug: string }>`
-
-### Revalidation Flow
-1. WordPress plugin sends webhook to `/api/revalidate`
-2. Validates `x-webhook-secret` header against `WORDPRESS_WEBHOOK_SECRET`
-3. Calls `revalidateTag()` for specific content types (posts, categories, tags, authors)
-4. Also calls `revalidatePath("/", "layout")` for full site refresh
-
-### Configuration Files
-- `site.config.ts` - Site metadata (domain, name, description)
-- `menu.config.ts` - Navigation menu structure (`mainMenu`, `contentMenu`)
-- `next.config.ts` - Image remotePatterns, /admin redirect to WordPress, standalone output
-
-### Layout Components (`components/craft.tsx`)
-Local copy of craft-ds (v0.3.2) providing layout primitives:
-- `Section` - Page sections with vertical padding
-- `Container` - Max-width container with horizontal padding
-- `Article` - Prose container for WordPress content (max-width prose)
-- `Prose` - Typography styles for rich content
-- `Box` - Flex/grid layout with responsive props
-
-### Utility Functions
-- `lib/utils.ts` - `cn()` function for merging Tailwind classes (clsx + tailwind-merge)
-- `lib/metadata.ts` - `generateContentMetadata()` for SEO metadata, `stripHtml()` for excerpt cleaning
-
-### Testing (`__tests__/`)
-- Vitest with `@` path alias matching `tsconfig.json`
-- Tests mirror source structure: `__tests__/lib/utils.test.ts` tests `lib/utils.ts`
-- Tests cover: `lib/utils`, `lib/metadata`, `lib/wordpress`, `api/revalidate`
-- WordPress API tests mock `global.fetch` to avoid external calls
-
-## Code Style
-
-### TypeScript
-- Strict typing with interfaces from `lib/wordpress.d.ts`
-- Async params: `params: Promise<{ slug: string }>` (Next.js 15+ pattern)
-
-### Naming
-- Components: PascalCase (`PostCard.tsx`)
-- Functions/variables: camelCase
-- Types/interfaces: PascalCase
-
-### File Structure
-- Pages: `/app/**/*.tsx`
-- UI components: `/components/ui/*.tsx` (shadcn/ui)
-- Feature components: `/components/posts/*.tsx`, `/components/theme/*.tsx`
-- WordPress functions must include cache tags
-
-## Environment Variables
-```
-WORDPRESS_URL="https://example.com"      # Full WordPress URL
-WORDPRESS_HOSTNAME="example.com"          # For Next.js image optimization
-WORDPRESS_WEBHOOK_SECRET="secret-key"     # Webhook validation
-```
-
-## Key Dependencies
-- Next.js 16 with React 19
-- Tailwind CSS v4 with `@tailwindcss/postcss`
-- shadcn/ui components (Radix primitives)
-- craft-ds for layout (`Section`, `Container`, `Article`, `Prose`)
+<!-- END:nextjs-agent-rules -->

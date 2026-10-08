@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -14,11 +13,14 @@
     }
 }
 
-@theme {
+@theme inline {
     --font-sans:
-        var(--font-sans), ui-sans-serif, system-ui, sans-serif,
+        var(--font-inter), ui-sans-serif, system-ui, sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
+}
+
+@theme {
 
     --color-border: hsl(var(--border));
     --color-input: hsl(var(--input));

@@ -3,6 +3,8 @@
 // Types are imported from `wp.d.ts`
 
 import querystring from "query-string";
+import { cache } from "react";
+import { unstable_rethrow } from "next/navigation";
 import type {
   Post,
   Category,
@@ -13,7 +15,7 @@ import type {
 } from "./wordpress.d";
 
 // Single source of truth for WordPress configuration
-const baseUrl = process.env.WORDPRESS_URL;
+const baseUrl = process.env.WORDPRESS_URL?.replace(/\/+$/, "");
 const isConfigured = Boolean(baseUrl);
 
 if (!isConfigured) {
@@ -47,6 +49,13 @@ export interface WordPressResponse<T> {
 const USER_AGENT = "Next.js WordPress Client";
 const CACHE_TTL = 3600; // 1 hour
 
+function wordpressCacheOptions(tags: string[]): RequestInit {
+  // Local editing can bypass the persistent cache without changing production.
+  return process.env.WORDPRESS_CACHE_DISABLED === "true"
+    ? { cache: "no-store" }
+    : { next: { tags, revalidate: CACHE_TTL } };
+}
+
 type QueryValue = string | number | boolean | undefined;
 type QueryParams = Record<string, QueryValue>;
 
@@ -63,8 +72,9 @@ async function wordpressFetch<T>(
   const url = `${baseUrl}${path}${query ? `?${querystring.stringify(query)}` : ""}`;
 
   const response = await fetch(url, {
+    signal: AbortSignal.timeout(10000),
     headers: { "User-Agent": USER_AGENT },
-    next: { tags, revalidate: CACHE_TTL },
+    ...wordpressCacheOptions(tags),
   });
 
   if (!response.ok) {
@@ -89,7 +99,8 @@ async function wordpressFetchGraceful<T>(
 
   try {
     return await wordpressFetch<T>(path, query, tags);
-  } catch {
+  } catch (error) {
+    unstable_rethrow(error);
     console.warn(`WordPress fetch failed for ${path}`);
     return fallback;
   }
@@ -108,8 +119,9 @@ async function wordpressFetchPaginated<T>(
   const url = `${baseUrl}${path}${query ? `?${querystring.stringify(query)}` : ""}`;
 
   const response = await fetch(url, {
+    signal: AbortSignal.timeout(10000),
     headers: { "User-Agent": USER_AGENT },
-    next: { tags, revalidate: CACHE_TTL },
+    ...wordpressCacheOptions(tags),
   });
 
   if (!response.ok) {
@@ -144,7 +156,8 @@ async function wordpressFetchPaginatedGraceful<T>(
 
   try {
     return await wordpressFetchPaginated<T[]>(path, query, tags);
-  } catch {
+  } catch (error) {
+    unstable_rethrow(error);
     console.warn(`WordPress paginated fetch failed for ${path}`);
     return emptyResponse;
   }
@@ -224,6 +237,15 @@ export async function getPostById(id: number): Promise<Post> {
   return wordpressFetch<Post>(`/wp-json/wp/v2/posts/${id}`);
 }
 
+export async function getPostNeighbours(post: Post): Promise<{ previous?: Post; next?: Post }> {
+  const base = { per_page: 1, status: "publish", orderby: "date", exclude: post.id };
+  const [previous, next] = await Promise.all([
+    wordpressFetchGraceful<Post[]>("/wp-json/wp/v2/posts", [], { ...base, before: post.date, order: "desc" }, ["wordpress", "posts"]),
+    wordpressFetchGraceful<Post[]>("/wp-json/wp/v2/posts", [], { ...base, after: post.date, order: "asc" }, ["wordpress", "posts"]),
+  ]);
+  return { previous: previous[0], next: next[0] };
+}
+
 export async function getPostBySlug(slug: string): Promise<Post | undefined> {
   const posts = await wordpressFetchGraceful<Post[]>(
     "/wp-json/wp/v2/posts",
@@ -232,6 +254,13 @@ export async function getPostBySlug(slug: string): Promise<Post | undefined> {
   );
   return posts[0];
 }
+
+// Article routes must distinguish an absent slug from a CMS outage. Returning
+// a false 404 during an outage could remove a valid article from search results.
+export const getPublishedPostBySlug = cache(async (slug: string): Promise<Post | undefined> => {
+  const posts = await wordpressFetch<Post[]>("/wp-json/wp/v2/posts", { slug, _embed: true, status: "publish" }, ["wordpress", "posts"]);
+  return posts[0];
+});
 
 export async function getAllCategories(): Promise<Category[]> {
   return wordpressFetchGraceful<Category[]>(
@@ -399,7 +428,8 @@ export async function getAllPostSlugs(): Promise<{ slug: string }[]> {
     }
 
     return allSlugs;
-  } catch {
+  } catch (error) {
+    unstable_rethrow(error);
     console.warn("WordPress unavailable, skipping static generation for posts");
     return [];
   }
@@ -420,13 +450,13 @@ export async function getAllPostsForSitemap(): Promise<
     while (hasMore) {
       const response = await wordpressFetchPaginated<Post[]>(
         "/wp-json/wp/v2/posts",
-        { per_page: 100, page, _fields: "slug,modified" }
+        { per_page: 100, page, status: "publish", _fields: "slug,modified,modified_gmt" }
       );
 
       allPosts.push(
         ...response.data.map((post) => ({
           slug: post.slug,
-          modified: post.modified,
+          modified: post.modified_gmt ? `${post.modified_gmt}Z` : post.modified,
         }))
       );
       hasMore = page < response.headers.totalPages;
@@ -434,7 +464,8 @@ export async function getAllPostsForSitemap(): Promise<
     }
 
     return allPosts;
-  } catch {
+  } catch (error) {
+    unstable_rethrow(error);
     console.warn("WordPress unavailable, skipping sitemap generation");
     return [];
   }

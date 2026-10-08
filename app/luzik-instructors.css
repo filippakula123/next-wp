@@ -1,0 +1,42 @@
+.luzik-team-hero-visual { min-width: 0; }
+.luzik-team-hero-portraits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding-bottom: 24px; }
+.luzik-team-hero-portraits a { position: relative; aspect-ratio: 2 / 3; overflow: hidden; background: #262a30; border-bottom: 3px solid #39a6e5; }
+.luzik-team-hero-portraits a:nth-child(2) { transform: translateY(24px); }
+.luzik-team-hero-portraits img { object-fit: cover; object-position: center 28%; }
+.luzik-team-hero-portraits a span { position: absolute; bottom: 0; inset-inline: 0; padding: 40px 12px 14px; background: linear-gradient(transparent, #000c); font-size: 13px; font-weight: 600; color: #fff; }
+.luzik-team-hero-visual > p { margin: 24px 0 0; font-size: 16px; font-weight: 600; color: #fff; }
+.luzik-team-hero-visual > p span { display: block; margin-top: 8px; font-size: 12px; font-weight: 400; color: #abb1ba; }
+.luzik-team-detailed .luzik-team-avatar { aspect-ratio: 4 / 5; }
+.luzik-team-detailed .luzik-team-info { padding: 24px 26px; }
+.luzik-team-detailed .luzik-team-info .home-text-link { margin-top: 20px; padding-top: 18px; border-top: 1px solid #e5e7eb; width: 100%; font-size: 13px; }
+.luzik-instructors-page [id] { scroll-margin-top: 145px; }
+.luzik-instructors-office .luzik-section-topline > p svg { display: inline; margin-right: 8px; vertical-align: middle; color: var(--color-luzik-blue); }
+.luzik-office-team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.luzik-office-team-grid article { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #e5e7eb; min-width: 0; }
+.luzik-office-portrait { position: relative; aspect-ratio: 2 / 3; background: #f6f6f7; }
+.luzik-office-portrait img { object-fit: cover; }
+.luzik-office-team-grid article > div:last-child { padding: 24px; align-self: center; }
+.luzik-office-team-grid h3 { font-size: 24px; line-height: 1.35; margin: 0 0 12px; }
+.luzik-office-team-grid .home-eyebrow { font-size: 10px; margin-bottom: 22px; }
+.luzik-office-team-grid p:not(.home-eyebrow) { font-size: 14px; line-height: 1.7; color: #62666e; }
+.luzik-office-team-grid a { margin-top: 22px; font-size: 13px; }
+.luzik-instructors-fleet { background: #f6f6f7; }
+.luzik-instructors-car-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.luzik-instructors-car-grid figure { margin: 0; background: #fff; border: 1px solid #e5e7eb; min-width: 0; }
+.luzik-instructors-car-grid img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+.luzik-instructors-car-grid figcaption { padding: 20px; font-size: 13px; line-height: 1.7; color: #62666e; }
+.luzik-instructors-course-links { display: flex; flex-wrap: wrap; gap: 16px 30px; margin-top: 32px; }
+.luzik-instructors-course-links a { display: inline-flex; align-items: center; gap: 10px; color: var(--color-luzik-blue); font-size: 13px; font-weight: 600; text-decoration: none; }
+@media (max-width: 1100px) {
+  .luzik-office-team-grid article { display: block; }
+  .luzik-office-portrait { aspect-ratio: 4 / 3; }
+  .luzik-office-portrait img { object-position: center 30%; }
+  .luzik-instructors-car-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .luzik-team-hero-portraits { gap: 8px; }
+  .luzik-team-hero-portraits a span { padding: 32px 8px 12px; font-size: 11px; }
+  .luzik-office-team-grid, .luzik-instructors-car-grid { grid-template-columns: minmax(0, 1fr); }
+  .luzik-office-portrait { aspect-ratio: 4 / 5; }
+  .luzik-instructors-page [id] { scroll-margin-top: 100px; }
+}

@@ -1,0 +1,1006 @@
+{
+  "b": {
+    "intro": {
+      "title": "Co obejmuje kurs prawa jazdy kat. B w Kielcach?",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Kurs na prawo jazdy kat. B w Kielcach w Szkole Jazdy Luzik obejmuje 30 godzin teorii oraz 30 godzin praktycznej nauki jazdy. W ramach szkolenia otrzymujesz materiały do nauki, dostęp do pytań egzaminacyjnych oraz pomoc w przygotowaniu formalności niezbędnych do rozpoczęcia kursu. Szkolenie prowadzimy w języku polskim i angielskim."
+        }
+      ]
+    },
+    "benefits": [
+      {
+        "title": "Materiały do nauki",
+        "text": "Otrzymujesz książkę zawierającą aktualne przepisy i materiały potrzebne do przygotowania się do części teoretycznej egzaminu."
+      },
+      {
+        "title": "Pytania egzaminacyjne online",
+        "text": "Zapewniamy dostęp do platformy umożliwiającej ćwiczenie pytań wykorzystywanych podczas przygotowania do egzaminu teoretycznego na prawo jazdy."
+      },
+      {
+        "title": "Pomoc z PKK i formalnościami",
+        "text": "Pomagamy przejść przez formalności związane z rozpoczęciem kursu, w tym uzyskaniem Profilu Kandydata na Kierowcę (PKK) w Urzędzie Miasta lub Starostwie."
+      },
+      {
+        "title": "Badania lekarskie na miejscu",
+        "text": "Badania wymagane do uzyskania orzeczenia lekarskiego możesz wykonać bezpośrednio w naszym ośrodku. Badanie jest dodatkowo płatne."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Jak wygląda kurs prawa jazdy kat. B?",
+        "blocks": [
+          {
+            "tag": "p",
+            "html": "Aby uzyskać <strong>prawo jazdy kategorii B</strong>, trzeba przejść przez kilka kolejnych etapów: wykonać <strong> <a href=\"/badania-lekarskie-na-prawo-jazdy-kielce\"> badania lekarskie </a> </strong>, uzyskać <strong> <a href=\"https://luzikkielce.pl/profil-kandydata-na-kierowce-pkk-co-to-jest-i-jak-go-uzyskac/\"> Profil Kandydata na Kierowcę (PKK) </a> </strong>, rozpocząć szkolenie i zdać wymagane egzaminy. Kurs prawa jazdy kat. B można rozpocząć już <strong>3 miesiące przed ukończeniem 17 lat</strong>, czyli od <strong>16 lat i 9 miesięcy</strong>. Osoba niepełnoletnia potrzebuje pisemnej zgody rodzica lub opiekuna prawnego. Szczegółowo wyjaśniamy te zasady w poradniku <strong> <a href=\"https://luzikkielce.pl/prawo-jazdy-od-17-lat-i-zmiany-przepisow-od-2026-roku/\"> prawo jazdy od 17 lat </a> </strong>. Jeśli spełniasz wymagania, możesz od razu <strong> <a href=\"/kontakt\"> zapisać się na kurs prawa jazdy kat. B w Kielcach </a> </strong>."
+          },
+          {
+            "tag": "p",
+            "html": "<strong>Kurs prawa jazdy kategorii B w Szkole Jazdy Luzik</strong> obejmuje <strong>30 godzin zajęć teoretycznych oraz 30 godzin praktycznej nauki jazdy</strong>. Podczas szkolenia przygotowujesz się zarówno do samodzielnego i bezpiecznego prowadzenia samochodu, jak i do zadań, z którymi spotkasz się podczas egzaminu. Po ukończeniu szkolenia przechodzisz <strong> <a href=\"https://luzikkielce.pl/egzamin-wewnetrzny-praktyczny-i-teoretyczny-na-prawo-jazdy-jak-wyglada-i-czy-trzeba-go-zdac-2/\"> egzamin wewnętrzny </a> </strong>, a następnie możesz przystąpić do <strong> <a href=\"https://luzikkielce.pl/egzamin-na-prawo-jazdy-kategorii-b-przewodnik-2026/\"> egzaminu państwowego na prawo jazdy kat. B </a> </strong>, który obejmuje część teoretyczną i praktyczną. Do zapisania się na egzamin potrzebny jest numer PKK, a w dniu egzaminu należy mieć przy sobie ważny dokument tożsamości. Po zdaniu wymaganych egzaminów i dopełnieniu formalności możesz uzyskać prawo jazdy kategorii B. Jeżeli otrzymasz uprawnienia przed ukończeniem 18 lat, obowiązują Cię dodatkowe zasady dotyczące młodego kierowcy, które opisaliśmy w naszym <strong> <a href=\"https://luzikkielce.pl/prawo-jazdy-od-17-lat-i-zmiany-przepisow-od-2026-roku/\"> przewodniku po prawie jazdy od 17 lat </a> </strong>. Oficjalne wymagania dotyczące uzyskania prawa jazdy znajdziesz również na <a href=\"https://www.gov.pl/web/infrastruktura/jak-uzyskac-prawo-jazdy\"> stronie Ministerstwa Infrastruktury </a>."
+          }
+        ]
+      },
+      {
+        "title": "Jakimi pojazdami można jeździć z prawem jazdy kat. B?",
+        "blocks": [
+          {
+            "tag": "p",
+            "html": "Prawo jazdy kategorii B pozwala prowadzić nie tylko samochód osobowy. Po uzyskaniu uprawnień możesz kierować m.in. pojazdem samochodowym o dopuszczalnej masie całkowitej do 3,5 t, z wyjątkiem autobusu i motocykla, a także określonymi zespołami pojazdów z przyczepą."
+          },
+          {
+            "tag": "p",
+            "html": "Z prawem jazdy kat. B możesz prowadzić m.in.:"
+          },
+          {
+            "tag": "li",
+            "html": "<strong>samochód osobowy lub dostawczy o DMC do 3,5 t</strong>,"
+          },
+          {
+            "tag": "li",
+            "html": "samochód z <strong>przyczepą lekką o DMC do 750 kg</strong>,"
+          },
+          {
+            "tag": "li",
+            "html": "samochód z przyczepą inną niż lekka, jeżeli <strong>łączna DMC zestawu nie przekracza 3500 kg</strong>,"
+          },
+          {
+            "tag": "li",
+            "html": "zestaw o łącznej DMC powyżej 3500 kg i maksymalnie 4250 kg, jeżeli zdasz dodatkowy egzamin praktyczny i uzyskasz odpowiedni wpis w prawie jazdy,"
+          },
+          {
+            "tag": "li",
+            "html": "<strong> <a href=\"/kursy-prawa-jazdy-kategorii-am\"> pojazdy kategorii AM </a> </strong>, czyli m.in. motorowery i lekkie czterokołowce,"
+          },
+          {
+            "tag": "li",
+            "html": "na terenie Polski także ciągnik rolniczy i pojazd wolnobieżny oraz określone zespoły tych pojazdów z lekką przyczepą."
+          },
+          {
+            "tag": "p",
+            "html": "Jeżeli masz prawo jazdy kategorii B od co najmniej 3 lat, na terenie Polski możesz również prowadzić określone <strong>motocykle o pojemności do 125 cm³ i mocy do 11 kW</strong>. Jeśli chcesz zdobyć pełniejsze uprawnienia motocyklowe, sprawdź nasze <a href=\"/kursy-prawa-jazdy\"> kursy prawa jazdy na motocykl </a>."
+          },
+          {
+            "tag": "p",
+            "html": "Wolisz uczyć się samochodem bez manualnej zmiany biegów? Zobacz także <strong> <a href=\"/kursy-prawa-jazdy-kategorii-b-automat\"> kurs prawa jazdy kat. B automat w Kielcach </a> </strong>."
+          }
+        ]
+      }
+    ],
+    "price": {
+      "title": "Ile kosztuje kurs prawa jazdy kat. B w Kielcach? Cena 2026",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Kurs prawa jazdy kat. B w Szkole Jazdy Luzik w Kielcach kosztuje {{coursePrice}} zł. Cena obejmuje pełne szkolenie wymagane do przygotowania do egzaminu: 30 godzin zajęć teoretycznych, 30 godzin praktycznej nauki jazdy oraz egzamin wewnętrzny. Kurs trwa około 4 tygodni, a po zakończeniu szkolenia pomagamy również w ustaleniu terminu egzaminu państwowego."
+        },
+        {
+          "tag": "p",
+          "html": "W cenie kursu otrzymujesz nie tylko teorię i jazdy. Zapewniamy materiały do nauki, dostęp do pytań egzaminacyjnych oraz szkolenie z instruktorami, którzy przygotowują kursantów zarówno do egzaminu, jak i do samodzielnego poruszania się po drogach."
+        },
+        {
+          "tag": "h3",
+          "html": "Jakie dodatkowe koszty trzeba doliczyć do kursu prawa jazdy kat. B?"
+        },
+        {
+          "tag": "p",
+          "html": "Cena {{coursePrice}} zł dotyczy kursu w Szkole Jazdy Luzik. Osobno należy uwzględnić koszty związane z badaniami, egzaminem państwowym oraz wydaniem dokumentu prawa jazdy."
+        },
+        {
+          "tag": "li",
+          "html": "<strong> <a href=\"/badania-lekarskie-na-prawo-jazdy-kielce\"> badanie lekarskie na prawo jazdy </a> </strong> – wymagane przed uzyskaniem PKK,"
+        },
+        {
+          "tag": "li",
+          "html": "<strong>egzamin teoretyczny kat. B w WORD Kielce – 58 zł</strong>,"
+        },
+        {
+          "tag": "li",
+          "html": "<strong>egzamin praktyczny kat. B w WORD Kielce – 237 zł</strong>,"
+        },
+        {
+          "tag": "li",
+          "html": "aktualne zdjęcie wymagane przy składaniu dokumentów,"
+        },
+        {
+          "tag": "li",
+          "html": "<strong>wydanie prawa jazdy – 100 zł</strong>."
+        },
+        {
+          "tag": "p",
+          "html": "Szczegółowo przebieg części teoretycznej opisaliśmy w poradniku <strong> <a href=\"https://luzikkielce.pl/egzamin-teoretyczny-na-prawo-jazdy-ile-trwa-egzamin-i-jak-wyglada/\"> egzamin teoretyczny na prawo jazdy </a> </strong>, a cały proces egzaminowania znajdziesz w naszym <strong> <a href=\"https://luzikkielce.pl/egzamin-na-prawo-jazdy-kategorii-b-przewodnik-2026/\"> przewodniku po egzaminie na prawo jazdy kat. B </a> </strong>."
+        },
+        {
+          "tag": "p",
+          "html": "Jeżeli chcesz porównać ceny pozostałych kategorii, zobacz <a href=\"/cennik\"> pełny cennik kursów prawa jazdy w Szkole Jazdy Luzik </a>."
+        }
+      ]
+    },
+    "registration": {
+      "title": "Zapisz się na kurs prawa jazdy kat. B w Kielcach",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Chcesz rozpocząć kurs prawa jazdy kat. B w Szkole Jazdy Luzik? Wypełnij formularz poniżej, a skontaktujemy się z Tobą i przekażemy informacje o najbliższym terminie szkolenia, wymaganych formalnościach oraz organizacji zajęć."
+        },
+        {
+          "tag": "p",
+          "html": "Jeśli nie masz jeszcze PKK lub badań lekarskich, również Ci pomożemy. Wyjaśnimy, co przygotować przed rozpoczęciem kursu i przeprowadzimy Cię przez kolejne etapy."
+        }
+      ]
+    },
+    "team": {
+      "title": "Poznaj instruktorów prawa jazdy kat. B w Kielcach",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Podczas kursu prawa jazdy kat. B najważniejszy jest nie tylko samochód, ale przede wszystkim <strong>instruktor</strong>, z którym spędzisz 30 godzin praktycznej nauki jazdy. <strong>W Szkole Jazdy Luzik</strong> uczysz się z instruktorami, którzy przygotowują kursantów do samodzielnego poruszania się po Kielcach oraz do egzaminu państwowego. Jeśli chcesz zobaczyć cały zespół, doświadczenie instruktorów i ich indywidualne profile,<strong><a href=\"/szkola-jazdy-luzik-instruktorzy\"> poznaj instruktorów nauki jazdy w Kielcach.<br></a></strong>"
+        }
+      ]
+    },
+    "fleet": {
+      "title": "Samochody do nauki jazdy kat. B w Kielcach",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Podczas <strong>kursu prawa jazdy kat. B w Szkole Jazdy Luzik w Kielcach</strong> uczysz się na nowoczesnych <strong>Hyundai i20</strong>, czyli samochodach takich jak te wykorzystywane podczas egzaminu państwowego na prawo jazdy kat. B w Kielcach. Dzięki temu już w trakcie szkolenia poznajesz gabaryty auta, sposób jego prowadzenia, obsługę najważniejszych elementów oraz zachowanie samochodu podczas wykonywania manewrów egzaminacyjnych."
+        },
+        {
+          "tag": "p",
+          "html": "Jazdy odbywają się zarówno na placu manewrowym, jak i w rzeczywistym ruchu drogowym w Kielcach. Nauka na samochodzie odpowiadającym typowi pojazdu egzaminacyjnego pomaga ograniczyć stres związany ze zmianą auta i pozwala skupić się na prawidłowym wykonywaniu zadań oraz bezpiecznej jeździe."
+        },
+        {
+          "tag": "h3",
+          "html": "Kurs prawa jazdy kat. B na automacie"
+        },
+        {
+          "tag": "p",
+          "html": "Jeżeli wolisz uczyć się bez obsługi sprzęgła i ręcznej zmiany biegów, możesz wybrać <a href=\"/kursy-prawa-jazdy-kategorii-b-automat\"> kurs prawa jazdy kat. B automat w Kielcach </a>. Szkolenie z automatyczną skrzynią biegów prowadzimy na <strong>Toyocie Yaris automat</strong>. Dzięki temu podczas jazdy możesz skoncentrować się na obserwacji drogi, manewrach, zachowaniu w ruchu oraz płynnym prowadzeniu samochodu."
+        }
+      ]
+    },
+    "guides": {
+      "title": "Zanim rozpoczniesz kurs prawa jazdy kat. B",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Sprawdź, jak uzyskać PKK, poznaj możliwość nauki jazdy samochodem z automatyczną skrzynią biegów oraz dowiedz się, jak wygląda egzamin wewnętrzny przed przystąpieniem do egzaminu państwowego."
+        },
+        {
+          "tag": "h3",
+          "html": "Jak uzyskać PKK?"
+        },
+        {
+          "tag": "p",
+          "html": "Sprawdź, jakie dokumenty przygotować, gdzie złożyć wniosek i jak uzyskać Profil Kandydata na Kierowcę przed rozpoczęciem kursu prawa jazdy."
+        },
+        {
+          "tag": "h3",
+          "html": "Prawo jazdy kat. B automat"
+        },
+        {
+          "tag": "p",
+          "html": "Wolisz samochód z automatyczną skrzynią biegów? Poznaj osobny kurs prawa jazdy kat. B automat w Kielcach i sprawdź, jak wygląda szkolenie."
+        },
+        {
+          "tag": "h3",
+          "html": "Egzamin wewnętrzny kat. B"
+        },
+        {
+          "tag": "p",
+          "html": "Dowiedz się, jak wygląda część teoretyczna i praktyczna egzaminu wewnętrznego oraz jak przygotować się do tego etapu szkolenia."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "question": "Ile kosztuje kurs prawa jazdy kat. B w Kielcach?",
+        "answer": "<p> <strong>Kurs prawa jazdy kat. B w Szkole Jazdy Luzik kosztuje {{coursePrice}} zł.</strong> Cena obejmuje 30 godzin zajęć teoretycznych, 30 godzin praktycznej nauki jazdy oraz egzamin wewnętrzny. Osobno należy uwzględnić m.in. koszt badań lekarskich i egzaminów państwowych. </p> <p> Aktualne ceny pozostałych szkoleń znajdziesz w <a href=\"/cennik\"> cenniku Szkoły Jazdy Luzik </a>. </p>"
+      },
+      {
+        "question": "Ile trwa kurs prawa jazdy kat. B?",
+        "answer": "<p> Kurs prawa jazdy kat. B w Szkole Jazdy Luzik trwa <strong>około 4 tygodni</strong>. Dokładny czas ukończenia szkolenia zależy również od organizacji jazd praktycznych i dostępności kursanta. </p>"
+      },
+      {
+        "question": "Ile godzin obejmuje kurs prawa jazdy kat. B?",
+        "answer": "<p> Szkolenie obejmuje <strong>30 godzin zajęć teoretycznych oraz 30 godzin praktycznej nauki jazdy</strong>. Część praktyczna pozwala przygotować się do jazdy w ruchu drogowym, wykonywania manewrów oraz egzaminu państwowego. </p>"
+      },
+      {
+        "question": "Od ilu lat można rozpocząć kurs prawa jazdy kat. B?",
+        "answer": "<p> Kurs można rozpocząć <strong>3 miesiące przed ukończeniem 17 lat</strong>, czyli od 16 lat i 9 miesięcy. Osoba niepełnoletnia potrzebuje zgody rodzica lub opiekuna prawnego. </p> <p> Więcej informacji znajdziesz w naszym poradniku: <a href=\"https://luzikkielce.pl/prawo-jazdy-od-17-lat-i-zmiany-przepisow-od-2026-roku/\"> prawo jazdy od 17 lat </a>. </p>"
+      },
+      {
+        "question": "Czy przed rozpoczęciem kursu trzeba mieć PKK?",
+        "answer": "<p> Do rozpoczęcia pełnej procedury szkolenia potrzebny jest <strong>Profil Kandydata na Kierowcę, czyli PKK</strong>. Przed jego uzyskaniem trzeba m.in. przejść wymagane badanie lekarskie i przygotować niezbędne dokumenty. </p> <p> Sprawdź krok po kroku, <a href=\"https://luzikkielce.pl/profil-kandydata-na-kierowce-pkk-co-to-jest-i-jak-go-uzyskac/\"> jak uzyskać PKK </a>. </p>"
+      },
+      {
+        "question": "Czy można zrobić kurs prawa jazdy kat. B na automacie?",
+        "answer": "<p> Tak. W Szkole Jazdy Luzik możesz wybrać <strong>kurs prawa jazdy kat. B na samochodzie z automatyczną skrzynią biegów</strong>. Szkolenie prowadzimy na Toyocie Yaris automat. </p> <p> Zobacz szczegóły: <a href=\"/kursy-prawa-jazdy-kategorii-b-automat\"> kurs prawa jazdy kat. B automat w Kielcach </a>. </p>"
+      },
+      {
+        "question": "Jak wygląda egzamin wewnętrzny na prawo jazdy kat. B?",
+        "answer": "<p> Egzamin wewnętrzny odbywa się po zakończeniu szkolenia i pozwala sprawdzić przygotowanie kursanta przed przystąpieniem do egzaminu państwowego. W ramach kursu kat. B w Luziku <strong>egzamin wewnętrzny jest wliczony w cenę szkolenia</strong>. </p> <p> Szczegółowo opisaliśmy ten etap tutaj: <a href=\"https://luzikkielce.pl/egzamin-wewnetrzny-praktyczny-i-teoretyczny-na-prawo-jazdy-jak-wyglada-i-czy-trzeba-go-zdac-2/\"> jak wygląda egzamin wewnętrzny </a>. </p>"
+      },
+      {
+        "question": "Na jakich samochodach odbywa się nauka jazdy kat. B?",
+        "answer": "<p> Podczas standardowego kursu kategorii B szkolenie odbywa się na samochodach <strong>Hyundai i20</strong>. Osoby wybierające kurs na automacie uczą się na <strong>Toyocie Yaris z automatyczną skrzynią biegów</strong>. </p>"
+      }
+    ]
+  },
+  "b-automat": {
+    "intro": {
+      "title": "Zakres kurs na prawo jazdy kat B automat w Kielcach",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Chcesz nauczyć się kierować samochodem i zyskać stosowne uprawnienia? W takim razie musisz przejść kurs prawa jazdy kategorii B. U nas odbędziesz też szkolenia na automat. To istotne, gdyż technika prowadzenia pojazdów ze skrzynią automatyczną różni się od tej, jaka obowiązuje w przypadku ręcznych przekładni. W szkole Luzik w Kielcach możesz odbyć naukę w atrakcyjnej cenie, bez ukrytych kosztów, pod okiem najlepszych wykładowców i instruktorów. Zachęcamy do zapoznania się z ofertą! <br> Kurs prowadzony jest w języku polskim i angielskim."
+        }
+      ]
+    },
+    "benefits": [
+      {
+        "title": "Książka do nauki",
+        "text": "Książka z aktualnymi przepisami"
+      },
+      {
+        "title": "Strona do ćwiczeń",
+        "text": "Dostęp do strony www z pytaniami z egzaminu teoretycznego"
+      },
+      {
+        "title": "Formalności",
+        "text": "Pomagamy w załatwieniu formalności w Urzędzie Miasta lub Starostwie"
+      },
+      {
+        "title": "Badania lekarskie na miejscu",
+        "text": "Możliwość wykonania badań lekarskich na miejscu (dodatkowo płatne)"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Nauka jazdy kat. B automat – ogólne zasady",
+        "blocks": [
+          {
+            "tag": "p",
+            "html": "Prawo jazdy kategorii B na samochód z automatyczną skrzynią biegów (oznaczone kodem „78” w dokumencie) uprawnia do prowadzenia wyłącznie pojazdów wyposażonych w automatyczną skrzynię biegów. Kurs nauki jazdy na automat obejmuje zarówno część teoretyczną, jak i praktyczną, podobnie jak w przypadku standardowego kursu na manualną skrzynię. Różnica polega na tym, że wszystkie jazdy odbywają się samochodem z automatyczną przekładnią, co eliminuje konieczność nauki zmiany biegów i obsługi sprzęgła."
+          },
+          {
+            "tag": "p",
+            "html": "Część teoretyczna kursu obejmuje 30 godzin zajęć, podczas których kursanci poznają przepisy ruchu drogowego, zasady bezpieczeństwa oraz techniki prowadzenia pojazdów. Po jej ukończeniu przystępują do egzaminu wewnętrznego, który przygotowuje ich do egzaminu państwowego. Zajęcia praktyczne również trwają 30 godzin i koncentrują się na nauce płynnej jazdy, manewrowania oraz reagowania na różne sytuacje drogowe. Dzięki temu kursanci mogą skupić się na doskonaleniu umiejętności prowadzenia pojazdu bez rozpraszania się obsługą skrzyni biegów."
+          },
+          {
+            "tag": "p",
+            "html": "Egzamin państwowy na prawo jazdy kategorii B automat składa się z części teoretycznej i praktycznej. Po jego zdaniu w dokumencie prawa jazdy pojawia się kod „78”, który ogranicza uprawnienia do prowadzenia wyłącznie samochodów z automatyczną skrzynią biegów. Aby uzyskać możliwość kierowania pojazdami z manualną przekładnią, konieczne jest ponowne zdanie egzaminu praktycznego na samochodzie z manualną skrzynią biegów. Nauka jazdy automatem to świetna opcja dla osób, które chcą szybko i komfortowo zdobyć prawo jazdy lub mają trudności z obsługą manualnej skrzyni biegów."
+          }
+        ]
+      }
+    ],
+    "price": {
+      "title": "Cena kursu na prawo jazdy kategorii B automat",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "W trakcie kursu na prawo jazdy B automat masz zagwarantowane 30 godzin teorii i praktyk pod okiem doświadczonych instruktorów, którzy zadbają o Twój komfort i skuteczność nauki. Każdy kursant otrzymuje komplet materiałów szkoleniowych z najważniejszymi przepisami ruchu drogowego. Cena kursu prawa jazdy kat. B na automat obejmuje także dostęp do przykładowych pytań egzaminacyjnych, jakie znajdują się na naszej stronie internetowej. Dzięki temu możesz solidnie przygotować się zarówno do części teoretycznej, jak i praktycznej egzaminu. Ponadto wspieramy podopiecznych szkoły w załatwianiu formalności – z nami łatwiej złożysz dokumentację do stosownych urzędów."
+        },
+        {
+          "tag": "p",
+          "html": "Podczas kursu na prawo jazdy B automat w Kielcach uczysz się jazdy na nowoczesnych pojazdach z automatyczną skrzynią biegów, które zapewniają wygodę i bezpieczeństwo. Wybierając naszą szkołę, inwestujesz w kompleksowe przygotowanie w atrakcyjnej cenie, które pozwoli Ci zdobyć upragnione prawo jazdy!"
+        }
+      ]
+    },
+    "registration": {
+      "title": "Zapisz się na kurs prawa jazdy B automat w Kielcach!",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Chcesz szybko i komfortowo nauczyć się prowadzić samochód? Kurs prawa jazdy kategorii B na automatycznej skrzyni biegów to idealne rozwiązanie! Dzięki prostszej obsłudze pojazdu skoncentrujesz się na bezpiecznej jeździe i nauce zasad ruchu drogowego. Nasza szkoła w Kielcach oferuje nowoczesne pojazdy, doświadczonych instruktorów oraz dostęp do materiałów edukacyjnych i testów online, które pomogą Ci świetnie przygotować się do egzaminu. Co więcej, służymy pełnym wsparciem i chętnie odpowiadamy na wszystkie pytania, abyś mógł czuć się pewnie na każdym etapie kursu."
+        },
+        {
+          "tag": "p",
+          "html": "Nie zwlekaj – wybierz naszą szkołę i rozpocznij swoją drogę do zdobycia prawa jazdy w komfortowych warunkach!"
+        }
+      ]
+    },
+    "fleet": {
+      "title": "Nasz samochód z automatyczną skrzynią biegów",
+      "blocks": []
+    },
+    "faqs": [
+      {
+        "question": "Dlaczego warto robić kurs na automat?",
+        "answer": "<p>Skrzynia automatyczna to coraz popularniejsze rozwiązanie w samochodach, które jeżdżą po polskich drogach. Automat z jednej strony ułatwia prowadzenie pojazdu i pomaga wyeliminować błędy prowadzące m.in. do gaśnięcia silnika. Prostsza jazda to również większy komfort kierowcy. Co więcej – wiele hybryd i aut elektrycznych wyposaża się właśnie w ten wariant przekładni. To tylko część powodów, dlaczego warto odbyć kurs na kategorię B na samochód ze skrzynią automatyczną. Jeśli chcesz uzyskać prawo do prowadzenia takich pojazdów i szukasz dobrej szkoły w Kielcach – skorzystaj z naszej oferty!</p>"
+      },
+      {
+        "question": "Czy kurs na prawo jazdy B automat różni się od kursu na skrzynię manualną?",
+        "answer": "<p>Tak, kurs na automatyczną skrzynię biegów jest bardziej komfortowy, ponieważ eliminuje konieczność nauki zmiany biegów i obsługi sprzęgła. Dzięki temu kursanci mogą skupić się na zasadach ruchu drogowego i technice jazdy. Egzamin również odbywa się na samochodzie z automatyczną skrzynią biegów.</p>"
+      },
+      {
+        "question": "Czy po zdaniu egzaminu na prawo jazdy B automat mogę prowadzić samochód z manualną skrzynią biegów?",
+        "answer": "<p>Nie, prawo jazdy kategorii B zdobyte na automatycznej skrzyni biegów uprawnia do prowadzenia wyłącznie pojazdów z automatem. Jeśli chcesz prowadzić samochody z manualną skrzynią, konieczne jest odbycie dodatkowego kursu i zdanie egzaminu.</p>"
+      },
+      {
+        "question": "Co obejmuje cena kursu na prawo jazdy B automat?",
+        "answer": "<p>Cena kursu obejmuje 30 godzin teorii i praktyki, materiały edukacyjne, dostęp do przykładowych pytań egzaminacyjnych oraz wsparcie w załatwianiu formalności, takich jak składanie dokumentów w urzędach. Dodatkowo zapewniamy naukę jazdy na nowoczesnych pojazdach z automatyczną skrzynią biegów.</p>"
+      }
+    ]
+  },
+  "a": {
+    "intro": {
+      "title": "Zakres kurs na prawo jazdy kat. A w Kielcach",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Umiejętność prowadzenia motocykla przydaje się w rozmaitych sytuacjach. Jeśli Ty też chcesz nabyć uprawnienia do kierowania wspomnianym pojazdem, zapisz się na kurs prawa jazdy kategorii A. Jego pomyślne ukończenie pozwoli Ci na swobodne przemieszczanie się po polskich drogach rozmaitymi motorami dwu- i trójkołowymi, a także lekkimi czterokołowcami. Kurs prowadzony jest w języku polskim i angielskim."
+        }
+      ]
+    },
+    "benefits": [
+      {
+        "title": "Książka do nauki",
+        "text": "Książka z aktualnymi przepisami"
+      },
+      {
+        "title": "Strona do ćwiczeń",
+        "text": "Dostęp do strony www z pytaniami z egzaminu teoretycznego"
+      },
+      {
+        "title": "Formalności",
+        "text": "Pomagamy w załatwieniu formalności w Urzędzie Miasta lub Starostwie"
+      },
+      {
+        "title": "Badania lekarskie na miejscu",
+        "text": "Możliwość wykonania badań lekarskich na miejscu (dodatkowo płatne)"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Kurs na prawo jazdy kat. A – ogólne zasady",
+        "blocks": [
+          {
+            "tag": "p",
+            "html": "W Szkole Jazdy Luzik w Kielcach organizujemy zajęcia teoretyczne i praktyczne dla kursantów, którzy spełniają określone kryterium wiekowe. Nauka jazdy kat. A zazwyczaj może zostać rozpoczęta na co najmniej 3 miesiące przed ukończeniem 24 lat. Dla osób dysponujących prawem jazdy kategorii A2 przez przynajmniej 2 lata wspomniany limit wiekowy został obniżony do 20 lat, a dla żołnierzy oraz funkcjonariuszy Policji, Straży Pożarnej i Straży Granicznej do 18 lat. W obu przypadkach naukę można rozpocząć na 3 miesiące przed osiągnięciem wymaganego wieku."
+          },
+          {
+            "tag": "p",
+            "html": "Szkolenie teoretyczne trwa 30 godzin. W jego ramach mieści się także kurs pierwszej pomocy. Czas trwania zajęć praktycznych wynosi natomiast standardowo 20 godzin. Są one prowadzone przez doświadczonych instruktorów. Cena kursu kategorii A oscyluje na poziomie {{coursePrice}} zł. Każda dodatkowa godzina jazdy doszkalającej kosztuje {{lessonPrice}} zł."
+          }
+        ]
+      },
+      {
+        "title": "Luzik Kielce – nauka jazdy kat. A na najwyższym poziomie",
+        "blocks": [
+          {
+            "tag": "p",
+            "html": "Chcesz uzyskać prawo jazdy i interesuje Cię kategoria A? W takim razie skorzystanie z oferty naszej szkoły jazdy to najlepsze rozwiązanie dla Ciebie. Zatrudniamy wyłącznie wysoko wykwalifikowanych, doświadczonych szkoleniowców, którzy do swoich obowiązków zawodowych podchodzą z pasją i zaangażowaniem. W swojej pracy kładą oni szczególny nacisk na doskonalenie praktycznych umiejętności, którymi powinien dysponować każdy motocyklista."
+          },
+          {
+            "tag": "p",
+            "html": "Wszyscy nasi kursanci otrzymują książkę z aktualnymi przepisami obowiązującymi w ruchu drogowym. Przekazujemy im także dostęp do strony www z pytaniami egzaminacyjnymi. W razie potrzeby uczestniczymy także w załatwianiu formalności w starostwie lub urzędzie miasta."
+          }
+        ]
+      }
+    ],
+    "registration": {
+      "title": "Z nami zdasz prawo jazdy na motor!",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Skontaktuj się z nami, aby poznać szczegóły naszej oferty i dopasować kurs idealny kat. A dla Ciebie. Nasz kurs prawa jazdy kategorii A jest dostosowany do różnych poziomów doświadczenia. W ten sposób jest on dobrym rozwiązaniem zarówno dla początkujących, jak i dla osób z pewnym doświadczeniem w jeździe na motocyklu. Nie zwlekaj – skontaktuj się z nami już dziś i rozpocznij swoją przygodę z jazdą na motocyklu!"
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "question": "Czy cena kursu na prawo jazdy kat. A w Kielcach obejmuje materiały edukacyjne?",
+        "answer": "<p>Tak, w cenie kursu zawarte są kompleksowe materiały dydaktyczne, w tym podręcznik z teorią oraz dostęp do platformy z testami online, dzięki czemu możesz skutecznie przygotować się do egzaminu teoretycznego. Nie musisz ponosić dodatkowych kosztów związanych z zakupem materiałów.</p>"
+      },
+      {
+        "question": "Czy po kursie prawa jazdy kat. A w Kielcach można dokupić jazdy doszkalające?",
+        "answer": "<p>Oczywiście! Zawsze istnieje możliwość dokupienia dodatkowych godzin jazd doszkalających. Nasi instruktorzy dostosują program zajęć do Twoich indywidualnych potrzeb, dzięki temu możesz w pełni przygotować się do egzaminu praktycznego i czuć się pewnie za kierownicą.</p>"
+      },
+      {
+        "question": "Czy nauka na kursie na prawo jazdy kat. A zaczyna się od zera?",
+        "answer": "<p>Nie musisz mieć żadnego wcześniejszego doświadczenia z motocyklami. Nasz kurs na prawo jazdy kat. A rozpoczyna się od podstaw, a nasi instruktorzy krok po kroku wprowadzą Cię w świat motocykli i nauczą wszystkich niezbędnych umiejętności. Możesz zrobić prawo jazdy kat. A nawet nie mając wcześniejszego doświadczenia jazdy motocyklem.</p>"
+      }
+    ]
+  },
+  "a1": {
+    "intro": {
+      "title": "Zakres kurs na prawo jazdy kat. A1 w Kielcach",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Motocykle to pojazdy, które w ostatnich latach cieszą się ogromną popularnością wśród zmotoryzowanych użytkowników polskich dróg. Możliwość ich prowadzenia zależy jednak od zdobycia odpowiednich uprawnień. W tym celu warto zapisać się na kurs prawa jazdy kategorii A1 organizowany przez naszą Szkołę Jazdy Luzik w Kielcach. Dzięki niemu nie tylko podszkolisz swoje umiejętności z zakresu kierowania wspomnianymi pojazdami jednośladowymi. Zyskasz także dodatkowe profity w postaci dostępu do strony www z pytaniami egzaminacyjnymi oraz książki zawierającej aktualnie obowiązujące przepisy drogowe.<br> Kurs prowadzony jest w języku polskim i angielskim."
+        }
+      ]
+    },
+    "benefits": [
+      {
+        "title": "Książka do nauki",
+        "text": "Książka z aktualnymi przepisami"
+      },
+      {
+        "title": "Strona do ćwiczeń",
+        "text": "Dostęp do strony www z pytaniami z egzaminu teoretycznego"
+      },
+      {
+        "title": "Formalności",
+        "text": "Pomagamy w załatwieniu formalności w Urzędzie Miasta lub Starostwie"
+      },
+      {
+        "title": "Badania lekarskie na miejscu",
+        "text": "Możliwość wykonania badań lekarskich na miejscu (dodatkowo płatne)"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Nauka jazdy kat. A1 – najważniejsze informacje",
+        "blocks": [
+          {
+            "tag": "p",
+            "html": "W prowadzonym przez nas kursie na prawo jazdy kat. A1 mogą brać udział osoby, które ukończyły 16 rok życia. W przypadku niepełnoletnich kursantów wymagana jest jednak pisemna zgoda rodziców. Szkolenie pozwala na zdobycie uprawnień do kierowania następującymi pojazdami:"
+          },
+          {
+            "tag": "li",
+            "html": "motocykle o maksymalnej mocy 11 kW i stosunku do masy własnej do 0,1kW/kg; modele te muszą mieć pojemność skokową do 125 cm3;"
+          },
+          {
+            "tag": "li",
+            "html": "motocykle trójkołowe o mocy nieprzekraczającej 15 kW;"
+          },
+          {
+            "tag": "li",
+            "html": "pojazdy określone dla prawa jazdy kategorii AM;"
+          },
+          {
+            "tag": "li",
+            "html": "zespoły wyżej wymienionych pojazdów połączonych ze sobą za sprawą przyczepy."
+          },
+          {
+            "tag": "p",
+            "html": "Zajęcia teoretyczne trwają 30 godzin. Dla kursantów ubiegających się o prawo jazdy kategorii A1 przewidziano także 20 godzin praktyki. Szkolenie prowadzone jest przez wysoko wykwalifikowanych, doświadczonych instruktorów."
+          },
+          {
+            "tag": "p",
+            "html": "Cena kursu prawa jazdy kategorii A1 wynosi {{coursePrice}} zł. Za każdą dodatkową godzinę szkolenia praktycznego trzeba uiścić opłatę zgodnie z <a href=\"/cennik#jazdy-doszkalajace\">cennikiem jazd doszkalających</a>."
+          }
+        ]
+      }
+    ],
+    "price": {
+      "title": "Prawo jazdy kat. A1 cena",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Szkoła Jazdy Luzik oferuje kompleksowy kurs na prawo jazdy kategorii A1 dostosowany do potrzeb młodych motocyklistów. Nasz kurs obejmuje 30 godzin zajęć teoretycznych, w tym kurs pierwszej pomocy oraz 20 godzin praktycznych jazd z doświadczonymi instruktorami. Uczestnicy kursu prawa jazdy kategorii A1 otrzymują książkę do nauki co ułatwia przygotowanie się do egzaminu teoretycznego. Zapewniamy indywidualne podejście do każdego kursanta, aby zapewnić maksymalny komfort i efektywność nauki na prawo jazdy kat. A1. Cena kursu jest atrakcyjna, ponieważ stawiamy na jakość i skuteczność."
+        },
+        {
+          "tag": "p",
+          "html": "W Luzik Kielce priorytetem jest Twój sukces. Dlatego stale doskonalimy nasze metody nauczania, co pozwoliło nam osiągnąć jedną z najwyższych zdawalności w Kielcach. Nasz kurs na prawo jazdy kat. A1 jest idealny zarówno dla początkujących, jak i dla tych, którzy chcą doskonalić swoje umiejętności. Zapewniamy elastyczne pakiety szkoleniowe i możliwość dokupienia dodatkowych godzin jazd doszkalających, abyś czuł się pewnie za kierownicą. Skontaktuj się z nami, aby dowiedzieć się więcej o naszej ofercie i zacząć swoją przygodę z jazdą na motocyklu!"
+        }
+      ]
+    },
+    "registration": {
+      "title": "Rozpocznij już teraz kurs prawa jazdy A1!",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Zastanawiasz się, gdzie zrobić prawo jazdy kategorii A1? Z nami zdasz bez stresu – gwarantujemy indywidualne podejście, pełne wsparcie i profesjonalne przygotowanie do egzaminu. Nasi doświadczeni instruktorzy zadbają o to, abyś czuł się pewnie na drodze i opanował wszystkie niezbędne umiejętności. Nie czekaj – zapisz się już dziś i przekonaj się, że nauka jazdy może być prosta i przyjemna!"
+        },
+        {
+          "tag": "p",
+          "html": "Chętnie odpowiemy na wszystkie Twoje pytania, więc nie wahaj się skontaktować z nami, aby dowiedzieć się więcej o naszym kursie. Z nami Twoje marzenie o jeździe na motocyklu stanie się rzeczywistością!"
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "question": "Jakie pojazdy można kierować po uzyskaniu prawa jazdy kategorii A1?",
+        "answer": "<p>Po uzyskaniu prawa jazdy kategorii A1 można kierować motocyklami o pojemności do 125 cm³, motocyklami trójkołowymi o mocy do 15 kW oraz czterokołowcami lekkimi. To pozwala na korzystanie z różnych typów pojazdów, idealnych dla początkujących motocyklistów.</p>"
+      },
+      {
+        "question": "Czy kurs na prawo jazdy kategorii A1 może być dostosowany do moich potrzeb i stylu życia?",
+        "answer": "<p>Tak, w Szkole Jazdy Luzik w Kielcach oferujemy elastyczne terminy zajęć, aby dostosować się do Twoich potrzeb i stylu życia. Podchodzimy indywidualne do każdego kursanta, co pozwala na efektywną naukę i maksymalny komfort.</p>"
+      }
+    ]
+  },
+  "a2": {
+    "intro": {
+      "title": "Zakres kurs na prawo jazdy kat. A2 w Kielcach",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Marzysz o poczuciu wolności i niezależności, jaką daje jazda motocyklem? Prawo jazdy kategorii A2 to Twój pierwszy krok do świata motocyklowych przygód! W szkole jazdy Luzik oferujemy kompleksowy kurs prawa jazdy A2, który przygotuje Cię nie tylko do zdania egzaminu, ale przede wszystkim do bezpiecznej i odpowiedzialnej jazdy motocyklem o mocy do 35 kW (47,6 KM). Nasi doświadczeni instruktorzy, nowoczesna flota motocykli i indywidualne podejście sprawią, że nauka jazdy będzie przyjemnością, a Ty szybko i skutecznie zdobędziesz upragnione uprawnienia.<br> Kurs prowadzony jest w języku polskim i angielskim."
+        }
+      ]
+    },
+    "benefits": [
+      {
+        "title": "Książka do nauki",
+        "text": "Książka z aktualnymi przepisami"
+      },
+      {
+        "title": "Strona do ćwiczeń",
+        "text": "Dostęp do strony www z pytaniami z egzaminu teoretycznego"
+      },
+      {
+        "title": "Formalności",
+        "text": "Pomagamy w załatwieniu formalności w Urzędzie Miasta lub Starostwie"
+      },
+      {
+        "title": "Badania lekarskie na miejscu",
+        "text": "Możliwość wykonania badań lekarskich na miejscu (dodatkowo płatne)"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Nauka jazdy kat. A2 – najważniejsze informacje",
+        "blocks": [
+          {
+            "tag": "p",
+            "html": "W Luzik Kielce kurs na kategorię A2 jest przeznaczony dla osób, które ukończyły 18 rok życia. Nasze szkolenie, prowadzone przez doświadczonych instruktorów, pozwala na uzyskanie uprawnień do kierowania następującymi pojazdami:"
+          },
+          {
+            "tag": "li",
+            "html": "<strong>Motocykle</strong>, których moc nie przekracza 35 kW (47,6 KM), a stosunek mocy do masy własnej nie jest wyższy niż 0,2 kW/kg."
+          },
+          {
+            "tag": "li",
+            "html": "<strong>Motocykle trójkołowe</strong>, których moc nie przekracza 15 kW."
+          },
+          {
+            "tag": "li",
+            "html": "<strong>Pojazdy określone dla prawa jazdy kategorii AM.</strong> (Czyli motorowery i czterokołowce lekkie)."
+          },
+          {
+            "tag": "li",
+            "html": "<strong>Zespoły pojazdów</strong>, składające się z wyżej wymienionych pojazdów, połączonych z przyczepą."
+          },
+          {
+            "tag": "p",
+            "html": "Wybierając nasz kurs, zyskujesz pewność kompleksowego przygotowania do egzaminu, solidną dawkę wiedzy teoretycznej i praktycznej oraz wsparcie doświadczonych instruktorów, którzy pomogą Ci opanować sztukę bezpiecznej i komfortowej jazdy motocyklem."
+          }
+        ]
+      }
+    ],
+    "price": {
+      "title": "Prawo jazdy kat. A2 cena",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Nasz kompleksowy kurs na prawo jazdy kategorii A2 w szkole Luzik został zaprojektowany, aby zapewnić Ci solidne podstawy teoretyczne i praktyczne umiejętności niezbędne do bezpiecznej jazdy motocyklem. Program szkolenia obejmuje zarówno zajęcia teoretyczne, podczas których poznasz przepisy ruchu drogowego i zasady bezpieczeństwa, jak i praktyczne, gdzie pod okiem doświadczonych instruktorów nauczysz się panowania nad motocyklem w różnych warunkach."
+        }
+      ]
+    },
+    "registration": {
+      "title": "Rozpocznij już teraz kurs prawa jazdy A2!",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Nie czekaj dłużej, aby spełnić swoje marzenie o motocyklowej wolności! Zapisz się już dziś na kurs prawa jazdy kategorii A2 i rozpocznij swoją przygodę z dwoma kółkami. Oferujemy elastyczne terminy zajęć, indywidualne podejście do każdego kursanta oraz konkurencyjne ceny. Z nami zdobędziesz nie tylko uprawnienia, ale przede wszystkim pewność siebie i umiejętności, które pozwolą Ci cieszyć się bezpieczną i komfortową jazdą przez całe życie! Skontaktuj się z nami już teraz i zapytaj o szczegóły oferty!"
+        }
+      ]
+    },
+    "faqs": []
+  },
+  "am": {
+    "intro": {
+      "title": "Zakres kurs na prawo jazdy kat AM w Kielcach",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Kierowanie motorowerem wielu osobom sprawia mnóstwo radości. Legalne przemieszczanie się tym pojazdem po polskich drogach wymaga jednak zdobycia stosownych uprawnień. Obowiązkowo trzeba ukończyć kurs prawa jazdy kategorii AM. Mieszczące się w jego ramach zajęcia teoretyczne i praktyczne organizowane są przez naszą Szkołę Jazdy Luzik w Kielcach. Nie wahaj się i już dziś zapisz się na nie! <br> Kurs prowadzony jest w języku polskim i angielskim."
+        }
+      ]
+    },
+    "benefits": [
+      {
+        "title": "Książka do nauki",
+        "text": "Książka z aktualnymi przepisami"
+      },
+      {
+        "title": "Strona do ćwiczeń",
+        "text": "Dostęp do strony www z pytaniami z egzaminu teoretycznego"
+      },
+      {
+        "title": "Formalności",
+        "text": "Pomagamy w załatwieniu formalności w Urzędzie Miasta lub Starostwie"
+      },
+      {
+        "title": "Badania lekarskie na miejscu",
+        "text": "Możliwość wykonania badań lekarskich na miejscu (dodatkowo płatne)"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Nauka jazdy kat. AM – najważniejsze zasady",
+        "blocks": [
+          {
+            "tag": "p",
+            "html": "W szkoleniu mogą brać udział osoby, którym do ukończenia wymaganego wieku 14 lat brakuje 3 miesięcy. Konieczne jest przy tym dostarczenie do sekretariatu placówki pisemnej zgody rodziców. Przewidywany czas zajęć teoretycznych wynosi 10 godzin. Na naukę praktycznych umiejętności pod okiem doświadczonych instruktorów przeznaczamy natomiast {{practice}} godzin."
+          },
+          {
+            "tag": "p",
+            "html": "Ukończenie kursu na prawo jazdy kat. AM wiąże się z możliwością uzyskania uprawnień do prowadzenia:"
+          },
+          {
+            "tag": "li",
+            "html": "dwu- lub trójkołowego motoroweru – może to być osiągający prędkość do 45 km/h model elektryczny o maksymalnej mocy na poziomie 4kW lub spalinowy o pojemności skokowej silnika do 50 cm3;"
+          },
+          {
+            "tag": "li",
+            "html": "lekkiego czterokołowca o masie do 350 kg i maksymalnej prędkości do 45 km/h;"
+          },
+          {
+            "tag": "li",
+            "html": "zespołów wyżej wymienionych pojazdów połączonych przyczepą."
+          },
+          {
+            "tag": "p",
+            "html": "Cena kursu prawa jazdy kategorii AM to {{coursePrice}} zł. Ceny dodatkowych godzin praktyki znajdziesz w <a href=\"/cennik#jazdy-doszkalajace\">cenniku jazd doszkalających</a>. Na jazdy próbne organizowane w dogodnych dla kursanta terminach można umówić się ze szkoleniowcami osobiście lub telefonicznie. Numery kontaktowe do poszczególnych instruktorów znajdziesz na naszej stronie internetowej."
+          }
+        ]
+      }
+    ],
+    "price": {
+      "title": "Prawo jazdy kat. AM cena",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Koszt kursu prawa jazdy kategorii AM w Kielcach zależy od zakresu szkolenia oraz oferowanych usług dodatkowych. W szkole Jazdy Luzik kurs obejmuje 10 godzin zajęć teoretycznych, podczas których uczestnicy poznają przepisy ruchu drogowego, zasady bezpieczeństwa oraz techniki jazdy motorowerem lub lekkim czterokołowcem. W ramach teorii organizowane są również zajęcia z pierwszej pomocy, a kursanci otrzymują dostęp do materiałów edukacyjnych i platformy z pytaniami egzaminacyjnymi."
+        },
+        {
+          "tag": "p",
+          "html": "Część praktyczna kursu to {{practice}} godzin jazd pod okiem doświadczonego instruktora. Zajęcia odbywają się zarówno na placu manewrowym, jak i w ruchu miejskim, co pozwala kursantom zdobyć praktyczne umiejętności w realnych warunkach drogowych. Szkoła Jazdy Luzik w Kielcach zapewnia indywidualne podejście do każdego kursanta oraz pomoc w załatwieniu formalności związanych z przystąpieniem do egzaminu państwowego."
+        }
+      ]
+    },
+    "registration": {
+      "title": "Rozpocznij już teraz kurs prawa jazdy AM w Kielcach!",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Prawo jazdy AM – pierwszy krok do niezależności! Jeśli marzysz o prowadzeniu motoroweru lub lekkiego czterokołowca, nie czekaj i zapisz się na kurs prawa jazdy kategorii AM już dziś! Wymagany wiek do uzyskania uprawnień to 14 lat, więc możesz zacząć swoją przygodę z motoryzacją jeszcze przed osiągnięciem pełnoletności. Kurs prawa jazdy AM obejmuje zarówno zajęcia teoretyczne, jak i praktyczne, dzięki którym zdobędziesz niezbędne umiejętności i wiedzę."
+        },
+        {
+          "tag": "p",
+          "html": "Nie zwlekaj – zapisz się na kurs już teraz! Proces szkolenia trwa zazwyczaj kilka tygodni i kończy się egzaminem wewnętrznym w naszej szkole jazdy. Po jego zaliczeniu możesz przystąpić do egzaminu państwowego w Wojewódzkim Ośrodku Ruchu Drogowego. Zdobycie prawa jazdy kategorii AM to nie tylko możliwość prowadzenia pojazdów, ale także pierwszy krok w kierunku samodzielności na drodze."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "question": "Jakie pojazdy mogę prowadzić posiadając prawo jazdy kategorii AM?",
+        "answer": "<p>Prawo jazdy kategorii AM uprawnia do prowadzenia motorowerów oraz lekkich czterokołowców. Motorower to pojazd o pojemności silnika spalinowego nieprzekraczającej 50 cm³ lub mocy silnika elektrycznego do 4 kW, którego konstrukcja ogranicza prędkość maksymalną do 45 km/h. Lekkie czterokołowce to pojazdy o masie całkowitej nieprzekraczającej 350 kg. Dzięki temu możesz korzystać zarówno z motorowerów, jak i małych quadów czy lekkich samochodów miejskich.</p>"
+      },
+      {
+        "question": "Czy muszę odbyć część teoretyczną kursu prawa jazdy AM?",
+        "answer": "<p>Nie jest to obowiązkowe – osoby, które samodzielnie przygotowały się i zdały egzamin teoretyczny w Wojewódzkim Ośrodku Ruchu Drogowego, mogą być zwolnione z tej części szkolenia. Jednakże uczestnictwo w wykładach teoretycznych może znacznie ułatwić przygotowanie do egzaminu praktycznego oraz zwiększyć szanse na jego zdanie.</p>"
+      },
+      {
+        "question": "Jak długo trwa kurs na prawo jazdy kategorii AM?",
+        "answer": "<p>Standardowy kurs trwa około czterech tygodni i obejmuje 10 godzin zajęć teoretycznych oraz 10 godzin praktycznych. W tym czasie nauczysz się podstaw ruchu drogowego oraz opanujesz technikę prowadzenia motoroweru lub lekkiego czterokołowca. Po zakończeniu kursu należy zdać egzamin wewnętrzny w szkole jazdy, a następnie przystąpić do egzaminu państwowego.</p>"
+      }
+    ]
+  },
+  "lessons": {
+    "intro": {
+      "title": "Jazdy doszkalające w Kielcach - kat. B i B automat",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "<strong>Jazdy doszkalające w Szkole Jazdy Luzik w Kielcach kosztują {{lessonBothPrices}} za godzinę</strong> i są dostępne zarówno na samochodzie z manualną, jak i automatyczną skrzynią biegów. Możesz skorzystać z dodatkowych jazd przed egzaminem państwowym, po niezdanym egzaminie albo wtedy, gdy masz już prawo jazdy i chcesz odzyskać pewność za kierownicą."
+        },
+        {
+          "tag": "p",
+          "html": "Zakres zajęć dopasowujemy do Twoich potrzeb. Z instruktorem możesz przećwiczyć konkretne manewry, jazdę po Kielcach, parkowanie, ronda, trudniejsze skrzyżowania oraz inne elementy, które sprawiają Ci największą trudność."
+        }
+      ]
+    },
+    "benefits": [],
+    "sections": [
+      {
+        "title": "Dla kogo są jazdy doszkalające?",
+        "blocks": [
+          {
+            "tag": "p",
+            "html": "Dodatkowe godziny jazdy nie są przeznaczone wyłącznie dla osób czekających na egzamin. Z jazd doszkalających mogą korzystać także kierowcy, którzy posiadają już prawo jazdy, ale chcą poprawić swoje umiejętności lub wrócić do prowadzenia samochodu po dłuższej przerwie."
+          },
+          {
+            "tag": "li",
+            "html": "<strong>Przed egzaminem</strong> - jeśli chcesz jeszcze przećwiczyć manewry, jazdę miejską i elementy, które sprawiają Ci największą trudność."
+          },
+          {
+            "tag": "li",
+            "html": "<strong>Po niezdanym egzaminie</strong> - jeśli chcesz skoncentrować kolejne godziny na konkretnych błędach i lepiej przygotować się do następnego podejścia."
+          },
+          {
+            "tag": "li",
+            "html": "<strong>Po dłuższej przerwie</strong> - jeśli masz prawo jazdy, ale dawno nie prowadziłeś samochodu i chcesz odzyskać pewność w ruchu drogowym."
+          },
+          {
+            "tag": "li",
+            "html": "<strong>Przy zmianie samochodu lub sposobu jazdy</strong> - jeśli chcesz nauczyć się prowadzenia samochodu z automatyczną skrzynią biegów albo lepiej odnaleźć się w intensywnym ruchu miejskim."
+          }
+        ]
+      },
+      {
+        "title": "Jazdy doszkalające kat. B w Kielcach",
+        "blocks": [
+          {
+            "tag": "p",
+            "html": "Jazdy doszkalające kategorii B pozwalają skupić się dokładnie na tych umiejętnościach, które wymagają jeszcze przećwiczenia. Zajęcia odbywają się indywidualnie z instruktorem, dzięki czemu czas jazdy możemy przeznaczyć na konkretne elementy potrzebne właśnie Tobie."
+          },
+          {
+            "tag": "p",
+            "html": "<strong>Podczas dodatkowych jazd możesz ćwiczyć między innymi:</strong>"
+          },
+          {
+            "tag": "li",
+            "html": "parkowanie równoległe i prostopadłe,"
+          },
+          {
+            "tag": "li",
+            "html": "zawracanie oraz inne manewry egzaminacyjne,"
+          },
+          {
+            "tag": "li",
+            "html": "jazdę przez ronda i bardziej wymagające skrzyżowania,"
+          },
+          {
+            "tag": "li",
+            "html": "zmianę pasa ruchu i prawidłową obserwację drogi,"
+          },
+          {
+            "tag": "li",
+            "html": "jazdę w godzinach większego natężenia ruchu,"
+          },
+          {
+            "tag": "li",
+            "html": "płynność jazdy oraz odpowiednie tempo poruszania się po mieście,"
+          },
+          {
+            "tag": "li",
+            "html": "elementy wskazane indywidualnie przez kursanta lub instruktora."
+          },
+          {
+            "tag": "p",
+            "html": "Jeżeli dopiero rozpoczynasz szkolenie i potrzebujesz pełnego kursu, sprawdź <strong> <a href=\"/kursy-prawa-jazdy-kategorii-b\"> kurs na prawo jazdy kat. B w Kielcach </a> </strong>."
+          }
+        ]
+      },
+      {
+        "title": "Jazdy doszkalające kat. B automat w Kielcach",
+        "blocks": [
+          {
+            "tag": "p",
+            "html": "Jazdy doszkalające możesz odbywać również na samochodzie z <strong>automatyczną skrzynią biegów</strong>. Ten wariant sprawdzi się zarówno przed egzaminem na automacie, jak i wtedy, gdy masz już prawo jazdy i chcesz nauczyć się sprawnego oraz pewnego prowadzenia samochodu bez manualnej zmiany biegów."
+          },
+          {
+            "tag": "p",
+            "html": "<strong>Podczas jazd na automacie możesz przećwiczyć między innymi:</strong>"
+          },
+          {
+            "tag": "li",
+            "html": "płynne ruszanie i zatrzymywanie się,"
+          },
+          {
+            "tag": "li",
+            "html": "jazdę w miejskim ruchu drogowym,"
+          },
+          {
+            "tag": "li",
+            "html": "parkowanie i pozostałe manewry,"
+          },
+          {
+            "tag": "li",
+            "html": "prawidłową obserwację drogi i zmianę pasa ruchu,"
+          },
+          {
+            "tag": "li",
+            "html": "przygotowanie do praktycznej części egzaminu,"
+          },
+          {
+            "tag": "li",
+            "html": "budowanie pewności za kierownicą samochodu z automatem."
+          },
+          {
+            "tag": "p",
+            "html": "Jeżeli chcesz odbyć całe szkolenie na samochodzie z automatyczną skrzynią biegów, zobacz <strong> <a href=\"/kursy-prawa-jazdy-kategorii-b-automat\"> kurs prawa jazdy kat. B automat w Kielcach </a> </strong>."
+          }
+        ]
+      }
+    ],
+    "price": {
+      "title": "Ile kosztują jazdy doszkalające w Kielcach?",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "<strong>Jedna godzina jazdy doszkalającej kat. B w Szkole Jazdy Luzik kosztuje {{lessonManualPrice}} zł.</strong> {{lessonEqualityLong}} Możesz umówić pojedynczą godzinę lub większą liczbę jazd, zależnie od tego, ile czasu potrzebujesz na przećwiczenie konkretnych manewrów, przygotowanie do egzaminu lub odzyskanie pewności za kierownicą. Zakres zajęć ustalamy indywidualnie, tak aby wykorzystać czas przede wszystkim na elementy, które wymagają poprawy. Jeżeli nie wiesz, ile godzin dodatkowej jazdy będzie dla Ciebie odpowiednie, skontaktuj się z nami. Po pierwszej jeździe instruktor może wskazać, nad którymi elementami warto jeszcze popracować."
+        }
+      ]
+    },
+    "registration": {
+      "title": "Umów jazdy doszkalające w Kielcach",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Chcesz przygotować się do egzaminu, poprawić konkretny element jazdy albo wrócić za kierownicę po dłuższej przerwie? Umów jazdę doszkalającą w Szkole Jazdy Luzik i ustal z instruktorem zakres zajęć dopasowany do swoich potrzeb."
+        },
+        {
+          "tag": "p",
+          "html": "<strong>Jazdy kat. B i B automat kosztują {{lessonBothPrices}} za godzinę.</strong> Wypełnij formularz poniżej lub skontaktuj się z naszym biurem, aby ustalić termin jazdy."
+        }
+      ]
+    },
+    "team": {
+      "title": "Z kim będziesz jeździć?",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Jazdy doszkalające w Szkole Jazdy Luzik odbywają się indywidualnie z instruktorami prowadzącymi szkolenia kategorii B i B automat. Dzięki temu podczas zajęć możesz skupić się dokładnie na manewrach, trasach i sytuacjach drogowych, które wymagają dodatkowego przećwiczenia."
+        },
+        {
+          "tag": "p",
+          "html": "Chcesz poznać nasz zespół, doświadczenie instruktorów i ich indywidualne profile? Sprawdź <strong> <a href=\"/szkola-jazdy-luzik-instruktorzy\"> instruktorów Szkoły Jazdy Luzik w Kielcach </a> </strong>."
+        }
+      ]
+    },
+    "guides": {
+      "title": "Co warto przećwiczyć przed egzaminem praktycznym?",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Jazdy doszkalające warto wykorzystać na elementy, które sprawiają Ci największą trudność. Pomiędzy kolejnymi jazdami możesz także skorzystać z naszych poradników i przypomnieć sobie najważniejsze zasady przed egzaminem."
+        },
+        {
+          "tag": "h3",
+          "html": "Parkowanie równoległe"
+        },
+        {
+          "tag": "p",
+          "html": "Przypomnij sobie kolejne etapy manewru i sprawdź, na co zwrócić uwagę podczas prawidłowego parkowania równoległego."
+        },
+        {
+          "tag": "h3",
+          "html": "Ronda i rondo turbinowe"
+        },
+        {
+          "tag": "p",
+          "html": "Sprawdź różnice między rondem zwykłym a turbinowym oraz przypomnij sobie zasady wyboru pasa i opuszczania skrzyżowania."
+        },
+        {
+          "tag": "h3",
+          "html": "Skrzyżowania i pierwszeństwo"
+        },
+        {
+          "tag": "p",
+          "html": "Przypomnij sobie zasady pierwszeństwa i sprawdź, jak prawidłowo zachować się na skrzyżowaniu równorzędnym."
+        },
+        {
+          "tag": "h3",
+          "html": "Egzamin praktyczny"
+        },
+        {
+          "tag": "p",
+          "html": "Sprawdź, jak przygotować się do egzaminu, na co zwrócić uwagę podczas jazdy i jak ograniczyć najczęstsze błędy."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "question": "Ile kosztują jazdy doszkalające w Kielcach?",
+        "answer": "<p> <strong>Jedna godzina jazdy doszkalającej kat. B w Szkole Jazdy Luzik kosztuje {{lessonManualPrice}} zł.</strong> {{lessonEqualityShort}} </p>"
+      },
+      {
+        "question": "Ile godzin jazd doszkalających warto wykupić?",
+        "answer": "<p> Liczba potrzebnych godzin zależy od Twoich umiejętności i elementów, które chcesz przećwiczyć. Dla jednej osoby wystarczy praca nad konkretnym manewrem, inna może potrzebować więcej czasu na jazdę w ruchu miejskim, skrzyżowania czy przygotowanie do egzaminu. </p> <p> Po pierwszej jeździe instruktor może wskazać, nad którymi elementami warto jeszcze popracować. </p>"
+      },
+      {
+        "question": "Czy jazdy doszkalające warto wykupić przed egzaminem?",
+        "answer": "<p> Tak. Dodatkowe jazdy przed egzaminem pozwalają skoncentrować się na elementach, które sprawiają największą trudność, takich jak parkowanie, ronda, skrzyżowania, zmiana pasa ruchu czy jazda w większym natężeniu ruchu. </p> <p> Możesz również skorzystać z naszego poradnika: <a href=\"https://luzikkielce.pl/jak-zdac-egzamin-na-prawo-jazdy/\"> jak przygotować się do egzaminu na prawo jazdy </a>. </p>"
+      },
+      {
+        "question": "Czy mogę wykupić jazdy doszkalające po niezdanym egzaminie?",
+        "answer": "<p> Tak. Po niezdanym egzaminie dodatkowe jazdy można wykorzystać do przećwiczenia konkretnych elementów, które sprawiły trudność podczas wcześniejszego podejścia. Dzięki temu kolejne godziny szkolenia mogą być skoncentrowane na realnych problemach kursanta. </p>"
+      },
+      {
+        "question": "Czy jazdy doszkalające są również dla osób, które mają już prawo jazdy?",
+        "answer": "<p> Tak. Z jazd doszkalających mogą korzystać także osoby posiadające prawo jazdy, które miały dłuższą przerwę w prowadzeniu samochodu, nie czują się pewnie w ruchu miejskim albo chcą ponownie przećwiczyć konkretne sytuacje drogowe. </p>"
+      },
+      {
+        "question": "Czy jazdy doszkalające mogą odbywać się na automacie?",
+        "answer": "<p> Tak. W Szkole Jazdy Luzik możesz umówić jazdy doszkalające na samochodzie z automatyczną skrzynią biegów. Cena wynosi również <strong>{{lessonAutomaticPrice}} zł za godzinę</strong>. </p> <p> Jeśli interesuje Cię pełne szkolenie na automacie, sprawdź <a href=\"/kursy-prawa-jazdy-kategorii-b-automat\"> kurs prawa jazdy kat. B automat w Kielcach </a>. </p>"
+      },
+      {
+        "question": "Co można ćwiczyć podczas jazd doszkalających?",
+        "answer": "<p> Zakres zajęć dopasowujemy do potrzeb kierowcy. Możesz ćwiczyć między innymi parkowanie, zawracanie, ronda, trudniejsze skrzyżowania, zmianę pasa ruchu, obserwację drogi, płynność jazdy oraz poruszanie się w większym natężeniu ruchu. </p>"
+      },
+      {
+        "question": "Jak umówić jazdy doszkalające w Szkole Jazdy Luzik?",
+        "answer": "<p> Możesz skontaktować się z biurem Szkoły Jazdy Luzik lub wypełnić formularz na tej stronie. Podczas kontaktu ustalimy dogodny termin oraz zakres jazdy dopasowany do Twoich potrzeb. </p>"
+      }
+    ]
+  },
+  "medical": {
+    "intro": {
+      "title": "Badania lekarskie na prawo jazdy Kielce",
+      "blocks": [
+        {
+          "tag": "p",
+          "html": "Zanim rozpoczniesz wymarzony kurs prawa jazdy, musisz przejść badania lekarskie na prawo jazdy kat b. Są one niezbędne do uzyskania Profilu Kandydata na Kierowcę (<a href=\"https://luzikkielce.pl/profil-kandydata-na-kierowce-pkk-co-to-jest-i-jak-go-uzyskac/\">PKK</a>), bez którego nie zapiszesz się na szkolenie. Wiemy, że załatwianie formalności bywa czasochłonne, dlatego wychodzimy Ci naprzeciw! Współpracujemy z wyselekcjonowanymi placówkami medycznymi w Kielcach, które oferują profesjonalne <strong>badania lekarskie kierowców w Kielcach</strong> i <strong>badania na prawo jazdy w Kielcach</strong>, wymagane do uzyskania PKK"
+        }
+      ]
+    },
+    "benefits": [],
+    "sections": [
+      {
+        "title": "Dlaczego kierujemy na badania lekarskie dla kierowców?",
+        "blocks": [
+          {
+            "tag": "p",
+            "html": "Posiadanie aktualnych badań lekarskich jest konieczne do rozpoczęcie kursu na prawa jazdy. W celu uniknięcia komplikacji i długiego oczekiwania kierujemy naszych kursantów do placówek medycznych, które wykonują badania bez zbędnego oczekiwania w kolejkach. Dlatego z nami zyskujesz:"
+          },
+          {
+            "tag": "li",
+            "html": "<strong>Oszczędność czasu:</strong> Zamiast przeszukiwać Internet w poszukiwaniu odpowiedniego lekarza, skontaktuj się z nami! Pomożemy Ci szybko znaleźć placówkę partnerską z dogodnymi terminami na <strong>badania kierowców Kielce</strong>."
+          },
+          {
+            "tag": "li",
+            "html": "<strong>Gwarancja jakości:</strong> Polecamy tylko te placówki, które cieszą się dobrą opinią i posiadają uprawnienia do przeprowadzania <strong>badań lekarskich kierowców</strong> wszystkich kategorii."
+          },
+          {
+            "tag": "li",
+            "html": "<strong>Kompleksowa informacja:</strong> Wyjaśnimy Ci, jakie dokumenty są potrzebne do badania i jak się do niego przygotować."
+          },
+          {
+            "tag": "li",
+            "html": "<strong>Wsparcie na każdym etapie:</strong> Odpowiemy na Twoje pytania i pomożemy w sprawnym przejściu przez proces uzyskiwania PKK."
+          }
+        ]
+      },
+      {
+        "title": "Badania lekarskie w Kielcach",
+        "blocks": [
+          {
+            "tag": "p",
+            "html": "<strong>Pamiętaj!</strong> <strong>Badania lekarskie na prawo jazdy Kielce</strong> są obowiązkowe dla każdego, kto ubiega się o prawo jazdy. Lekarz oceni Twój stan zdrowia, wzrok, słuch i sprawność psychomotoryczną, aby upewnić się, że możesz bezpiecznie prowadzić pojazd. <strong>Jak skorzystać z naszej pomocy?</strong> Zadzwoń do nas lub napisz! Skierujemy Cię do zaufanej placówki partnerskiej w <strong>Kielcach</strong>, gdzie szybko i sprawnie przejdziesz <strong>badania na prawo jazdy</strong>, niezbędne do rozpoczęcia kursu. Nie trać czasu na szukanie – powierz to nam i skup się na nauce jazdy!"
+          }
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Co dokładnie obejmują badania kierowców i jakie aspekty zdrowia są oceniane podczas badań lekarskich na prawo jazdy?",
+        "answer": "<p>Badania kierowców mają na celu ocenę Twojego ogólnego stanu zdrowia pod kątem zdolności do bezpiecznego prowadzenia pojazdów. Podczas badań lekarskich lekarz sprawdzi Twój wzrok (ostrość, pole widzenia, widzenie barw), słuch, równowagę, układ ruchu oraz oceni funkcjonowanie układu nerwowego i krążenia. W razie potrzeby, może zlecić dodatkowe badania specjalistyczne.</p>"
+      },
+      {
+        "question": "Czy podczas badań lekarskich kierowców sprawdzana jest historia moich chorób i czy muszę przedstawić dokumentację medyczną?",
+        "answer": "<p>Tak, podczas badań lekarskich lekarz zapyta o Twoją historię chorób i przyjmowane leki. Warto zabrać ze sobą posiadaną dokumentację medyczną (np. karty informacyjne z leczenia szpitalnego, zaświadczenia od lekarzy specjalistów), ponieważ może ona pomóc lekarzowi w ocenie Twojego stanu zdrowia.</p>"
+      },
+      {
+        "question": "Czy poza podstawowymi badaniami lekarskimi kierowców są wymagane dodatkowe badania na prawo jazdy?",
+        "answer": "<p>W większości przypadków wystarczające są podstawowe badania lekarskie kierowców, obejmujące ocenę stanu zdrowia, wzroku, słuchu i układu ruchu. Jednakże, w pewnych sytuacjach (np. w przypadku skierowania przez lekarza lub jeśli ubiegasz się o przywrócenie uprawnień po utracie prawa jazdy z powodu stanu zdrowia), mogą być wymagane dodatkowe konsultacje ze specjalistami lub wykonanie dodatkowych badań.</p>"
+      }
+    ]
+  }
+}

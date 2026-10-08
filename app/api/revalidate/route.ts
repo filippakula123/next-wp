@@ -11,10 +11,14 @@ export const maxDuration = 30;
 
 export async function POST(request: NextRequest) {
   try {
-    const requestBody = await request.json();
     const secret = request.headers.get("x-webhook-secret");
+    const configuredSecret = process.env.WORDPRESS_WEBHOOK_SECRET;
 
-    if (secret !== process.env.WORDPRESS_WEBHOOK_SECRET) {
+    if (!configuredSecret || configuredSecret === "your-secret-key-here") {
+      return NextResponse.json({ message: "Webhook is not configured" }, { status: 503 });
+    }
+
+    if (!secret || secret !== configuredSecret) {
       console.error("Invalid webhook secret");
       return NextResponse.json(
         { message: "Invalid webhook secret" },
@@ -22,13 +26,20 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { contentType, contentId } = requestBody;
+    let requestBody;
+    try { requestBody = await request.json(); }
+    catch { return NextResponse.json({ message: "Invalid JSON body" }, { status: 400 }); }
+    const { contentType, contentId } = requestBody ?? {};
 
     if (!contentType) {
       return NextResponse.json(
         { message: "Missing content type" },
         { status: 400 }
       );
+    }
+
+    if (!["post", "page", "category", "tag", "author", "user", "attachment"].includes(contentType) || (contentId !== undefined && (!Number.isInteger(contentId) || contentId <= 0))) {
+      return NextResponse.json({ message: "Invalid content type or ID" }, { status: 400 });
     }
 
     try {

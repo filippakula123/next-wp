@@ -1,104 +1,374 @@
 "use client";
+import { useLuzikSettings } from "@/components/site/luzik-settings-provider";
 
-// React and Next Imports
-import * as React from "react";
-import Link, { LinkProps } from "next/link";
-import { useRouter } from "next/navigation";
+import { useState } from "react";
+import * as Dialog from "@radix-ui/react-dialog";
 
-// Utility Imports
-import { Menu, ArrowRightSquare } from "lucide-react";
-import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-// Component Imports
-import { Button } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetTitle,
-  SheetHeader,
-} from "@/components/ui/sheet";
-import { Separator } from "@/components/ui/separator";
+  ChevronDown,
+  ChevronRight,
+  Facebook,
+  Instagram,
+  Menu,
+  Phone,
+  X,
+} from "lucide-react";
 
-import { mainMenu, contentMenu } from "@/menu.config";
-import { siteConfig } from "@/site.config";
+import { LuzikLogo } from "@/components/layout/luzik-logo";
+
+import {
+  luzikNavigation,
+} from "@/lib/luzik-navigation";
 
 export function MobileNav() {
-  const [open, setOpen] = React.useState(false);
+  const { header: luzikHeaderData } = useLuzikSettings();
+  const pathname = usePathname();
+
+  const [openPath, setOpenPath] = useState<string | null>(null);
+  const open = openPath === pathname;
+  const [expandedItem, setExpandedItem] =
+    useState<string | null>(null);
+
+  function closeMenu() {
+    setOpenPath(null);
+    setExpandedItem(null);
+  }
 
   return (
-    <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger asChild>
-        <Button
-          variant="ghost"
-          className="px-0 border w-10 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
-        >
-          <Menu />
-          <span className="sr-only">Toggle Menu</span>
-        </Button>
-      </SheetTrigger>
-      <SheetContent side="left" className="pr-0">
-        <SheetHeader>
-          <SheetTitle className="text-left">
-            <MobileLink
-              href="/"
-              className="flex items-center"
-              onOpenChange={setOpen}
-            >
-              <ArrowRightSquare className="mr-2 h-4 w-4" />
-              <span>{siteConfig.site_name}</span>
-            </MobileLink>
-          </SheetTitle>
-        </SheetHeader>
-        <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
-          <div className="flex flex-col space-y-3">
-            <h3 className="text-small mt-6">Menu</h3>
-            <Separator />
-            {Object.entries(mainMenu).map(([key, href]) => (
-              <MobileLink key={key} href={href} onOpenChange={setOpen}>
-                {key.charAt(0).toUpperCase() + key.slice(1)}
-              </MobileLink>
-            ))}
-            <h3 className="text-small pt-6">Blog Menu</h3>
-            <Separator />
-            {Object.entries(contentMenu).map(([key, href]) => (
-              <MobileLink key={key} href={href} onOpenChange={setOpen}>
-                {key.charAt(0).toUpperCase() + key.slice(1)}
-              </MobileLink>
-            ))}
-          </div>
-        </ScrollArea>
-      </SheetContent>
-    </Sheet>
-  );
-}
+    <Dialog.Root open={open} onOpenChange={nextOpen => {
+      if (!nextOpen) closeMenu();
+      else { setExpandedItem(null); setOpenPath(pathname); }
+    }}>
+      {/* ================================================== */}
+      {/* MOBILE HEADER BUTTON                                */}
+      {/* ================================================== */}
 
-interface MobileLinkProps extends LinkProps {
-  onOpenChange?: (open: boolean) => void;
-  children: React.ReactNode;
-  className?: string;
-}
+      <Dialog.Trigger asChild><button
+        type="button"
+        aria-label="Otwórz menu"
+        aria-expanded={open}
+        className="
+          flex
+          h-[42px]
+          w-[46px]
+          items-center
+          justify-center
+          rounded-[2px]
+          border-0
+          bg-[#008bd0]
+          text-white
+          shadow-[0_7px_20px_rgba(0,139,208,0.18)]
+        "
+      >
+        <Menu
+          size={25}
+          strokeWidth={2}
+        />
+      </button></Dialog.Trigger>
 
-function MobileLink({
-  href,
-  onOpenChange,
-  className,
-  children,
-  ...props
-}: MobileLinkProps) {
-  const router = useRouter();
-  return (
-    <Link
-      href={href}
-      onClick={() => {
-        router.push(href.toString());
-        onOpenChange?.(false);
-      }}
-      className={cn("text-lg", className)}
-      {...props}
-    >
-      {children}
-    </Link>
+      {/* ================================================== */}
+      {/* OVERLAY                                             */}
+      {/* ================================================== */}
+
+      <Dialog.Portal>
+        <Dialog.Overlay className="fixed inset-0 z-[200] bg-black/60 backdrop-blur-[2px]" />
+        <Dialog.Content asChild aria-describedby={undefined}>
+          {/* ================================================== */}
+          {/* PANEL                                             */}
+          {/* ================================================== */}
+
+          <aside
+            className="
+              fixed z-[201]
+              right-0
+              top-0
+              flex
+              h-full
+              w-[390px]
+              max-w-[calc(100vw-20px)]
+              flex-col
+              overflow-hidden
+              bg-[#111214]
+              shadow-[-20px_0_60px_rgba(0,0,0,0.3)]
+              max-[480px]:w-[calc(100vw-10px)]
+            "
+          >
+            <Dialog.Title className="sr-only">Menu główne</Dialog.Title>
+            {/* HEADER */}
+
+            <div className="relative flex h-[105px] shrink-0 items-center border-b border-white/[0.08] px-7">
+              <LuzikLogo />
+
+              <button
+                type="button"
+                onClick={closeMenu}
+                aria-label="Zamknij menu"
+                className="
+                  ml-auto
+                  flex
+                  h-9
+                  w-9
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-white/10
+                  bg-white/5
+                  text-white
+                  transition-colors
+                  hover:bg-white/10
+                "
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* CTA */}
+
+            <div className="border-b border-white/[0.08] p-5">
+              <Link
+                href={luzikHeaderData.registrationHref}
+                onClick={closeMenu}
+                className="
+                  flex
+                  h-[50px]
+                  items-center
+                  justify-center
+                  rounded-[2px]
+                  bg-[#008bd0]
+                  font-[var(--font-inter)]
+                  text-[12px]
+                  font-extrabold
+                  uppercase
+                  tracking-wide
+                  text-white
+                  no-underline
+                "
+              >
+                Zapisz się na kurs
+              </Link>
+            </div>
+
+            {/* NAVIGATION */}
+
+            <nav className="flex-1 overflow-y-auto">
+              <ul className="m-0 list-none p-0">
+                {luzikNavigation.map(
+                  (item) => {
+                    const active =
+                      pathname === item.href ||
+                      (item.href === "/blog" && pathname.startsWith("/posts/")) ||
+                      item.children?.some(child => pathname === child.href) ||
+                      pathname.startsWith(
+                        `${item.href}/`,
+                      );
+
+                    const expanded =
+                      expandedItem === item.href;
+
+                    return (
+                      <li
+                        key={item.href}
+                        className="border-b border-white/[0.08]"
+                      >
+                        <div className="flex min-h-[55px] items-center">
+                          <Link
+                            href={item.href}
+                            onClick={closeMenu}
+                            className={`
+                              flex
+                              min-w-0
+                              flex-1
+                              items-center
+                              px-6
+                              py-4
+                              font-[var(--font-inter)]
+                              text-[13px]
+                              font-extrabold
+                              uppercase
+                              tracking-wide
+                              no-underline
+                              ${
+                                active
+                                  ? "text-[#008bd0]"
+                                  : "text-white"
+                              }
+                            `}
+                          >
+                            {item.label}
+                          </Link>
+
+                          {item.children && (
+                            <button
+                              type="button"
+                              aria-label={
+                                expanded
+                                  ? `Zwiń ${item.label}`
+                                  : `Rozwiń ${item.label}`
+                              }
+                              aria-expanded={
+                                expanded
+                              }
+                              onClick={() =>
+                                setExpandedItem(
+                                  expanded
+                                    ? null
+                                    : item.href,
+                                )
+                              }
+                              className="
+                                mr-4
+                                flex
+                                h-8
+                                w-8
+                                shrink-0
+                                items-center
+                                justify-center
+                                rounded-[2px]
+                                border-0
+                                bg-white/[0.07]
+                                text-white
+                              "
+                            >
+                              <ChevronDown
+                                size={17}
+                                className={
+                                  expanded
+                                    ? "rotate-180 transition-transform"
+                                    : "transition-transform"
+                                }
+                              />
+                            </button>
+                          )}
+                        </div>
+
+                        {item.children &&
+                          expanded && (
+                            <div className="border-t border-white/[0.08] bg-[#18191b] px-3 py-2">
+                              {item.children.map(
+                                (child) => (
+                                  <Link
+                                    key={child.href}
+                                    href={
+                                      child.href
+                                    }
+                                    onClick={
+                                      closeMenu
+                                    }
+                                    className="
+                                      flex
+                                      items-center
+                                      gap-2
+                                      px-4
+                                      py-3
+                                      font-[var(--font-inter)]
+                                      text-[13px]
+                                      text-white/65
+                                      no-underline
+                                      transition-colors
+                                      hover:text-[#008bd0]
+                                    "
+                                  >
+                                    <ChevronRight
+                                      size={13}
+                                      className="text-[#008bd0]"
+                                    />
+
+                                    {
+                                      child.label
+                                    }
+                                  </Link>
+                                ),
+                              )}
+                            </div>
+                          )}
+                      </li>
+                    );
+                  },
+                )}
+              </ul>
+            </nav>
+
+            {/* CONTACT */}
+
+            <div className="shrink-0 border-t border-white/[0.08] bg-[#0d0e10] px-6 py-6">
+              <div className="mb-4 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#fff6cc] text-[#151617]">
+                  <Phone size={18} />
+                </div>
+
+                <div>
+                  <span className="block font-[var(--font-inter)] text-[10px] font-semibold uppercase tracking-wide text-white/40">
+                    Zadzwoń
+                  </span>
+
+                  <a
+                    href={
+                      luzikHeaderData.phoneHref
+                    }
+                    className="font-[var(--font-inter)] text-[15px] font-extrabold text-white no-underline"
+                  >
+                    {luzikHeaderData.phoneLabel}
+                  </a>
+                </div>
+              </div>
+
+              <div className="mb-5 flex flex-col gap-1 font-[var(--font-inter)] text-[13px] leading-5 text-white/60">
+                <span>
+                  {luzikHeaderData.contactAddress}
+                </span>
+
+                <a
+                  href={`mailto:${luzikHeaderData.email}`}
+                  className="text-white/60 no-underline"
+                >
+                  {luzikHeaderData.email}
+                </a>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <a
+                    href={
+                      luzikHeaderData.facebookHref
+                    }
+                    aria-label="Facebook"
+                    className="text-white/70 transition-colors hover:text-white"
+                  >
+                    <Facebook
+                      size={17}
+                      fill="currentColor"
+                      strokeWidth={0}
+                    />
+                  </a>
+
+                  <a
+                    href={
+                      luzikHeaderData.instagramHref
+                    }
+                    aria-label="Instagram"
+                    className="text-white/70 transition-colors hover:text-white"
+                  >
+                    <Instagram size={18} />
+                  </a>
+                </div>
+
+                <div className="flex items-center gap-2 rounded-[2px] bg-white px-3 py-2 font-[var(--font-inter)] text-[12px] font-bold text-[#333]">
+                  <span>🇵🇱</span>
+                  <span>PL</span>
+                  <ChevronDown
+                    size={13}
+                    className="text-[#777]"
+                  />
+                </div>
+              </div>
+            </div>
+          </aside>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }

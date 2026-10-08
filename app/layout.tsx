@@ -1,51 +1,78 @@
 import "./globals.css";
+import "./luzik.css";
+import "./luzik-subpages.css";
+import "./luzik-course-details.css";
+import "./luzik-instructors.css";
+import "./luzik-contact.css";
+import "./luzik-gallery.css";
+import "./luzik-blog.css";
+import "./luzik-accents.css";
 
-import { Inter as FontSans } from "next/font/google";
-import { ThemeProvider } from "@/components/theme/theme-provider";
+import type { Metadata, Viewport } from "next";
+import type { ReactNode } from "react";
+import { Inter, Lexend } from "next/font/google";
+
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
-import { Analytics } from "@vercel/analytics/react";
-
 import { siteConfig } from "@/site.config";
 import { cn } from "@/lib/utils";
+import { JsonLd } from "@/components/site/json-ld";
+import { organizationSchemaFor } from "@/lib/luzik-seo";
+import { getLuzikSiteData } from "@/lib/luzik-settings-server";
+import { LuzikSettingsProvider } from "@/components/site/luzik-settings-provider";
 
-import type { Metadata } from "next";
+const inter = Inter({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
-const font = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
+const lexend = Lexend({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-lexend",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "WordPress & Next.js Starter by 9d8",
-  description:
-    "A starter template for Next.js with WordPress as a headless CMS.",
   metadataBase: new URL(siteConfig.site_domain),
-  alternates: {
-    canonical: "/",
+  title: {
+    default: siteConfig.site_name,
+    template: `%s | ${siteConfig.site_name}`,
+  },
+  description: siteConfig.site_description,
+  applicationName: siteConfig.site_name,
+  manifest: "/manifest.webmanifest",
+  formatDetection: { telephone: false },
+  alternates: { types: { "application/rss+xml": [{ url: "/feed.xml", title: "Blog Szkoły Jazdy Luzik" }] } },
+  robots: {
+    // Only finished Luzik pages opt into public indexing through their metadata.
+    index: false,
+    follow: true,
   },
 };
 
-export default function RootLayout({
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#0075b8" };
+
+export default async function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: Readonly<{ children: ReactNode }>) {
+  const data = await getLuzikSiteData();
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head />
-      <body className={cn("min-h-screen font-sans antialiased", font.variable)}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+    <html lang="pl" className="light">
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          inter.variable,
+          lexend.variable,
+        )}
+      >
+        <a href="#main-content" className="luzik-skip-link">Przejdź do treści</a>
+          <JsonLd data={organizationSchemaFor(data)} />
+          <LuzikSettingsProvider value={{ header: data.header, contact: data.contact }}>
           <Nav />
           {children}
           <Footer />
-        </ThemeProvider>
-        <Analytics />
+          </LuzikSettingsProvider>
       </body>
     </html>
   );

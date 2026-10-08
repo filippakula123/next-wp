@@ -30,10 +30,51 @@ describe("WordPress API", () => {
     vi.unstubAllEnvs();
   });
 
+  it("loads the nearest published posts in both directions without the current post", async () => {
+    mockFetch.mockResolvedValueOnce(mockResponse([{ id: 10 }])).mockResolvedValueOnce(mockResponse([]));
+    const { getPostNeighbours } = await import("@/lib/wordpress");
+    const result = await getPostNeighbours({ id: 23, date: "2026-10-08T10:00:00" } as import("@/lib/wordpress.d").Post);
+    expect(result).toEqual({ previous: { id: 10 }, next: undefined });
+    const previous = new URL(mockFetch.mock.calls[0][0]);
+    const next = new URL(mockFetch.mock.calls[1][0]);
+    expect(previous.searchParams.get("before")).toBe("2026-10-08T10:00:00");
+    expect(previous.searchParams.get("order")).toBe("desc");
+    expect(next.searchParams.get("after")).toBe("2026-10-08T10:00:00");
+    expect(next.searchParams.get("order")).toBe("asc");
+    expect(next.searchParams.get("exclude")).toBe("23");
+    expect(next.searchParams.get("status")).toBe("publish");
+  });
+
   // We need to dynamically import the module for each test group
   // to pick up environment variable changes
 
   describe("getPostBySlug", () => {
+    it("does not turn a CMS outage into a false article 404", async () => {
+      mockFetch.mockResolvedValueOnce(mockResponse(null, { ok: false, status: 503, statusText: "Service Unavailable" }));
+      const { getPublishedPostBySlug } = await import("@/lib/wordpress");
+      await expect(getPublishedPostBySlug("real-article")).rejects.toThrow("Service Unavailable");
+      mockFetch.mockResolvedValueOnce(mockResponse([]));
+      await expect(getPublishedPostBySlug("missing-article")).resolves.toBeUndefined();
+    });
+    it("bypasses cached articles and lists during local CMS editing", async () => {
+      vi.stubEnv("WORDPRESS_CACHE_DISABLED", "true");
+      mockFetch.mockResolvedValue(mockResponse([]));
+      const { getPostBySlug, getPostsPaginated } = await import("@/lib/wordpress");
+      await getPostBySlug("removed-post");
+      await getPostsPaginated();
+      for (const [, options] of mockFetch.mock.calls) {
+        expect(options.cache).toBe("no-store");
+        expect(options.next).toBeUndefined();
+      }
+    });
+
+    it("keeps cache tags and the hourly fallback in normal mode", async () => {
+      vi.stubEnv("WORDPRESS_CACHE_DISABLED", "false");
+      mockFetch.mockResolvedValue(mockResponse([]));
+      const { getPostBySlug } = await import("@/lib/wordpress");
+      await getPostBySlug("article");
+      expect(mockFetch.mock.calls[0][1].next).toMatchObject({ tags: ["wordpress"], revalidate: 3600 });
+    });
     it("passes _embed=true and returns the first post", async () => {
       const post = { id: 1, slug: "hello", title: { rendered: "Hello" } };
       mockFetch.mockResolvedValueOnce(mockResponse([post]));

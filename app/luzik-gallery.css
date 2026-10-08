@@ -1,0 +1,43 @@
+.luzik-gallery-section { background: #f6f6f7; scroll-margin-top: 120px; }
+.luzik-gallery-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; margin-bottom: 32px; }
+.luzik-gallery-filters { display: flex; flex-wrap: wrap; gap: 10px; }
+.luzik-gallery-filters button { display: flex; align-items: center; gap: 14px; padding: 13px 18px; border: 1px solid #dce0e5; background: #fff; color: #454951; font-size: 13px; font-weight: 600; cursor: pointer; transition: background .2s, border-color .2s; }
+.luzik-gallery-filters button span { font-size: 11px; opacity: .7; }
+.luzik-gallery-filters button:hover { border-color: #008acb; }
+.luzik-gallery-filters button[aria-pressed="true"] { background: #ffe101; color: #111214; border-color: #ffe101; }
+.luzik-gallery-toolbar > p { font-size: 12px; color: #62666e; }
+.luzik-gallery-grid { columns: 3; column-gap: 24px; }
+.luzik-gallery-card { break-inside: avoid; margin: 0 0 24px; background: #fff; border: 1px solid #e2e5e9; }
+.luzik-gallery-card > button { display: block; position: relative; width: 100%; padding: 0; background: #e5e9ed; cursor: zoom-in; }
+.luzik-gallery-card img { display: block; width: 100%; height: auto; }
+.luzik-gallery-expand { position: absolute; right: 16px; bottom: 16px; display: grid; place-items: center; width: 42px; height: 42px; background: #ffda00; color: #111214; transition: background .2s, color .2s; }
+.luzik-gallery-card button:hover .luzik-gallery-expand { background: #008acb; color: #fff; }
+.luzik-gallery-card figcaption { padding: 22px; }
+.luzik-gallery-card figcaption > span { color: #0075b8; font-size: 10px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; }
+.luzik-gallery-card h3 { font-family: var(--font-lexend), sans-serif; font-size: 17px; font-weight: 500; line-height: 1.45; margin: 9px 0 0; }
+.luzik-gallery-card figcaption p { margin: 10px 0 0; font-size: 12px; color: #62666e; line-height: 1.8; }
+.luzik-gallery-page button:focus-visible, .luzik-gallery-control:focus-visible { outline: 3px solid #008acb; outline-offset: 4px; }
+.luzik-gallery-overlay { position: fixed; inset: 0; background: rgb(0 0 0 / .92); z-index: 100; }
+.luzik-gallery-dialog { position: fixed; inset: 20px max(20px, calc((100vw - 1400px) / 2)); z-index: 101; color: #fff; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 16px; outline: none; }
+.luzik-gallery-dialog-header { display: flex; align-items: center; justify-content: space-between; }
+.luzik-gallery-dialog-header p { margin: 0; color: #d7dce4; font-size: 13px; }
+.luzik-gallery-control { flex-shrink: 0; width: 48px; height: 48px; display: grid; place-items: center; border: 1px solid #5c6067; color: #fff; background: #25282d; cursor: pointer; transition: background .2s, color .2s; }
+.luzik-gallery-control:hover { color: #111214; background: #ffda00; }
+.luzik-gallery-full-photo { position: relative; min-height: 0; }
+.luzik-gallery-full-photo img { object-fit: contain; }
+.luzik-gallery-dialog-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.luzik-gallery-dialog-footer > div { text-align: center; min-width: 0; }
+.luzik-gallery-dialog-footer h2 { font-family: var(--font-lexend), sans-serif; font-size: 18px; margin: 0; }
+.luzik-gallery-dialog-footer p { font-size: 12px; color: #c1c6cf; margin: 8px 0 0; line-height: 1.6; }
+@media (max-width: 1000px) { .luzik-gallery-grid { columns: 2; } }
+@media (max-width: 600px) {
+  .luzik-gallery-grid { columns: 1; }
+  .luzik-gallery-filters { width: 100%; display: grid; grid-template-columns: 1fr 1fr; }
+  .luzik-gallery-filters button { justify-content: space-between; padding: 12px; font-size: 11px; gap: 8px; }
+  .luzik-gallery-dialog { inset: 12px; gap: 12px; }
+  .luzik-gallery-dialog-footer { gap: 10px; }
+  .luzik-gallery-dialog-footer h2 { font-size: 14px; }
+  .luzik-gallery-dialog-footer p { font-size: 11px; }
+  .luzik-gallery-control { width: 44px; height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) { .luzik-gallery-filters button, .luzik-gallery-expand, .luzik-gallery-control { transition: none; } }

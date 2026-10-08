@@ -1,0 +1,132 @@
+/* Detailed offer pages share the homepage typography and blue accents. */
+.luzik-subhero-portrait { max-width: 340px; justify-self: center; }
+.luzik-subhero-portrait .luzik-subhero-image { aspect-ratio: 2 / 3; }
+.luzik-course-detail .luzik-subhero { position: relative; }
+.luzik-course-detail:not(.luzik-course-detail-moto) .luzik-subhero-image { aspect-ratio: 3 / 2; }
+.luzik-course-detail .luzik-subhero h1 { font-size: clamp(36px, 3.5vw, 50px); }
+.luzik-course-detail-moto .luzik-subhero-grid { grid-template-columns: 1.25fr .75fr; }
+.luzik-course-facts { background: #edf6fc; border-bottom: 1px solid #dfedf6; }
+.luzik-course-facts .luzik-container { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); padding-block: 28px; }
+.luzik-course-facts .luzik-container > div { display: flex; flex-direction: column; gap: 6px; padding-inline: 26px; border-right: 1px solid #d6e7f2; }
+.luzik-course-facts .luzik-container > div:first-child { padding-left: 0; }
+.luzik-course-facts .luzik-container > div:last-child { border-right: 0; }
+.luzik-course-facts strong { color: var(--color-luzik-blue); font-family: var(--font-lexend), sans-serif; font-size: 32px; font-weight: 600; letter-spacing: -.04em; }
+.luzik-course-facts span { color: #606977; font-size: 12px; }
+.luzik-course-benefits { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 24px; margin-top: 48px; }
+.luzik-course-benefits article { padding-top: 26px; border-top: 2px solid #dde8ef; }
+.luzik-course-benefits svg { color: var(--color-luzik-blue); margin-bottom: 18px; }
+.luzik-course-benefits h3 { font-size: 17px; line-height: 1.45; font-weight: 600; margin: 0 0 12px; }
+.luzik-course-benefits p { color: #62666e; font-size: 14px; line-height: 1.8; margin: 0; }
+.luzik-course-chapters { padding-block: 16px 40px; background: #f6f6f7; }
+.luzik-course-chapter { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; padding-block: 64px; border-bottom: 1px solid #e0e3e7; }
+.luzik-course-chapter:last-child { border-bottom: 0; }
+.luzik-course-chapter h2 { margin: 0; font-family: var(--font-lexend), sans-serif; font-size: clamp(26px,2.7vw,36px); font-weight: 600; letter-spacing: -.035em; line-height: 1.25; }
+.luzik-course-detail .luzik-prose ul { padding-left: 22px; margin: 22px 0; }
+.luzik-course-detail .luzik-prose li { padding-left: 4px; margin-block: 12px; }
+.luzik-course-detail .luzik-prose li::marker { color: var(--color-luzik-blue); }
+.luzik-course-detail .luzik-prose h3 { font-size: 20px; color: #191a1c; font-weight: 600; margin-block: 28px 14px; }
+.luzik-course-detail .luzik-prose strong { color: #343a43; font-weight: 600; }
+.luzik-detail-price { background: #edf6fc; }
+.luzik-detail-price-layout { display: grid; grid-template-columns: 1.2fr .8fr; gap: 72px; align-items: start; }
+.luzik-detail-price .home-title { margin-bottom: 28px; }
+.luzik-detail-price .home-text-link { margin-top: 24px; }
+.luzik-detail-price-card { border-top: 3px solid var(--color-luzik-blue); padding: 36px; background: #fff; }
+.luzik-detail-price-card ul { padding: 24px 0; margin: 24px 0; border-block: 1px solid #e9e9ed; list-style: none; }
+.luzik-detail-price-card li { display: flex; align-items: center; gap: 12px; margin-block: 14px; font-size: 13px; line-height: 1.6; }
+.luzik-detail-price-card li svg { flex-shrink: 0; color: var(--color-luzik-blue); }
+.luzik-detail-price-card .home-button { width: 100%; justify-content: center; }
+.luzik-price-footnote { color: #737984; font-size: 11px; line-height: 1.6; margin: 16px 0 0; }
+.luzik-lesson-price-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; margin-top: 40px; }
+.luzik-lesson-price-grid .luzik-prose { margin-bottom: 28px; }
+.luzik-course-guides { background: #111214; color: #fff; }
+.luzik-course-guides .home-title { color: #fff; max-width: 800px; margin-bottom: 24px; }
+.luzik-course-guides .luzik-prose { color: #afb7c2; }
+.luzik-guide-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap: 20px; margin-top: 36px; }
+.luzik-guide-grid > a { display: flex; flex-direction: column; padding: 28px; border: 1px solid #353941; text-decoration: none; transition: border-color .2s, background .2s; }
+.luzik-guide-grid > a:hover { border-color: #39a6e5; background: #1c2026; }
+.luzik-guide-grid > a > span { font-size: 13px; color: #39a6e5; margin-bottom: 28px; }
+.luzik-guide-grid h3 { color: #fff; font-size: 20px; font-weight: 600; line-height: 1.4; margin: 0 0 18px; }
+.luzik-guide-grid .luzik-prose { font-size: 13px; line-height: 1.8; margin-bottom: 24px; }
+.luzik-guide-grid > a > strong { display: flex; justify-content: space-between; gap: 12px; margin-top: auto; color: #39a6e5; font-size: 12px; font-weight: 600; }
+.luzik-team-intro { background: #f6f6f7; padding-bottom: 0; }
+.luzik-team-intro .home-title { margin-bottom: 24px; }
+.luzik-team-intro .luzik-prose { max-width: 880px; }
+.luzik-fleet-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; margin-top: 40px; }
+.luzik-fleet-grid > a { background: #f6f6f7; text-decoration: none; color: #333943; border-bottom: 2px solid #e6e9ec; }
+.luzik-fleet-grid > a:hover { border-color: var(--color-luzik-blue); }
+.luzik-fleet-grid img { display: block; width: 100%; height: auto; }
+.luzik-fleet-grid span { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; padding: 20px; }
+.luzik-fleet-grid svg { color: var(--color-luzik-blue); }
+.luzik-fleet-single { grid-template-columns: minmax(0,1fr); max-width: 920px; margin-inline: auto; }
+.luzik-detail-faq { background: #f6f6f7; }
+.luzik-faq-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; align-items: start; }
+.luzik-faq-layout > div > p:not(.home-eyebrow) { color: #737984; font-size: 14px; line-height: 1.8; margin: 24px 0; }
+.luzik-faq-list { border-top: 1px solid #dfe3e8; }
+.luzik-faq-list details { border-bottom: 1px solid #dfe3e8; }
+.luzik-faq-list summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 24px; cursor: pointer; list-style: none; color: #20252d; font-size: 16px; line-height: 1.65; font-weight: 600; }
+.luzik-faq-list summary::-webkit-details-marker { display: none; }
+.luzik-faq-list summary svg { color: var(--color-luzik-blue); flex-shrink: 0; }
+.luzik-faq-list details[open] summary svg { transform: rotate(180deg); }
+.luzik-faq-list details[open] summary { color: var(--color-luzik-blue); }
+.luzik-faq-list details > .luzik-prose { font-size: 14px; line-height: 1.85; padding: 0 32px 24px 0; }
+.luzik-registration-layout { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 72px; }
+.luzik-registration-layout .home-title { margin-bottom: 26px; }
+.luzik-registration-phone { display: inline-flex; align-items: center; gap: 16px; margin-top: 28px; font-size: 23px; font-weight: 600; color: var(--color-luzik-blue); text-decoration: none; }
+.luzik-registration-phone small { display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #69727e; margin-bottom: 5px; }
+.luzik-contact-form { padding: 36px; background: #f6f6f7; border-top: 3px solid var(--color-luzik-blue); }
+.luzik-form-heading { display: flex; align-items: center; gap: 12px; margin: 0 0 28px; font-size: 21px; font-weight: 600; }
+.luzik-form-heading svg { color: var(--color-luzik-blue); }
+.luzik-contact-form label { display: flex; flex-direction: column; gap: 8px; min-width: 0; font-size: 12px; font-weight: 600; margin-bottom: 20px; }
+.luzik-contact-form label > span { color: #737984; font-weight: 400; }
+.luzik-contact-form input, .luzik-contact-form textarea { width: 100%; min-width: 0; border: 1px solid #dfe3e8; border-radius: 0; background: #fff; padding: 13px 14px; font-size: 14px; line-height: 1.6; color: #282d35; font-weight: 400; }
+.luzik-contact-form textarea { resize: vertical; }
+.luzik-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.luzik-form-note { font-size: 12px; color: #69727e; line-height: 1.8; margin: 0 0 24px; }
+.luzik-form-note a { color: var(--color-luzik-blue); }
+.luzik-contact-form .home-button { width: 100%; justify-content: center; font-size: 13px; }
+.luzik-contact-form [role="status"] { margin: 20px 0 0; }
+.luzik-related-courses { background: #f6f6f7; }
+.luzik-category-links { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+.luzik-category-links a { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 26px; background: #fff; border: 1px solid #e0e5eb; text-decoration: none; }
+.luzik-category-links a:hover { border-color: var(--color-luzik-blue); }
+.luzik-category-links span { color: #171b21; font-family: var(--font-lexend), sans-serif; font-size: 28px; font-weight: 600; }
+.luzik-category-links small { color: #737984; font-size: 11px; max-width: calc(100% - 20px); }
+.luzik-category-links svg { position: absolute; right: 22px; top: 30px; color: var(--color-luzik-blue); }
+.luzik-medical-visual { background: #1c1f23; padding: 40px; border-bottom: 4px solid var(--color-luzik-blue); }
+.luzik-medical-visual > svg { color: #39a6e5; margin-bottom: 32px; }
+.luzik-medical-visual > p { font-family: var(--font-lexend), sans-serif; font-size: 25px; line-height: 1.4; margin: 0 0 32px; }
+.luzik-medical-visual ol { padding: 0; margin: 0 0 30px; list-style: none; }
+.luzik-medical-visual li { display: flex; align-items: center; gap: 18px; padding-block: 23px; border-top: 1px solid #373c44; font-size: 14px; }
+.luzik-medical-visual li > span { color: #39a6e5; font-size: 12px; }
+.luzik-medical-visual li > svg { margin-left: auto; color: #39a6e5; flex-shrink: 0; }
+.luzik-medical-visual > span { color: #adb5c0; font-size: 12px; }
+.luzik-course-detail :is(a,button,input,textarea,summary):focus-visible { outline: 3px solid #39a6e5; outline-offset: 4px; }
+.luzik-course-detail :is(section[id],h2[id]) { scroll-margin-top: 140px; }
+@media (max-width: 1023px) {
+  .luzik-course-chapter, .luzik-faq-layout { gap: 36px; }
+  .luzik-detail-price-layout, .luzik-registration-layout { gap: 32px; }
+  .luzik-course-benefits { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .luzik-contact-form, .luzik-detail-price-card, .luzik-medical-visual { padding: 26px; }
+  .luzik-course-facts strong { font-size: 28px; }
+  .luzik-course-facts .luzik-container > div { padding-inline: 16px; }
+}
+@media (max-width: 767px) {
+  .luzik-course-detail-moto .luzik-subhero-grid { grid-template-columns: minmax(0,1fr); }
+  .luzik-subhero-portrait { max-width: 340px; }
+  .luzik-course-facts .luzik-container { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px 0; }
+  .luzik-course-facts .luzik-container > div:nth-child(odd) { padding-left: 0; }
+  .luzik-course-facts .luzik-container > div:nth-child(even) { border-right: 0; }
+  .luzik-course-chapter, .luzik-detail-price-layout, .luzik-faq-layout, .luzik-registration-layout, .luzik-lesson-price-grid { grid-template-columns: minmax(0,1fr); gap: 28px; }
+  .luzik-course-chapter { padding-block: 40px; }
+  .luzik-course-benefits { gap: 24px; margin-top: 32px; }
+  .luzik-course-benefits h3 { font-size: 15px; }
+  .luzik-course-benefits p { font-size: 13px; }
+  .luzik-fleet-grid { grid-template-columns: minmax(0,1fr); }
+  .luzik-category-links { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+  .luzik-category-links a { padding: 20px; }
+  .luzik-category-links span { font-size: 23px; }
+  .luzik-category-links svg { right: 14px; top: 24px; width: 16px; }
+  .luzik-form-row { grid-template-columns: minmax(0,1fr); gap: 0; }
+  .luzik-course-detail :is(section[id],h2[id]) { scroll-margin-top: 100px; }
+}
+@media (prefers-reduced-motion: reduce) { .luzik-guide-grid > a { transition: none; } }

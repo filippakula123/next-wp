@@ -1,0 +1,236 @@
+/* Course, pricing and about pages use the homepage's visual language. */
+.luzik-subhero {
+  background: #111214;
+  color: #fff;
+  padding: 26px 0 60px;
+}
+
+.luzik-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+  color: #a8adb5;
+  font-size: 12px;
+}
+
+.luzik-breadcrumbs a { color: #c7cbd2; text-decoration: none; }
+.luzik-breadcrumbs a:hover { color: #fff; }
+.luzik-breadcrumbs [aria-current] { color: #fff; }
+.luzik-subhero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.luzik-subhero-content { padding-block: 28px; min-width: 0; }
+.luzik-subhero .home-eyebrow { color: #39a6e5; }
+.luzik-subhero h1 {
+  margin: 0;
+  font-family: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(36px, 3.7vw, 52px);
+  font-weight: 600;
+  letter-spacing: -.045em;
+  line-height: 1.16;
+  color: #fff;
+}
+
+.luzik-subhero h1 span { color: #39a6e5; }
+.luzik-subhero-copy { margin: 24px 0 0; color: #b4bac4; font-size: 16px; line-height: 1.8; max-width: 550px; }
+.luzik-subhero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin-top: 28px; }
+.luzik-subhero-phone { display: inline-flex; gap: 10px; align-items: center; color: #fff; font-size: 14px; font-weight: 600; text-decoration: none; }
+.luzik-subhero-phone svg { color: #39a6e5; }
+.luzik-subhero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
+.luzik-subhero-tags > * { border: 1px solid #383d46; padding: 6px 10px; color: #c8cdd5; font-size: 11px; line-height: 1.7; text-decoration: none; }
+.luzik-subhero-tags a:hover { border-color: #39a6e5; color: #fff; }
+.luzik-subhero-photo { width: 100%; min-width: 0; overflow: hidden; background: #1c1f23; border-bottom: 4px solid var(--color-luzik-blue); }
+.luzik-subhero-image { position: relative; aspect-ratio: 1170 / 683; }
+.luzik-subhero-photo img { object-fit: contain; }
+.luzik-subhero-photo-label { display: block; margin: 22px 24px; font-size: 12px; font-weight: 600; border-left: 3px solid #39a6e5; padding-left: 12px; }
+.luzik-subhero a:focus-visible, .luzik-subpage-cta a:focus-visible { outline: 3px solid #39a6e5; outline-offset: 5px; }
+
+.luzik-editorial-intro { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: start; }
+.luzik-prose { font-size: 16px; line-height: 1.85; color: #62666e; }
+.luzik-prose p { margin: 0 0 18px; }
+.luzik-prose p:last-child { margin-bottom: 0; }
+.luzik-prose a, .luzik-support-panel a, .luzik-offer-note a { color: var(--color-luzik-blue); font-weight: 600; text-underline-offset: 4px; }
+.luzik-section-topline { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 40px; }
+.luzik-section-topline > a { flex-shrink: 0; margin-bottom: 4px; }
+.luzik-section-topline > p { margin: 0 0 4px; font-size: 14px; line-height: 1.8; color: #62666e; }
+.luzik-offer-section { background: #f6f6f7; }
+.luzik-course-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.luzik-course-card { min-width: 0; background: #fff; border: 1px solid #e5e7eb; scroll-margin-top: 145px; }
+.luzik-course-photo { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #e7e9ed; }
+.luzik-course-photo img { object-fit: cover; object-position: center 40%; }
+.luzik-category-badge { position: absolute; bottom: 0; left: 0; display: flex; align-items: center; gap: 10px; background: var(--color-luzik-blue); color: #fff; padding: 10px 20px; font-family: var(--font-lexend), ui-sans-serif, system-ui, sans-serif; font-size: 25px; font-weight: 600; }
+.luzik-category-badge small { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .07em; }
+.luzik-course-content { padding: 26px; }
+.luzik-course-subtitle { margin: 0 0 10px; font-size: 11px; color: #62666e; }
+.luzik-course-content h3 { font-size: 21px; font-weight: 600; line-height: 1.4; margin: 0; }
+.luzik-check-list { padding: 0; margin: 20px 0 24px; list-style: none; display: grid; gap: 8px; }
+.luzik-check-list li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #62666e; }
+.luzik-check-list svg { flex-shrink: 0; color: var(--color-luzik-blue); }
+.luzik-course-bottom { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding-top: 18px; border-top: 1px solid #e7e8ec; }
+.luzik-course-bottom > span { font-size: 13px; color: #454951; }
+.luzik-course-bottom strong { font-family: var(--font-lexend), ui-sans-serif, system-ui, sans-serif; font-size: 27px; font-weight: 600; letter-spacing: -.04em; color: var(--color-luzik-ink); }
+.luzik-course-bottom small { display: block; color: #74757b; font-size: 11px; }
+.luzik-course-bottom a { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; height: 44px; background: #e7f3fa; color: var(--color-luzik-blue); transition: background .2s, color .2s; }
+.luzik-course-bottom a:hover { background: var(--color-luzik-blue); color: #fff; }
+.luzik-offer-note { margin: 28px 0 0; font-size: 13px; line-height: 1.8; max-width: 850px; }
+.luzik-learning-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 44px; }
+.luzik-learning-grid article { padding: 28px; background: #f6f6f7; border-top: 2px solid var(--color-luzik-blue); }
+.luzik-learning-grid svg { color: var(--color-luzik-blue); margin-bottom: 20px; }
+.luzik-learning-grid h3 { margin: 0 0 12px; font-size: 18px; font-weight: 600; line-height: 1.45; }
+.luzik-learning-grid p { margin: 0; font-size: 14px; line-height: 1.8; color: #62666e; }
+.luzik-course-detail-copy { max-width: 900px; margin: 40px 0; }
+.luzik-course-detail-copy h3 { font-size: 19px; font-weight: 600; margin: 0 0 16px; }
+.luzik-support-panel { display: flex; gap: 24px; padding: 32px; background: #eaf5fb; }
+.luzik-support-panel > svg { flex-shrink: 0; color: var(--color-luzik-blue); margin-top: 3px; }
+.luzik-support-panel h3 { font-size: 20px; line-height: 1.4; font-weight: 600; margin: 0 0 16px; }
+.luzik-support-panel p { margin: 0; font-size: 14px; line-height: 1.85; color: #555d68; }
+.luzik-subpage-cta { padding-block: 72px; background: #eaf5fb; }
+.luzik-subpage-cta > .luzik-container { display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: center; }
+.luzik-subpage-cta .home-title { max-width: 760px; font-size: clamp(28px, 2.8vw, 36px); }
+.luzik-subpage-cta p:not(.home-eyebrow) { max-width: 700px; font-size: 15px; line-height: 1.8; margin: 20px 0 0; color: #62666e; }
+
+.luzik-price-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.luzik-price-grid-cars { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.luzik-price-card { position: relative; padding: 32px; background: #fff; border: 1px solid #e3e6eb; scroll-margin-top: 145px; }
+.luzik-price-card-featured { border-top: 3px solid var(--color-luzik-blue); }
+.luzik-anchor { position: absolute; top: 0; scroll-margin-top: 145px; }
+.luzik-price-card-label { margin: 0 0 12px; font-size: 11px; letter-spacing: .1em; font-weight: 600; text-transform: uppercase; color: var(--color-luzik-blue); }
+.luzik-price-card h3 { margin: 0 0 8px; font-size: 24px; font-weight: 600; line-height: 1.4; }
+.luzik-price-card-description { margin: 0; font-size: 13px; color: #62666e; }
+.luzik-course-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; margin: 32px 0 24px; color: var(--color-luzik-ink); }
+.luzik-course-price strong { font-family: var(--font-lexend), ui-sans-serif, system-ui, sans-serif; font-size: 48px; font-weight: 600; line-height: 1.1; letter-spacing: -.045em; }
+.luzik-course-price > span { color: #62666e; font-size: 13px; }
+.luzik-price-includes { list-style: none; padding: 22px 0; margin: 0 0 28px; border-block: 1px solid #e7e8ec; display: grid; gap: 12px; }
+.luzik-price-includes li { display: flex; gap: 12px; align-items: center; color: #62666e; font-size: 14px; }
+.luzik-price-includes svg { color: var(--color-luzik-blue); flex-shrink: 0; }
+.luzik-price-includes strong { color: var(--color-luzik-ink); font-weight: 600; }
+.luzik-price-card .home-button { width: 100%; }
+.luzik-exam-car { display: flex; align-items: center; gap: 22px; padding: 28px 32px; border: 1px solid #e3e6eb; background: #fff; margin-top: 24px; scroll-margin-top: 145px; }
+.luzik-exam-car > svg { color: var(--color-luzik-blue); flex-shrink: 0; }
+.luzik-exam-car > div { flex: 1; }
+.luzik-exam-car h3 { font-size: 17px; line-height: 1.5; margin: 0 0 5px; font-weight: 600; }
+.luzik-exam-car p { margin: 0; color: #62666e; font-size: 13px; }
+.luzik-exam-car > strong { flex-shrink: 0; color: var(--color-luzik-ink); font-size: 30px; font-family: var(--font-lexend), ui-sans-serif, system-ui, sans-serif; font-weight: 600; }
+.luzik-exam-car > strong span { font-size: 14px; font-weight: 400; color: #62666e; }
+.luzik-exam-car > a { font-size: 12px; flex-shrink: 0; }
+.luzik-motorcycle-heading { margin: 72px 0 36px; }
+.luzik-extra-lessons-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 64px; align-items: start; }
+.luzik-extra-lessons-table { border: 1px solid #e3e6eb; }
+.luzik-extra-lessons-table table { width: 100%; border-collapse: collapse; }
+.luzik-extra-lessons-table thead { background: #f6f6f7; }
+.luzik-extra-lessons-table th, .luzik-extra-lessons-table td { padding: 20px 24px; text-align: left; }
+.luzik-extra-lessons-table thead th { font-size: 11px; text-transform: uppercase; font-weight: 600; letter-spacing: .05em; color: #62666e; }
+.luzik-extra-lessons-table th:last-child, .luzik-extra-lessons-table td { text-align: right; }
+.luzik-extra-lessons-table tbody tr + tr { border-top: 1px solid #e3e6eb; }
+.luzik-extra-lessons-table tbody th strong { display: block; font-size: 15px; font-weight: 600; color: var(--color-luzik-ink); }
+.luzik-extra-lessons-table tbody th span { display: block; font-size: 12px; font-weight: 400; color: #62666e; margin-top: 4px; line-height: 1.5; }
+.luzik-extra-lessons-table td { font-size: 23px; font-weight: 600; color: var(--color-luzik-ink); white-space: nowrap; }
+.luzik-extra-lessons-table td span { font-size: 12px; font-weight: 400; }
+.luzik-payment-section { padding-bottom: 80px; background: #fff; }
+.luzik-payment-panel { display: flex; align-items: center; gap: 24px; border: 1px solid #d5e7f2; padding: 32px; background: #eaf5fb; }
+.luzik-payment-panel > svg { color: var(--color-luzik-blue); flex-shrink: 0; }
+.luzik-payment-panel > div { flex: 1; }
+.luzik-payment-panel h2 { font-size: 19px; font-weight: 600; line-height: 1.5; margin: 0 0 8px; }
+.luzik-payment-panel p { margin: 0; font-size: 13px; line-height: 1.8; color: #62666e; }
+.luzik-payment-panel > span { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: var(--color-luzik-blue); }
+
+.luzik-about-benefits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.luzik-about-benefits article { padding: 30px; border: 1px solid #e5e7eb; background: #f9f9fa; }
+.luzik-about-benefit-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; color: var(--color-luzik-blue); }
+.luzik-about-benefit-top span { font-size: 12px; font-weight: 600; color: #9096a0; }
+.luzik-about-benefits h3 { margin: 0 0 14px; font-size: 19px; font-weight: 600; line-height: 1.5; }
+.luzik-about-benefits p { margin: 0; font-size: 14px; line-height: 1.8; color: #62666e; }
+.luzik-awards-section { background: #111214; }
+.luzik-awards-section .home-title { color: #fff; }
+.luzik-awards-section .home-eyebrow { color: #39a6e5; }
+.luzik-awards-layout { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 70px; }
+.luzik-award-timeline { list-style: none; padding: 0; margin: 36px 0 0; display: grid; gap: 0; }
+.luzik-award-timeline li { display: grid; grid-template-columns: 58px 1fr; gap: 22px; align-items: start; padding-block: 20px; border-bottom: 1px solid #34383f; }
+.luzik-award-timeline li > span { color: #39a6e5; font-family: var(--font-lexend), ui-sans-serif, system-ui, sans-serif; font-size: 20px; font-weight: 500; }
+.luzik-award-timeline li > div { display: flex; align-items: start; gap: 14px; }
+.luzik-award-timeline svg { flex-shrink: 0; color: #c6ab6e; margin-top: 2px; }
+.luzik-award-timeline p { margin: 0; font-size: 14px; line-height: 1.8; color: #c3c7cf; }
+.luzik-award-images { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
+.luzik-award-images figure { margin: 0; min-width: 0; text-align: center; }
+.luzik-award-images img { width: 100%; max-width: 230px; height: auto; margin-inline: auto; }
+.luzik-award-images figcaption { margin-top: 22px; font-size: 11px; line-height: 1.7; color: #a7adb6; }
+.luzik-about-statistics { background: #eaf5fb; padding-block: 42px; }
+.luzik-about-statistics > .luzik-container { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.luzik-about-statistics .luzik-container > div { padding: 8px 24px; border-right: 1px solid #cddfe9; text-align: center; }
+.luzik-about-statistics .luzik-container > div:last-child { border: 0; }
+.luzik-about-statistics strong { display: block; color: var(--color-luzik-blue); font-family: var(--font-lexend), ui-sans-serif, system-ui, sans-serif; font-size: 36px; line-height: 1.3; letter-spacing: -.035em; font-weight: 600; }
+.luzik-about-statistics span { display: block; margin-top: 10px; color: #555d68; font-size: 12px; line-height: 1.6; }
+.luzik-school-team { background: #f6f6f7; }
+.luzik-team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-bottom: 32px; }
+.luzik-team-grid article { min-width: 0; overflow: hidden; background: #fff; border: 1px solid #e5e7eb; }
+.luzik-team-avatar { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: #e7f3fa; }
+.luzik-team-info { padding: 24px; }
+.luzik-team-avatar img { object-fit: cover; object-position: center 28%; }
+.luzik-team-avatar span { font-family: var(--font-lexend), ui-sans-serif, system-ui, sans-serif; font-weight: 500; color: var(--color-luzik-blue); font-size: 20px; }
+.luzik-team-grid h3 { margin: 0 0 8px; font-size: 21px; font-weight: 600; line-height: 1.5; }
+.luzik-team-grid p { margin: 0; font-size: 13px; line-height: 1.6; color: #62666e; }
+#oferta-kursow, #ceny-kursow, #jazdy-doszkalajace, #co-nas-wyroznia { scroll-margin-top: 120px; }
+
+@media (max-width: 1023px) {
+  .luzik-subhero-grid { gap: 32px; }
+  .luzik-editorial-intro, .luzik-awards-layout, .luzik-extra-lessons-layout { gap: 36px; }
+  .luzik-course-grid, .luzik-team-grid, .luzik-about-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .luzik-course-content, .luzik-price-card { padding: 24px; }
+  .luzik-section-topline { align-items: start; flex-direction: column; gap: 24px; }
+  .luzik-exam-car { flex-wrap: wrap; }
+  .luzik-exam-car > div { flex-basis: calc(100% - 50px); }
+  .luzik-exam-car > a { margin-left: auto; }
+  .luzik-learning-grid { gap: 16px; }
+  .luzik-learning-grid article { padding: 22px; }
+  .luzik-subpage-cta > .luzik-container { gap: 28px; }
+  .luzik-about-statistics .luzik-container > div { padding-inline: 12px; }
+  .luzik-about-statistics strong { font-size: 30px; }
+  .luzik-payment-panel { flex-wrap: wrap; }
+  .luzik-payment-panel > span { flex-basis: 100%; margin-left: 56px; }
+}
+
+@media (max-width: 767px) {
+  .luzik-subhero { padding-bottom: 32px; }
+  .luzik-subhero-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .luzik-breadcrumbs { margin-bottom: 20px; }
+  .luzik-subhero-content { padding-block: 10px 0; }
+  .luzik-subhero-copy { font-size: 15px; }
+  .luzik-subhero-photo-label { margin: 20px; }
+  .luzik-subhero-actions { gap: 20px; }
+  .luzik-subhero-tags { margin-top: 24px; }
+  .luzik-editorial-intro, .luzik-extra-lessons-layout, .luzik-awards-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .luzik-prose { font-size: 15px; }
+  .luzik-section-topline { margin-bottom: 30px; }
+  .luzik-learning-grid, .luzik-price-grid, .luzik-price-grid-cars { grid-template-columns: minmax(0, 1fr); }
+  .luzik-learning-grid { margin-top: 30px; }
+  .luzik-course-detail-copy { margin-block: 30px; }
+  .luzik-support-panel { padding: 24px; flex-direction: column; gap: 16px; }
+  .luzik-subpage-cta { padding-block: 56px; }
+  .luzik-subpage-cta > .luzik-container { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .luzik-subpage-cta .home-button { justify-self: start; }
+  .luzik-course-price strong { font-size: 44px; }
+  .luzik-exam-car { padding: 24px; gap: 18px; }
+  .luzik-exam-car h3 { font-size: 16px; }
+  .luzik-exam-car > a { font-size: 11px; }
+  .luzik-motorcycle-heading { margin-top: 52px; }
+  .luzik-extra-lessons-table th, .luzik-extra-lessons-table td { padding: 18px; }
+  .luzik-extra-lessons-table td { font-size: 20px; }
+  .luzik-extra-lessons-table thead th { font-size: 10px; }
+  .luzik-payment-section { padding-bottom: 56px; }
+  .luzik-payment-panel { padding: 24px; gap: 18px; align-items: start; }
+  .luzik-payment-panel h2 { font-size: 17px; }
+  .luzik-payment-panel > span { margin-left: 0; }
+  .luzik-award-images { max-width: 500px; margin-inline: auto; gap: 20px; }
+  .luzik-about-statistics > .luzik-container { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 0; }
+  .luzik-about-statistics .luzik-container > div:nth-child(even) { border: 0; }
+  .luzik-about-statistics .luzik-container > div:last-child { grid-column: 1 / -1; }
+  .luzik-course-card, .luzik-price-card, .luzik-anchor, .luzik-exam-car, #oferta-kursow, #ceny-kursow, #jazdy-doszkalajace, #co-nas-wyroznia { scroll-margin-top: 95px; }
+}
+
+@media (max-width: 639px) {
+  .luzik-course-grid, .luzik-team-grid, .luzik-about-benefits { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .luzik-course-bottom a { transition: none; }
+}

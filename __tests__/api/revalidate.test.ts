@@ -76,6 +76,25 @@ describe("POST /api/revalidate", () => {
     expect(body.message).toContain("Invalid webhook secret");
   });
 
+  it("disables revalidation when the server secret is missing or still a placeholder", async () => {
+    const { POST } = await import("@/app/api/revalidate/route");
+    for (const secret of ["", "your-secret-key-here"]) {
+      vi.stubEnv("WORDPRESS_WEBHOOK_SECRET", secret);
+      const res = await POST(createRequest({ contentType: "post" }, secret));
+      expect(res.status).toBe(503);
+      expect(mockRevalidateTag).not.toHaveBeenCalled();
+    }
+  });
+
+  it("rejects unsupported content types and non-positive IDs", async () => {
+    const { POST } = await import("@/app/api/revalidate/route");
+    for (const body of [{ contentType: "unknown" }, { contentType: "post", contentId: -1 }, { contentType: "post", contentId: "23" }]) {
+      const res = await POST(createRequest(body, "test-secret"));
+      expect(res.status).toBe(400);
+      expect(mockRevalidatePath).not.toHaveBeenCalled();
+    }
+  });
+
   it("returns 401 for missing webhook secret", async () => {
     const { POST } = await import("@/app/api/revalidate/route");
     const req = createRequest({ contentType: "post" });
