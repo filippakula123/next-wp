@@ -2,7 +2,7 @@ import { getLuzikSiteData } from "@/lib/luzik-settings-server";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
-import { featuredInstructors, luzikOfficeTeam, originalProfileUrl } from "@/lib/luzik-team";
+import { featuredInstructors, luzikOfficeTeam, profileHref } from "@/lib/luzik-team";
 import { SubpageHero } from "./subpage-hero";
 import { SchoolTeam } from "./school-team";
 import { CourseContactForm } from "./course-contact-form";
@@ -25,13 +25,13 @@ export async function InstructorsPage() {
       title={<>Instruktorzy nauki jazdy.<br /><span>Poznaj nas!</span></>}
       description="Poznaj instruktorów Szkoły Jazdy Luzik w Kielcach. Wybierz osobę, z którą chcesz rozpocząć naukę, i porozmawiaj z naszym biurem o terminach jazd."
       action={{ href: "#instruktorzy", label: "Poznaj nasz zespół" }}
-      visual={<div className="luzik-team-hero-visual"><div className="luzik-team-hero-portraits">{featuredInstructors.map(person => <Link href={`#${person.id}`} key={person.id}><Image src={person.image} alt={person.name} fill sizes="(max-width: 767px) 30vw, 17vw" loading="eager" /><span>{person.name}</span></Link>)}</div><p>Twoja nauka. Twój instruktor.<span>Kategoria B · B automat</span></p></div>}>
+      visual={<div className="luzik-team-hero-visual"><div className="luzik-team-hero-portraits">{featuredInstructors.map(person => <Link href={`#${person.id}`} key={person.id}><Image src={person.image} alt={person.name} fill sizes="(max-width: 767px) 45vw, 13vw" loading="eager" /><span>{person.name}</span></Link>)}</div><p>Twoja nauka. Twój instruktor.<span>Kategoria B · B automat</span></p></div>}>
       <div className="luzik-subhero-tags"><a href="#instruktorzy">Instruktorzy</a><a href="#biuro">Nasze biuro</a><a href="#samochody">Nasze samochody</a></div>
     </SubpageHero>
     <SchoolTeam detailed contactHref="#wybor-instruktora" />
     <section className="home-section luzik-instructors-office" id="biuro" aria-labelledby="office-team-title"><div className="luzik-container">
       <div className="luzik-section-topline"><div><p className="home-eyebrow">Spotkajmy się w Luziku</p><h2 className="home-title" id="office-team-title">Szkoła jazdy Luzik — biuro</h2></div><p><MapPin size={17} aria-hidden="true" />{luzikContactData.address}<br />{luzikContactData.floor}</p></div>
-      <div className="luzik-office-team-grid">{luzikOfficeTeam.map(person => <article key={person.id}><div className="luzik-office-portrait"><Image src={person.image} alt={`${person.name} — ${person.role.toLowerCase()}, Szkoła Jazdy Luzik`} fill sizes="(max-width: 767px) 100vw, 25vw" /></div><div><p className="home-eyebrow">Szkoła Jazdy Luzik</p><h3>{person.name}</h3><p>{person.role}</p><a href={originalProfileUrl(person.profile)} className="home-text-link">Poznaj bliżej<ArrowRight size={17} aria-hidden="true" /><span className="sr-only">: {person.name}</span></a></div></article>)}</div>
+      <div className="luzik-office-team-grid">{luzikOfficeTeam.map(person => <article key={person.id}><div className="luzik-office-portrait"><Image src={person.image} alt={`${person.name} — ${person.role.toLowerCase()}, Szkoła Jazdy Luzik`} fill sizes="(max-width: 767px) 100vw, 25vw" /></div><div><p className="home-eyebrow">Szkoła Jazdy Luzik</p><h3>{person.name}</h3><p>{person.role}</p><a href={profileHref(person.profile)} className="home-text-link">Poznaj bliżej<ArrowRight size={17} aria-hidden="true" /><span className="sr-only">: {person.name}</span></a></div></article>)}</div>
     </div></section>
     <section className="home-section luzik-instructors-fleet" id="samochody" aria-labelledby="instructors-fleet-title"><div className="luzik-container">
       <div className="luzik-section-topline"><div><p className="home-eyebrow">Za kierownicą z Luzikiem</p><h2 className="home-title" id="instructors-fleet-title">Nasze samochody</h2></div><Link href="/kursy-prawa-jazdy" className="home-text-link">Poznaj ofertę kursów<ArrowRight size={18} aria-hidden="true" /></Link></div>

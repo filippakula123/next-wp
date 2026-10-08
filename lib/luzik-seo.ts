@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { legacySeo, legacyOrganization } from "./luzik-legacy-seo";
 import { siteConfig } from "@/site.config";
 import { completedLuzikSlugs, luzikPages, type LuzikPageSlug } from "./luzik-pages";
 import { courseHref, coursePresentation, type CourseId } from "./luzik-course-details";
@@ -13,14 +14,17 @@ export const publicUrl = (path: string) => new URL(path, siteConfig.site_domain)
 const schoolId = publicUrl("/#school");
 const websiteId = publicUrl("/#website");
 
-export function luzikMetadata(title: string, description: string, path: string, image = "/luzik/brand/social.jpg", indexable = true): Metadata {
+export function luzikMetadata(title: string, description: string, path: string, image = "/luzik/brand/social.jpg", indexable = true, data?: LuzikSiteData): Metadata {
+  const legacy = legacySeo(path, title, description, data);
+  title = legacy.title;
+  description = legacy.description;
   const url = publicUrl(path);
   // Local media URLs cannot be read by social networks after deployment.
-  const socialImage = wordpressImageUnoptimized(image) ? "/luzik/brand/social.jpg" : image;
+  const socialImage = legacy.socialImage ?? (wordpressImageUnoptimized(image) ? "/luzik/brand/social.jpg" : image);
   return {
-    title, description, alternates: { canonical: url },
-    robots: { index: siteConfig.site_indexable && indexable, follow: true, "max-image-preview": "large" },
-    openGraph: { title: `${title} | Szkoła Jazdy Luzik`, description, type: "website", url, locale: "pl_PL", siteName: siteConfig.site_name, images: [{ url: publicUrl(socialImage), alt: title, ...(socialImage === "/luzik/brand/social.jpg" ? { width: 1200, height: 630 } : {}) }] },
+    title: { absolute: title }, description, alternates: { canonical: url },
+    robots: { index: siteConfig.site_indexable && indexable && legacy.indexable, follow: true, "max-image-preview": "large" },
+    openGraph: { title: legacy.socialTitle ?? title, description: legacy.socialDescription ?? description, type: "website", url, locale: "pl_PL", siteName: siteConfig.site_name, images: [{ url: publicUrl(socialImage), alt: title, ...(socialImage === "/luzik/brand/social.jpg" ? { width: 1200, height: 630 } : {}) }] },
     twitter: { card: "summary_large_image", title, description, images: [publicUrl(socialImage)] },
   };
 }
@@ -34,13 +38,14 @@ function pageDescription(slug: LuzikPageSlug, data?: LuzikSiteData) {
 export function luzikPageMetadata(slug: LuzikPageSlug, data?: LuzikSiteData): Metadata {
   const page = luzikPages[slug];
   const course = luzikCourses.find(c => courseHref(c.id) === `/${slug}`);
-  return luzikMetadata(page.title, pageDescription(slug, data), `/${slug}`, course ? coursePresentation[course.id].image : undefined, completedLuzikSlugs.includes(slug) && (slug !== "blog" || process.env.BLOG_INDEXABLE === "true"));
+  return luzikMetadata(page.title, pageDescription(slug, data), `/${slug}`, course ? coursePresentation[course.id].image : undefined, completedLuzikSlugs.includes(slug) && (slug !== "blog" || process.env.BLOG_INDEXABLE === "true"), data);
 }
 
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": ["LocalBusiness", "EducationalOrganization"], "@id": schoolId, name: siteConfig.site_name, url: publicUrl("/"), description: siteConfig.site_description,
+    { "@type": ["LocalBusiness", "EducationalOrganization"], "@id": schoolId, name: siteConfig.site_name, url: publicUrl("/"), description: legacyOrganization.description,
+      geo: { "@type": "GeoCoordinates", latitude: legacyOrganization.latitude, longitude: legacyOrganization.longitude },
       telephone: "+48504166557", email: "autoluzik@wp.pl", logo: publicUrl("/luzik/logo.png"), image: publicUrl("/luzik/hero.jpg"),
       address: { "@type": "PostalAddress", streetAddress: "ul. Warszawska 4", addressLocality: "Kielce", postalCode: "25-306", addressCountry: "PL" },
       hasMap: luzikContactData.mapHref,

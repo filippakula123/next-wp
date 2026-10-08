@@ -1,5 +1,5 @@
 .luzik-team-hero-visual { min-width: 0; }
-.luzik-team-hero-portraits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding-bottom: 24px; }
+.luzik-team-hero-portraits { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; padding-bottom: 24px; }
 .luzik-team-hero-portraits a { position: relative; aspect-ratio: 2 / 3; overflow: hidden; background: #262a30; border-bottom: 3px solid #39a6e5; }
 .luzik-team-hero-portraits a:nth-child(2) { transform: translateY(24px); }
 .luzik-team-hero-portraits img { object-fit: cover; object-position: center 28%; }

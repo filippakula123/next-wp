@@ -7,6 +7,7 @@ import "./luzik-contact.css";
 import "./luzik-gallery.css";
 import "./luzik-blog.css";
 import "./luzik-accents.css";
+import "./luzik-profiles.css";
 
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";

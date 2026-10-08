@@ -2,12 +2,12 @@ import { getLuzikSiteData } from "@/lib/luzik-settings-server";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Clock3, CreditCard, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
-import { luzikTeam } from "@/lib/luzik-team";
+import { featuredInstructors } from "@/lib/luzik-team";
 import { SubpageHero } from "./subpage-hero";
 import { CourseContactForm } from "./course-contact-form";
 import { CopyAccountButton } from "./copy-account-button";
 
-const contactInstructors = [luzikTeam[0], luzikTeam[1], luzikTeam[5]];
+const contactInstructors = featuredInstructors;
 
 export async function ContactPage() {
   const { header: luzikHeaderData, contact: luzikContactData } = await getLuzikSiteData();

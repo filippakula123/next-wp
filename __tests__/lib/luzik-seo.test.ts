@@ -13,7 +13,7 @@ describe("Luzik search metadata", () => {
   it("keeps demo blog content out of search results", async () => {
     expect(luzikPageMetadata("blog").robots).toMatchObject({ index: false, follow: true });
     const urls = (await sitemap()).map(entry => entry.url);
-    expect(urls).toHaveLength(15);
+    expect(urls).toHaveLength(23);
     expect(urls).toContain("https://luzikkielce.pl/kontakt");
     expect(urls).toContain("https://luzikkielce.pl/galeria");
     expect(urls.some(url => /localhost|\/posts|\/blog$/.test(url))).toBe(false);

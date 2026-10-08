@@ -10,7 +10,6 @@ interface StatItem {
   suffix?: string;
   label: string;
   icon: typeof CalendarDays;
-  placeholder?: boolean;
 }
 
 const stats: readonly StatItem[] = [
@@ -31,11 +30,10 @@ const stats: readonly StatItem[] = [
     icon: MessageCircle,
   },
   {
-    value: "4.9",
+    value: "4,8",
     suffix: "/5",
     label: "średnia ocena kursantów",
     icon: Star,
-    placeholder: true,
   },
 ];
 
@@ -163,25 +161,6 @@ export function StatsStrip() {
                 >
                   {stat.label}
                 </p>
-
-                {/* Placeholder */}
-
-                {stat.placeholder === true && (
-                  <span
-                    className="
-                      mt-1
-                      inline-block
-                      font-[var(--font-inter)]
-                      text-[9px]
-                      font-bold
-                      uppercase
-                      tracking-[0.12em]
-                      text-[#1383ec]/70
-                    "
-                  >
-                    placeholder
-                  </span>
-                )}
               </div>
             </div>
           );

@@ -13,5 +13,5 @@ export const luzikOfficeTeam = [
   { id: "karolina-jaros", name: "Karolina Jaros", role: "Specjalistka ds. floty samochodowej", image: "/luzik/instructors/karolina-jaros.jpg", profile: "karolina-jaros-specjalistka-ds-floty-samochodowej" },
 ] as const;
 
-export const featuredInstructors = [luzikTeam[0], luzikTeam[3], luzikTeam[1]];
-export const originalProfileUrl = (profile: string) => `https://luzikkielce.pl/team/${profile}/`;
+export const featuredInstructors = [luzikTeam[0], luzikTeam[4], luzikTeam[1], luzikTeam[3]];
+export const profileHref = (profile: string) => `/team/${profile}`;

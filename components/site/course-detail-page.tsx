@@ -56,8 +56,8 @@ async function Registration({ content, subject }: { content: CourseContent; subj
 }
 
 const guideLinks = {
-  b: ["https://luzikkielce.pl/profil-kandydata-na-kierowce-pkk-co-to-jest-i-jak-go-uzyskac/", courseHref("b-automat"), "https://luzikkielce.pl/egzamin-wewnetrzny-praktyczny-i-teoretyczny-na-prawo-jazdy-jak-wyglada-i-czy-trzeba-go-zdac-2/"],
-  lessons: ["https://luzikkielce.pl/parkowanie-rownolegle-jak-wykonac-je-poprawnie/", "https://luzikkielce.pl/czym-rondo-turbinowe-rozni-sie-od-zwyklego/", "https://luzikkielce.pl/skrzyzowanie-rownorzedne-zasady-i-praktyka/", "https://luzikkielce.pl/jak-zdac-egzamin-na-prawo-jazdy/"],
+  b: ["/profil-kandydata-na-kierowce-pkk-co-to-jest-i-jak-go-uzyskac/", courseHref("b-automat"), "/egzamin-wewnetrzny-praktyczny-i-teoretyczny-na-prawo-jazdy-jak-wyglada-i-czy-trzeba-go-zdac/"],
+  lessons: ["/parkowanie-rownolegle-jak-wykonac-je-poprawnie/", "/czym-rondo-turbinowe-rozni-sie-od-zwyklego/", "/skrzyzowanie-rownorzedne-zasady-i-praktyka/", "/jak-zdac-egzamin-na-prawo-jazdy/"],
 };
 
 function Guides({ content, kind }: { content: CourseContent; kind: "b" | "lessons" }) {

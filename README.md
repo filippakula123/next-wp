@@ -64,6 +64,10 @@ Przy uruchomionym podglądzie produkcyjnym:
 
 Favicony, ikony mobilne i domyślne obrazy udostępniania odtwarza `node scripts/generate-brand-assets.mjs`. RSS, sitemapę oraz dane SEO generuje Next.js.
 
+Zapisane tytuły, opisy i szablony Rank Math ze starej kopii znajdują się w `lib/luzik-legacy-seo.json`. Obsługuje je `lib/luzik-legacy-seo.ts`, bez podwójnego dopisywania nazwy szkoły. Wpisy bez ręcznie ustawionego opisu korzystają z aktualnej zajawki w WordPressie. Kopia metadanych nie jest synchronizowana z panelem Rank Math; jej ręczne opisy można zmienić w tym pliku. Dla nowych artykułów używane są tytuł, zajawka i zdjęcie wyróżniające z CMS.
+
+Przy przenoszeniu SEO poprawiono dwie literówki w tytułach, opisy społecznościowe skopiowane z niewłaściwego artykułu oraz cenę kursu B w opisie (teraz pobieraną z ustawień WordPressa). Własne obrazy społecznościowe z kopii znajdują się w `public/luzik/blog-social`; nie zależą od adresu lokalnego CMS. Opisy i umiejętności ośmiu profili `/team/…` zachowano w `lib/luzik-profiles.json`. Stare formularze ocen instruktorów wymagają osobnej integracji, jeśli mają wrócić.
+
 ## Przed publikacją
 
 1. Przenieś WordPressa wraz ze zdjęciami na publiczny serwer HTTPS. Lokalny adres `next-wp.local` nie będzie dostępny z hostingu Next.js.

@@ -15,16 +15,7 @@ import { siteConfig } from "@/site.config";
 import { luzikMetadata, pageSchema } from "@/lib/luzik-seo";
 import { JsonLd } from "@/components/site/json-ld";
 
-export const metadata: Metadata = {
-  ...luzikMetadata("Szkoła Jazdy Kielce Luzik", siteConfig.site_description, "/"),
-  title: {
-    absolute: "Szkoła Jazdy Kielce Luzik",
-  },
-  description: siteConfig.site_description,
-  alternates: {
-    canonical: "/",
-  },
-};
+export const metadata: Metadata = luzikMetadata("Szkoła Jazdy Kielce Luzik", siteConfig.site_description, "/");
 
 export default async function HomePage() {
   const data = await getLuzikSiteData();

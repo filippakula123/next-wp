@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/site.config";
 import { completedLuzikSlugs } from "@/lib/luzik-pages";
 import { getAllPostsForSitemap } from "@/lib/wordpress";
+import profiles from "@/lib/luzik-profiles.json";
 
 // Blog content enters the sitemap only after real articles replace demo content.
 export const revalidate = 3600;
@@ -29,5 +30,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...(Number.isNaN(Date.parse(post.modified)) ? {} : { lastModified: new Date(post.modified) }),
     changeFrequency: "monthly", priority: 0.6,
   }));
-  return [...staticUrls, ...luzikUrls, ...postUrls];
+  const profileUrls: MetadataRoute.Sitemap = profiles.map(profile => ({ url: `${siteConfig.site_domain}/team/${profile.slug}`, changeFrequency: "monthly", priority: 0.5 }));
+  return [...staticUrls, ...luzikUrls, ...profileUrls, ...postUrls];
 }

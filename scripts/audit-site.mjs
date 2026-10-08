@@ -40,6 +40,10 @@ if (crawl) {
   const assets = new Set();
   const fragments = [];
   function collect(path, html) {
+    for (const match of html.matchAll(/<meta\b[^>]*property="og:image"[^>]*content="([^"]+)"/g)) {
+      const image = new URL(match[1], base);
+      if (image.origin === base.origin || image.hostname === "luzikkielce.pl") assets.add(image.pathname);
+    }
     for (const match of html.matchAll(/<(a|img)\b[^>]*?\b(href|src)="([^"]+)"/g)) {
       let url;
       try { url = new URL(match[3].replaceAll("&amp;", "&"), new URL(path, base)); } catch { continue; }

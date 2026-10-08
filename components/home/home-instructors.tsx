@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { featuredInstructors } from "@/lib/luzik-team";
 
 import {
   ArrowUpRight,
@@ -7,35 +8,15 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-const instructors = [
-  {
-    id: "arkadiusz-jaros",
-    image: "/luzik/instructors/arkadiusz-jaros.jpg",
-    name: "Arkadiusz Jaros",
-    role: "Właściciel / instruktor",
-    description:
-      "Doświadczony instruktor i właściciel szkoły. Stawia na spokojną atmosferę i praktyczne przygotowanie do egzaminu.",
-    objectPosition: "center center",
-  },
-  {
-    id: "sandra-baczek",
-    image: "/luzik/instructors/sandra-baczek.jpg",
-    name: "Sandra Bączek",
-    role: "Instruktor",
-    description:
-      "Prowadzi jazdy w spokojnej atmosferze i pomaga kursantom nabrać pewności za kierownicą.",
-    objectPosition: "center center",
-  },
-  {
-    id: "kacper-jaros",
-    image: "/luzik/instructors/kacper-jaros.jpg",
-    name: "Kacper Jaros",
-    role: "Instruktor",
-    description:
-      "Prowadzi jazdy w spokojnej atmosferze i pomaga kursantom nabrać pewności za kierownicą.",
-    objectPosition: "center center",
-  },
-] as const;
+const instructors = featuredInstructors.map(person => ({
+  ...person,
+  description: person.id === 'arkadiusz-jaros'
+    ? 'Doświadczony instruktor i właściciel szkoły. Stawia na spokojną atmosferę i praktyczne przygotowanie do egzaminu.'
+    : person.id === 'mariola-jaros'
+      ? 'Prowadzi naukę jazdy kategorii B i B automat. Stawia na spokojną atmosferę, cierpliwość i indywidualne podejście.'
+      : 'Prowadzi jazdy w spokojnej atmosferze i pomaga kursantom nabrać pewności za kierownicą.',
+  objectPosition: 'center center',
+}));
 
 export function HomeInstructors() {
   return (
@@ -154,7 +135,7 @@ export function HomeInstructors() {
         {/* KARTY                                             */}
         {/* ================================================= */}
 
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
           {instructors.map((instructor) => (
             <article
               key={instructor.id}
@@ -176,7 +157,7 @@ export function HomeInstructors() {
                   src={instructor.image}
                   alt={`Instruktor nauki jazdy - ${instructor.name}`}
                   fill
-                  sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 25vw"
                   className="
                     object-cover
                     brightness-[0.93]
@@ -266,7 +247,7 @@ export function HomeInstructors() {
                     />
 
                     <span className="font-[var(--font-inter)] text-[11px] font-semibold uppercase tracking-wide text-white/45">
-                      Szkolenie kategorii B
+                      Szkolenie kategorii {instructor.category}
                     </span>
                   </div>
 

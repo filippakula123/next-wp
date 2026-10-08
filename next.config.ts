@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { legacyPaths } from "./lib/luzik-redirects";
 
 const wordpressUrlValue = process.env.WORDPRESS_URL;
 
@@ -33,9 +34,8 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
-      { source: "/egzamin-teoretyczny-na-prawo-jazdy-ile-trwa-egzamin-i-jak-wyglada", destination: "/jak-wyglada-egzamin-teoretyczny-na-prawo-jazdy-2026", permanent: true },
+      ...Object.entries(legacyPaths).map(([source, destination]) => ({ source, destination, permanent: true })),
       { source: "/feed", destination: "/feed.xml", permanent: true },
-      { source: "/kursy-prawa-jazdy/jazdy-doszkalajace", destination: "/jazdy-doszkalajace", permanent: true },
       {
         source: "/admin",
         destination: new URL("/wp-admin", wordpressUrl).toString(),

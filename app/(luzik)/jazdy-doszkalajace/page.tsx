@@ -3,7 +3,9 @@ import { PageContent } from "@/components/site/luzik-page";
 import { JsonLd } from "@/components/site/json-ld";
 import { luzikPageMetadata, pageSchema } from "@/lib/luzik-seo";
 
-export const metadata = luzikPageMetadata("jazdy-doszkalajace");
+export async function generateMetadata() {
+  return luzikPageMetadata("jazdy-doszkalajace", await getLuzikSiteData());
+}
 
 export default async function Page() {
   const data = await getLuzikSiteData();

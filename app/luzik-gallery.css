@@ -10,7 +10,7 @@
 .luzik-gallery-card { break-inside: avoid; margin: 0 0 24px; background: #fff; border: 1px solid #e2e5e9; }
 .luzik-gallery-card > button { display: block; position: relative; width: 100%; padding: 0; background: #e5e9ed; cursor: zoom-in; }
 .luzik-gallery-card img { display: block; width: 100%; height: auto; }
-.luzik-gallery-expand { position: absolute; right: 16px; bottom: 16px; display: grid; place-items: center; width: 42px; height: 42px; background: #ffda00; color: #111214; transition: background .2s, color .2s; }
+.luzik-gallery-expand { position: absolute; right: 16px; bottom: 16px; display: grid; place-items: center; width: 42px; height: 42px; background: var(--color-luzik-yellow); color: #111214; transition: background .2s, color .2s; }
 .luzik-gallery-card button:hover .luzik-gallery-expand { background: #008acb; color: #fff; }
 .luzik-gallery-card figcaption { padding: 22px; }
 .luzik-gallery-card figcaption > span { color: #0075b8; font-size: 10px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; }
@@ -22,7 +22,7 @@
 .luzik-gallery-dialog-header { display: flex; align-items: center; justify-content: space-between; }
 .luzik-gallery-dialog-header p { margin: 0; color: #d7dce4; font-size: 13px; }
 .luzik-gallery-control { flex-shrink: 0; width: 48px; height: 48px; display: grid; place-items: center; border: 1px solid #5c6067; color: #fff; background: #25282d; cursor: pointer; transition: background .2s, color .2s; }
-.luzik-gallery-control:hover { color: #111214; background: #ffda00; }
+.luzik-gallery-control:hover { color: #111214; background: var(--color-luzik-yellow); }
 .luzik-gallery-full-photo { position: relative; min-height: 0; }
 .luzik-gallery-full-photo img { object-fit: contain; }
 .luzik-gallery-dialog-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; }

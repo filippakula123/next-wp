@@ -1,3 +1,4 @@
+import { canonicalPath } from "./luzik-redirects";
 import type { Post } from "./wordpress.d";
 import { luzikMetadata, publicUrl } from "./luzik-seo";
 import { wordpressImageUnoptimized } from "./wordpress-media";
@@ -68,10 +69,10 @@ export function articleLinks(html: string, articleSlugs: string[]) {
   if (articleSlugs.includes(pkkSlug)) html = html.replace(/co(?:\s|&nbsp;)+to(?:\s|&nbsp;)+jest(?:\s|&nbsp;)+PKK\s*\(BĘDZIE LINK DO ARTYKUŁU\)/g, `<a href="${postHref(pkkSlug)}">co to jest PKK</a>`);
   return html.replace(/\bhref=(["'])(https?:\/\/(?:www\.)?luzikkielce\.pl\/[^"']*)\1/gi, (attribute, quote: string, href: string) => {
     const url = new URL(href.replace(/&amp;/g, "&"));
-    let path = url.pathname.replace(/\/$/, "");
+    let path = canonicalPath(url.pathname);
     if (path === "/kursy-prawa-jazdy/jazdy-doszkalajace") path = "/jazdy-doszkalajace";
     const slug = path.slice(1);
-    if (articleSlugs.includes(slug)) path = postHref(slug);
+    if (path !== url.pathname.replace(/\/$/, "") || articleSlugs.includes(slug)) path = postHref(slug);
     else if (!/^\/(?:kursy-prawa-jazdy(?:-kategorii-[a-z0-9-]+)?|jazdy-doszkalajace|badania-lekarskie-na-prawo-jazdy-kielce|kontakt|o-nas|cennik|galeria|blog|szkola-jazdy-luzik-instruktorzy)$/.test(path)) return attribute;
     return `href=${quote}${path}${url.search.replace(/&/g, "&amp;")}${url.hash}${quote}`;
   });
