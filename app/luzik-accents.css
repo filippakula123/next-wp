@@ -12,7 +12,6 @@
 .luzik-team-hero-portraits a { border-bottom-color: var(--color-luzik-yellow); }
 .luzik-team-detailed .luzik-team-avatar { border-bottom: 3px solid var(--color-luzik-yellow); }
 .luzik-medical-visual > svg, .luzik-medical-visual li > span { color: var(--color-luzik-yellow); }
-.luzik-footer-accent { border-top: 3px solid var(--color-luzik-yellow); }
 .home-stat-icon, .home-icon { background: var(--color-luzik-yellow); }
 .luzik-team-grid, .luzik-contact-team-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 1100px) {

@@ -19,6 +19,7 @@ import {
 
 import { LuzikLogo } from "@/components/layout/luzik-logo";
 import { MobileNav } from "@/components/nav/mobile-nav";
+import { LanguageSwitcher } from "@/components/site/language-switcher";
 
 import {
   luzikNavigation,
@@ -167,7 +168,7 @@ export function Nav({
           
           {/* LOGO */}
 
-          <div className="flex w-[185px] shrink-0 items-center">
+          <div className="flex w-[135px] shrink-0 items-center sm:w-[185px]">
             <LuzikLogo />
           </div>
 
@@ -175,9 +176,9 @@ export function Nav({
 
           {/* DESKTOP */}
 
-          <div className="hidden min-w-0 flex-1 items-center justify-end gap-7 lg:flex">
+          <div className="hidden min-w-0 flex-1 items-center justify-end gap-5 xl:flex">
             <nav aria-label="Nawigacja główna">
-              <ul className="flex items-center gap-7">
+              <ul className="flex items-center gap-5">
                 {luzikNavigation.map((item) => {
                   const active =
                     pathname === item.href ||
@@ -270,7 +271,7 @@ export function Nav({
 
             {/* PHONE */}
 
-            <div className="hidden border-l border-[#e5e6e8] pl-6 xl:block">
+            <div className="hidden border-l border-[#e5e6e8] pl-5 min-[1500px]:block">
               <a href={luzikHeaderData.phoneHref} className="luzik-header-call">
               <span className="luzik-header-call-icon">
                 <Phone
@@ -293,8 +294,8 @@ export function Nav({
           </div>
 
           {/* MOBILE */}
-
-          <div className="ml-auto lg:hidden">
+          <div className="ml-auto mr-3 shrink-0 xl:ml-5 xl:mr-0"><LanguageSwitcher /></div>
+          <div className="xl:hidden">
             <MobileNav />
           </div>
         </div>

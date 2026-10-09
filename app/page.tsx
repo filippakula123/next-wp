@@ -7,15 +7,17 @@ import { HomeIntro } from "@/components/home/home-intro";
 import { HomeRankings } from "@/components/home/home-rankings";
 import { HomeExamTraining } from "@/components/home/home-exam-training";
 import { HomeReviews } from "@/components/home/home-reviews";
+import { googleReviewsConfigured } from "@/lib/luzik-reviews-server";
 import { HomeImportantPlaces } from "@/components/home/home-important-places";
 import { HomeHighlights } from "@/components/home/home-highlights";
 import { HomeLatestPosts } from "@/components/home/home-latest-posts";
 import { StatsStrip } from "@/components/home/stats-strip";
 import { siteConfig } from "@/site.config";
-import { luzikMetadata, pageSchema } from "@/lib/luzik-seo";
+import { pageSchema } from "@/lib/luzik-seo";
+import { getLuzikMetadata } from "@/lib/luzik-seo-server";
 import { JsonLd } from "@/components/site/json-ld";
 
-export const metadata: Metadata = luzikMetadata("Szkoła Jazdy Kielce Luzik", siteConfig.site_description, "/");
+export async function generateMetadata(): Promise<Metadata> { return getLuzikMetadata("Szkoła Jazdy Kielce Luzik", siteConfig.site_description, "/"); }
 
 export default async function HomePage() {
   const data = await getLuzikSiteData();
@@ -28,7 +30,7 @@ export default async function HomePage() {
   <HomeRankings />
   <HomeInstructors />
   <HomeExamTraining />
-  <HomeReviews />
+  <HomeReviews enabled={googleReviewsConfigured()} />
   <HomeImportantPlaces />
   <HomeHighlights />
   <HomeLatestPosts />

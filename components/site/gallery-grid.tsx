@@ -19,7 +19,7 @@ export function GalleryGrid() {
       <div className="luzik-gallery-filters" role="group" aria-label="Filtruj zdjęcia">
         {galleryCategories.map(filter => <button key={filter.id} type="button" aria-pressed={category === filter.id} onClick={() => setCategory(filter.id)}>{filter.label}<span>{galleryPhotos.filter(p => filter.id === "all" || p.category === filter.id).length}</span></button>)}
       </div>
-      <p role="status" aria-live="polite">{photos.length} / {galleryPhotos.length} zdjęć</p>
+      <p role="status" aria-live="polite"><span translate="no">{photos.length} / {galleryPhotos.length}{"\u00a0"}</span>zdjęć</p>
     </div>
     <div className="luzik-gallery-grid">
       {photos.map((item, index) => <figure key={item.src} className="luzik-gallery-card">
@@ -34,10 +34,10 @@ export function GalleryGrid() {
       <Dialog.Overlay className="luzik-gallery-overlay" />
       <Dialog.Content className="luzik-gallery-dialog" onCloseAutoFocus={event => { event.preventDefault(); opener.current?.focus(); }} onKeyDown={event => { if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); move(event.key === "ArrowLeft" ? -1 : 1); } }}>
         {photo && <>
-          <div className="luzik-gallery-dialog-header"><p aria-live="polite">{active! + 1} / {photos.length}</p><Dialog.Close className="luzik-gallery-control" aria-label="Zamknij zdjęcie"><X size={24} /></Dialog.Close></div>
+          <div className="luzik-gallery-dialog-header"><p aria-live="polite" translate="no">{active! + 1} / {photos.length}</p><Dialog.Close className="luzik-gallery-control" aria-label="Zamknij zdjęcie"><X size={24} /></Dialog.Close></div>
           <div className="luzik-gallery-full-photo"><Image src={photo.src} alt={photo.alt} fill sizes="100vw" loading="eager" /></div>
           <div className="luzik-gallery-dialog-footer"><button className="luzik-gallery-control" aria-label="Poprzednie zdjęcie" onClick={() => move(-1)}><ArrowLeft size={24} /></button>
-            <div><Dialog.Title>{photo.title}</Dialog.Title><Dialog.Description>{photo.caption || photo.alt}</Dialog.Description></div>
+            <div><Dialog.Title key={`title-${photo.src}`}>{photo.title}</Dialog.Title><Dialog.Description key={`description-${photo.src}`}>{photo.caption || photo.alt}</Dialog.Description></div>
             <button className="luzik-gallery-control" aria-label="Następne zdjęcie" onClick={() => move(1)}><ArrowRight size={24} /></button>
           </div>
         </>}

@@ -38,11 +38,12 @@ for (const path of articleLinks) {
 if (crawl) {
   const checked = new Set(rendered.keys());
   const assets = new Set();
+  const socialImages = new Set();
   const fragments = [];
   function collect(path, html) {
     for (const match of html.matchAll(/<meta\b[^>]*property="og:image"[^>]*content="([^"]+)"/g)) {
       const image = new URL(match[1], base);
-      if (image.origin === base.origin || image.hostname === "luzikkielce.pl") assets.add(image.pathname);
+      if (image.origin === base.origin || image.hostname === "luzikkielce.pl") { assets.add(image.pathname); socialImages.add(image.pathname); }
     }
     for (const match of html.matchAll(/<(a|img)\b[^>]*?\b(href|src)="([^"]+)"/g)) {
       let url;
@@ -76,6 +77,7 @@ if (crawl) {
   for (const asset of assets) {
     const response = await fetch(new URL(asset, base), { signal: AbortSignal.timeout(30000) });
     if (!response.ok) report.failures.push(`${asset}: missing asset, HTTP ${response.status}`);
+    if (socialImages.has(asset) && !response.headers.get("content-type")?.startsWith("image/")) report.failures.push(`${asset}: Open Graph URL does not return an image`);
     await response.arrayBuffer();
   }
   for (const link of fragments) {

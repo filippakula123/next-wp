@@ -8,6 +8,9 @@ import "./luzik-gallery.css";
 import "./luzik-blog.css";
 import "./luzik-accents.css";
 import "./luzik-profiles.css";
+import "./luzik-languages.css";
+import "./luzik-motion.css";
+import "./luzik-footer.css";
 
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
@@ -21,6 +24,8 @@ import { JsonLd } from "@/components/site/json-ld";
 import { organizationSchemaFor } from "@/lib/luzik-seo";
 import { getLuzikSiteData } from "@/lib/luzik-settings-server";
 import { LuzikSettingsProvider } from "@/components/site/luzik-settings-provider";
+import { TranslationRuntime } from "@/components/site/translation-runtime";
+import { MotionRuntime } from "@/components/site/motion-runtime";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext"],
@@ -61,6 +66,9 @@ export default async function RootLayout({
   return (
     <html lang="pl" className="light">
       <body
+        // ColorZilla adds cz-shortcut-listen before React hydrates. Suppress
+        // attribute differences on this element only; children remain checked.
+        suppressHydrationWarning
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           inter.variable,
@@ -73,6 +81,8 @@ export default async function RootLayout({
           <Nav />
           {children}
           <Footer />
+          <TranslationRuntime />
+          <MotionRuntime />
           </LuzikSettingsProvider>
       </body>
     </html>

@@ -1,6 +1,7 @@
 import { describe, expect, it, vi, afterEach } from "vitest";
 import { articleHeadings, articleSections, articleLinks, articleFaqs, blogText, postSchema, postMetadata, readingMinutes } from "@/lib/luzik-blog";
 import type { Post } from "@/lib/wordpress.d";
+vi.mock("@/lib/luzik-seo-server", () => ({ getCmsSeo: vi.fn(async () => undefined) }));
 
 const post = { id: 1, slug: "nauka-jazdy", title: { rendered: "Kurs &amp; egzamin" }, excerpt: { rendered: "<p>Porady dla kierowców.</p>" }, content: { rendered: "<p>Przykładowa treść artykułu.</p>" }, date_gmt: "2026-10-08T08:00:00", modified_gmt: "2026-10-08T09:00:00", _embedded: { author: [{ name: "Autor" }] } } as Post;
 

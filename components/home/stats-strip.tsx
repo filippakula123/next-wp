@@ -4,12 +4,14 @@ import {
   Star,
   Users,
 } from "lucide-react";
+import { luzikGoogleReviewsUrl } from "@/lib/luzik-reviews";
 
 interface StatItem {
   value: string;
   suffix?: string;
   label: string;
   icon: typeof CalendarDays;
+  href?: string;
 }
 
 const stats: readonly StatItem[] = [
@@ -30,10 +32,10 @@ const stats: readonly StatItem[] = [
     icon: MessageCircle,
   },
   {
-    value: "4,8",
-    suffix: "/5",
-    label: "średnia ocena kursantów",
+    value: "Google",
+    label: "sprawdź aktualną ocenę",
     icon: Star,
+    href: luzikGoogleReviewsUrl,
   },
 ];
 
@@ -62,10 +64,14 @@ export function StatsStrip() {
       >
         {stats.map((stat) => {
           const Icon = stat.icon;
+          const Element = stat.href ? "a" : "div";
 
           return (
-            <div
+            <Element
               key={stat.label}
+              href={stat.href}
+              target={stat.href ? "_blank" : undefined}
+              rel={stat.href ? "noopener noreferrer" : undefined}
               className="
                 group
                 relative
@@ -162,7 +168,7 @@ export function StatsStrip() {
                   {stat.label}
                 </p>
               </div>
-            </div>
+            </Element>
           );
         })}
       </div>

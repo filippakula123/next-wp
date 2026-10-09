@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import { legacyPaths } from "./lib/luzik-redirects";
+import { metadataCrawlerPattern } from "./lib/luzik-crawlers";
 
 const wordpressUrlValue = process.env.WORDPRESS_URL;
 
@@ -19,6 +20,7 @@ if (
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  htmlLimitedBots: metadataCrawlerPattern,
   images: {
     dangerouslyAllowLocalIP: isDevelopment,
     remotePatterns: [

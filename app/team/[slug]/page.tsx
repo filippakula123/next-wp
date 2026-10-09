@@ -5,7 +5,8 @@ import { ArrowRight, Check, Phone } from "lucide-react";
 import profiles from "@/lib/luzik-profiles.json";
 import { luzikTeam, luzikOfficeTeam, profileHref, featuredInstructors } from "@/lib/luzik-team";
 import { getLuzikSiteData } from "@/lib/luzik-settings-server";
-import { luzikMetadata, publicUrl } from "@/lib/luzik-seo";
+import { publicUrl } from "@/lib/luzik-seo";
+import { getLuzikMetadata } from "@/lib/luzik-seo-server";
 import { JsonLd } from "@/components/site/json-ld";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -14,7 +15,7 @@ export function generateStaticParams() { return profiles.map(profile => ({ slug:
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const profile = profiles.find(profile => profile.slug === slug), person = personFor(slug);
-  return profile && person ? luzikMetadata(profile.title, profile.paragraphs.join(" ").slice(0, 160), profileHref(slug), person.image) : {};
+  return profile && person ? getLuzikMetadata(profile.title, profile.paragraphs.join(" ").slice(0, 160), profileHref(slug), person.image) : {};
 }
 export default async function InstructorProfile({ params }: Props) {
   const { slug } = await params;

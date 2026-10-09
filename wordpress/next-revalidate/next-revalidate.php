@@ -3,7 +3,7 @@
  * Plugin Name: Next.js Revalidation
  * Plugin URI: https://github.com/9d8dev/next-wp
  * Description: Automatically revalidate Next.js cache when WordPress content changes
- * Version: 1.1.0
+ * Version: 1.2.0
  * Author: 9d8
  * Author URI: https://9d8.dev
  * License: MIT
@@ -17,6 +17,7 @@ class NextRevalidate {
     private $option_name = 'next_revalidate_settings';
     private $log_option = 'next_revalidate_log';
     private $last_option = 'next_revalidate_last';
+    private $pending_revalidation = null;
 
     public function __construct() {
         add_action('admin_menu', [$this, 'add_admin_menu']);
@@ -26,6 +27,10 @@ class NextRevalidate {
         add_action('save_post', [$this, 'on_post_change'], 10, 3);
         add_action('delete_post', [$this, 'on_post_delete']);
         add_action('transition_post_status', [$this, 'on_status_change'], 10, 3);
+        foreach (['added_post_meta', 'updated_post_meta', 'deleted_post_meta'] as $hook) {
+            add_action($hook, [$this, 'on_seo_meta_change'], 10, 4);
+        }
+        add_action('shutdown', [$this, 'flush_revalidation']);
 
         // Hook into taxonomy changes
         add_action('created_term', [$this, 'on_term_change'], 10, 3);
@@ -305,7 +310,22 @@ class NextRevalidate {
         ]);
     }
 
+    public function on_seo_meta_change($meta_id, $post_id, $meta_key, $meta_value) {
+        if (!str_starts_with($meta_key, 'rank_math_') || $meta_key === 'rank_math_seo_score') { return; }
+        $post = get_post($post_id);
+        if (!$post || $post->post_status !== 'publish') { return; }
+        $this->trigger_revalidation('post', ['id' => $post_id, 'type' => $post->post_type, 'action' => 'seo_update']);
+    }
+
     private function trigger_revalidation($type, $data) {
+        // Send once, after all editor/Rank Math fields have been saved.
+        $this->pending_revalidation = [$type, $data];
+    }
+
+    public function flush_revalidation() {
+        if ($this->pending_revalidation === null) { return; }
+        [$type, $data] = $this->pending_revalidation;
+        $this->pending_revalidation = null;
         $options = get_option($this->option_name);
 
         if (empty($options['nextjs_url'])) {
@@ -363,11 +383,8 @@ class NextRevalidate {
         $url = $options['nextjs_url'] . '/api/revalidate';
         $secret = $options['webhook_secret'] ?? '';
 
-        $payload = [
-            'type' => $type,
-            'data' => $data,
-            'timestamp' => time()
-        ];
+        $content_type = $type === 'term' ? (($data['taxonomy'] ?? '') === 'post_tag' ? 'tag' : 'category') : (($data['type'] ?? 'post') === 'attachment' ? 'attachment' : (($data['type'] ?? 'post') === 'post' ? 'post' : 'page'));
+        $payload = ['contentType' => $content_type, 'contentId' => (int) $data['id']];
 
         $this->debug_log("Sending request to {$url}", $payload);
 
@@ -450,11 +467,7 @@ add_action('wp_ajax_next_revalidate_test', function() {
             'Content-Type' => 'application/json',
             'x-webhook-secret' => $secret
         ],
-        'body' => json_encode([
-            'type' => 'test',
-            'data' => ['message' => 'Test from WordPress'],
-            'timestamp' => time()
-        ])
+        'body' => json_encode(['contentType' => 'post'])
     ]);
 
     if (is_wp_error($response)) {

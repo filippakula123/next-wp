@@ -16,7 +16,7 @@ export function CopyAccountButton() {
     }
   }
   return <div className="luzik-copy-account">
-    <button type="button" onClick={copyAccount}>{status === "copied" ? <Check size={16} aria-hidden="true" /> : <Copy size={16} aria-hidden="true" />}{status === "copied" ? "Skopiowano numer konta" : "Kopiuj numer konta"}</button>
-    <span className={status === "error" ? "luzik-copy-error" : "sr-only"} role="status">{status === "copied" ? "Numer konta został skopiowany bez spacji." : status === "error" ? "Nie udało się skopiować. Zaznacz numer konta i skopiuj go ręcznie." : ""}</span>
+    <button type="button" onClick={copyAccount}>{status === "copied" ? <Check size={16} aria-hidden="true" /> : <Copy size={16} aria-hidden="true" />}<span key={status}>{status === "copied" ? "Skopiowano numer konta" : "Kopiuj numer konta"}</span></button>
+    <span className={status === "error" ? "luzik-copy-error" : "sr-only"} role="status"><span key={status}>{status === "copied" ? "Numer konta został skopiowany bez spacji." : status === "error" ? "Nie udało się skopiować. Zaznacz numer konta i skopiuj go ręcznie." : ""}</span></span>
   </div>;
 }

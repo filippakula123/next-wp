@@ -271,6 +271,17 @@ export async function HomeHero({
 
           {/* Górna etykieta */}
 
+          <div className="luzik-hero-route" aria-hidden="true">
+            <svg viewBox="0 0 140 92" focusable="false">
+              <path className="luzik-route-base" d="M10 78h35a16 16 0 0 0 16-16V40a16 16 0 0 1 16-16h45" />
+              <path className="luzik-route-trace" pathLength="100" strokeDasharray="100" d="M10 78h35a16 16 0 0 0 16-16V40a16 16 0 0 1 16-16h45" />
+              <circle className="luzik-route-stop" cx="10" cy="78" r="5" />
+              <circle className="luzik-route-stop" cx="61" cy="46" r="4" />
+              <circle className="luzik-route-finish" cx="122" cy="24" r="7" />
+              <path d="m118 24 3 3 5-6" fill="none" stroke="#111214" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+
           <div
             className="
               absolute

@@ -107,6 +107,7 @@ header :is(a,button):focus-visible, [role="dialog"] :is(a,button):focus-visible 
 .home-route-list p { margin: 0; font-size: 13px; line-height: 1.7; color: #62666e; }
 .home-route-footnote { font-size: 12px; line-height: 1.7; margin: 18px 0 0; }
 .home-reviews-heading { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 40px; }
+#home-reviews { scroll-margin-top: 110px; }
 .home-reviews-heading > a { margin-bottom: 6px; flex-shrink: 0; }
 .home-reviews-layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 36px; align-items: start; }
 .home-review-summary { border-top: 3px solid var(--color-luzik-blue); padding: 24px; background: #f6f6f7; }
@@ -130,6 +131,25 @@ header :is(a,button):focus-visible, [role="dialog"] :is(a,button):focus-visible 
 .home-review-controls > div { display: flex; gap: 8px; }
 .home-review-controls button { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: white; border: 1px solid #dedfe3; color: var(--color-luzik-ink); cursor: pointer; }
 .home-review-controls button:hover { background: #e7f3fa; color: var(--color-luzik-blue); }
+.home-review-google-logo { width: auto; height: 18px; margin: 0 10px 24px; }
+.home-review-author > img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.home-review-author a:hover { color: var(--color-luzik-blue); text-decoration: underline; }
+.home-review-card blockquote { white-space: pre-line; overflow-wrap: anywhere; }
+.home-review-source { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; font-size: 12px; font-weight: 600; color: var(--color-luzik-blue); }
+.home-review-source:hover { text-decoration: underline; }
+.home-review-policy, .home-review-translation { font-size: 11px; line-height: 1.7; color: #626671; margin: 14px 0 0; }
+.home-review-policy a { text-decoration: underline; }
+.home-review-no-text { flex: 1; padding-block: 24px; font-size: 14px; }
+.home-review-unavailable { display: flex; align-items: center; gap: 28px; padding: 36px; border: 1px solid #e7e8ec; border-left: 4px solid var(--color-luzik-yellow); background: #f6f6f7; }
+.home-review-unavailable > div { flex: 1; }
+.home-review-unavailable h3 { font-size: 20px; font-weight: 600; margin: 0 0 8px; }
+.home-review-unavailable p { margin: 0; font-size: 14px; line-height: 1.7; }
+.home-review-unavailable > a { flex-shrink: 0; }
+.home-review-invitation-icon { display: grid; place-items: center; width: 68px; height: 68px; border-radius: 50%; background: var(--color-luzik-yellow); color: var(--color-luzik-ink); flex-shrink: 0; }
+@media (max-width: 767px) {
+  .home-review-unavailable { align-items: start; flex-direction: column; padding: 26px; gap: 20px; }
+  .home-review-summary .home-review-google-logo { grid-column: 1 / -1; }
+}
 .home-section-heading { max-width: 680px; margin: 0 auto 42px; text-align: center; }
 .home-section-heading .home-eyebrow { justify-content: center; }
 .home-section-heading .home-copy { margin-inline: auto; }

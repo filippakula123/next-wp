@@ -138,6 +138,7 @@ export function HomeInstructors() {
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
           {instructors.map((instructor) => (
             <article
+              data-luzik-reveal="card"
               key={instructor.id}
               className="
                 group

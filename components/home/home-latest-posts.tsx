@@ -60,6 +60,7 @@ export async function HomeLatestPosts() {
 
               return (
                 <article
+                  data-luzik-reveal="card"
                   key={post.id}
                   className={posts.length === 1 ? "group grid min-w-0 border border-[#e7e8ec] bg-white sm:grid-cols-2" : "group flex min-w-0 flex-col border border-[#e7e8ec] bg-white"}
                 >

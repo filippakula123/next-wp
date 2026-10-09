@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 
 import { LuzikLogo } from "@/components/layout/luzik-logo";
+import { LanguageSwitcher } from "@/components/site/language-switcher";
 
 import {
   luzikNavigation,
@@ -356,14 +357,7 @@ export function MobileNav() {
                   </a>
                 </div>
 
-                <div className="flex items-center gap-2 rounded-[2px] bg-white px-3 py-2 font-[var(--font-inter)] text-[12px] font-bold text-[#333]">
-                  <span>🇵🇱</span>
-                  <span>PL</span>
-                  <ChevronDown
-                    size={13}
-                    className="text-[#777]"
-                  />
-                </div>
+                <LanguageSwitcher dark />
               </div>
             </div>
           </aside>

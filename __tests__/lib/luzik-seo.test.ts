@@ -3,8 +3,16 @@ import { luzikPageMetadata, pageSchema } from "@/lib/luzik-seo";
 import { luzikCourses } from "@/lib/luzik-offer";
 import { serializeJsonLd } from "@/components/site/json-ld";
 import sitemap from "@/app/sitemap";
+import { getCmsSeo } from "@/lib/luzik-seo-server";
+vi.mock("@/lib/luzik-seo-server", () => ({ getCmsSeo: vi.fn(async () => undefined) }));
 
 describe("Luzik search metadata", () => {
+  it("excludes a page marked noindex in WordPress from the sitemap", async () => {
+    vi.mocked(getCmsSeo).mockResolvedValueOnce({ version: 1, entries: { "/kontakt": { robots: ["noindex"] } } });
+    const urls = (await sitemap()).map(entry => entry.url);
+    expect(urls).not.toContain("https://luzikkielce.pl/kontakt");
+    expect(urls).toContain("https://luzikkielce.pl/galeria");
+  });
   it("never publishes localhost canonicals or social image URLs", () => {
     const metadata = luzikPageMetadata("szkola-jazdy-luzik-instruktorzy");
     expect(metadata.alternates?.canonical).toBe("https://luzikkielce.pl/szkola-jazdy-luzik-instruktorzy");

@@ -3,6 +3,7 @@ import { siteConfig } from "@/site.config";
 import { completedLuzikSlugs } from "@/lib/luzik-pages";
 import { getAllPostsForSitemap } from "@/lib/wordpress";
 import profiles from "@/lib/luzik-profiles.json";
+import { getCmsSeo } from "@/lib/luzik-seo-server";
 
 // Blog content enters the sitemap only after real articles replace demo content.
 export const revalidate = 3600;
@@ -31,5 +32,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: "monthly", priority: 0.6,
   }));
   const profileUrls: MetadataRoute.Sitemap = profiles.map(profile => ({ url: `${siteConfig.site_domain}/team/${profile.slug}`, changeFrequency: "monthly", priority: 0.5 }));
-  return [...staticUrls, ...luzikUrls, ...profileUrls, ...postUrls];
+  const cms = await getCmsSeo();
+  return [...staticUrls, ...luzikUrls, ...profileUrls, ...postUrls].filter(entry => !cms?.entries[new URL(entry.url).pathname]?.robots?.includes("noindex"));
 }

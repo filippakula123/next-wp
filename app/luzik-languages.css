@@ -1,0 +1,13 @@
+.luzik-language { position:relative; display:flex; align-items:center; gap:5px; height:38px; padding:0 9px; color:#111214; background:#fff; border:1px solid #e5e6e8; border-radius:4px; font-size:12px; font-weight:800; line-height:1; }
+.luzik-language:hover { border-color:var(--color-luzik-blue); background:#f4faff; }
+.luzik-language-flag { display:block; flex-shrink:0; border-radius:2px; overflow:hidden; box-shadow:0 0 0 1px #00000016; }
+.luzik-language:focus-within { outline:3px solid var(--color-luzik-blue); outline-offset:3px; }
+.luzik-language select { position:absolute; inset:0; width:100%; height:100%; cursor:pointer; opacity:0; color:#111214; background:white; font-size:15px; }
+.luzik-language select option { color:#111214; background:white; }
+.luzik-language select:focus { outline:none; }
+.luzik-language-dark { border-color:#ffffff40; }
+.luzik-language-progress { position:absolute; bottom:-1px; left:0; width:100%; height:3px; background:var(--color-luzik-yellow); }
+.luzik-translation-status { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); z-index:250; display:flex; align-items:center; gap:14px; width:max-content; max-width:calc(100vw - 32px); padding:12px 18px; border-radius:6px; box-shadow:0 8px 28px #0002; color:#111214; background:var(--color-luzik-yellow); font-size:14px; line-height:1.5; }
+.luzik-translation-status button { flex-shrink:0; cursor:pointer; border:0; padding:7px 10px; border-radius:3px; color:white; background:#111214; font-weight:700; }
+.luzik-translation-status button:focus-visible { outline:3px solid #0075b8; outline-offset:3px; }
+@media(max-width:480px) { .luzik-translation-status { flex-direction:column; align-items:flex-start; gap:8px; } }

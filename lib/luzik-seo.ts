@@ -14,8 +14,8 @@ export const publicUrl = (path: string) => new URL(path, siteConfig.site_domain)
 const schoolId = publicUrl("/#school");
 const websiteId = publicUrl("/#website");
 
-export function luzikMetadata(title: string, description: string, path: string, image = "/luzik/brand/social.jpg", indexable = true, data?: LuzikSiteData): Metadata {
-  const legacy = legacySeo(path, title, description, data);
+export function luzikMetadata(title: string, description: string, path: string, image = "/luzik/brand/social.jpg", indexable = true, data?: LuzikSiteData, useLegacy = true): Metadata {
+  const legacy = useLegacy ? legacySeo(path, title, description, data) : { title, description, indexable: true, socialImage: undefined, socialTitle: title, socialDescription: description };
   title = legacy.title;
   description = legacy.description;
   const url = publicUrl(path);

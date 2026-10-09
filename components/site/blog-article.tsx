@@ -4,6 +4,8 @@ import { wordpressImageUnoptimized } from "@/lib/wordpress-media";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ChevronRight, Clock3, Phone, Search } from "lucide-react";
 import type { Category, Post } from "@/lib/wordpress.d";
+import { getPostBySlug } from "@/lib/wordpress";
+import { articleImages } from "@/lib/luzik-article-images";
 import { articleHeadings, articleSections, articleLinks, blogCategory, postDate, postHref, postSchema, postTitle, readingMinutes } from "@/lib/luzik-blog";
 import { JsonLd } from "./json-ld";
 import { BlogPostCard } from "./blog-post-card";
@@ -12,7 +14,14 @@ export async function BlogArticle({ post, related, categories, latest, neighbour
   const { header: luzikHeaderData } = await getLuzikSiteData();
   const media = post._embedded?.["wp:featuredmedia"]?.[0];
   const category = post._embedded?.["wp:term"]?.[0]?.[0];
-  const content = articleHeadings(articleLinks(post.content.rendered, [post.slug, ...related.map(item => item.slug), ...latest.map(item => item.slug)]));
+  const linkedSlugs = [post.slug, ...related.map(item => item.slug), ...latest.map(item => item.slug)];
+  // An imported editorial placeholder may refer to an older article outside the
+  // related/latest lists. Confirm that target exists before creating its link.
+  if (post.content.rendered.includes("BĘDZIE LINK DO ARTYKUŁU")) {
+    const target = await getPostBySlug("profil-kandydata-na-kierowce-pkk-co-to-jest-i-jak-go-uzyskac");
+    if (target) linkedSlugs.push(target.slug);
+  }
+  const content = articleHeadings(articleImages(articleLinks(post.content.rendered, linkedSlugs)));
   const sections = articleSections(content.html);
   return <main id="main-content" className="luzik-blog-page">
     <JsonLd data={postSchema(post)} />
@@ -51,4 +60,3 @@ export async function BlogArticle({ post, related, categories, latest, neighbour
     {related.length > 0 && <section className="home-section luzik-blog-section" aria-labelledby="related-title"><div className="luzik-container"><p className="home-eyebrow">Czytaj dalej</p><h2 id="related-title" className="home-title">Więcej wiedzy na drogę</h2><div className="luzik-blog-grid">{related.map(item => <BlogPostCard key={item.id} post={item} />)}</div></div></section>}
   </main>;
 }
-

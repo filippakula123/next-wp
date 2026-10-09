@@ -16,6 +16,7 @@
     "audit:site": "node scripts/audit-site.mjs",
     "audit:links": "node scripts/audit-site.mjs --crawl",
     "audit:settings": "node scripts/audit-settings.mjs",
+    "audit:seo": "node scripts/audit-seo.mjs",
     "check:release": "node scripts/check-release.mjs"
   },
   "dependencies": {
