@@ -1,5 +1,9 @@
 packages:
   - "."
+# Hosted builds cannot answer interactive prompts after dependency staging.
+confirmModulesPurge: false
+# Use real package directories so the hosting runtime can relocate dependencies.
+nodeLinker: hoisted
 allowBuilds:
   esbuild: true
   sharp: true
