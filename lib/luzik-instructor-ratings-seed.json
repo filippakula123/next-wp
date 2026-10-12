@@ -1,0 +1,34 @@
+{
+  "instruktor-nauki-jazdy-arek": {
+    "count": 3,
+    "sum": 12
+  },
+  "mariola-jaros": {
+    "count": 1,
+    "sum": 5
+  },
+  "instruktor-nauki-jazdy-kategoria-b-kacper-jaros": {
+    "count": 5,
+    "sum": 25
+  },
+  "instruktor-nauki-jazdy-kategorii-b-zbigniew-zadlo": {
+    "count": 9,
+    "sum": 41
+  },
+  "instruktor-nauki-jazdy-kategoria-b-sandra-baczek": {
+    "count": 26,
+    "sum": 123
+  },
+  "instruktor-nauki-jazdy-kategoria-b-oskar": {
+    "count": 12,
+    "sum": 60
+  },
+  "instruktor-nauki-jazdy-kategoria-b-i-b-automat-mariola": {
+    "count": 5,
+    "sum": 25
+  },
+  "karolina-jaros-specjalistka-ds-floty-samochodowej": {
+    "count": 0,
+    "sum": 0
+  }
+}

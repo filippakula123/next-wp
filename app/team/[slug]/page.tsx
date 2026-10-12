@@ -3,11 +3,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Check, Phone } from "lucide-react";
 import profiles from "@/lib/luzik-profiles.json";
-import { luzikTeam, luzikOfficeTeam, profileHref, featuredInstructors } from "@/lib/luzik-team";
+import { luzikTeam, luzikOfficeTeam, profileHref } from "@/lib/luzik-team";
 import { getLuzikSiteData } from "@/lib/luzik-settings-server";
 import { publicUrl } from "@/lib/luzik-seo";
 import { getLuzikMetadata } from "@/lib/luzik-seo-server";
 import { JsonLd } from "@/components/site/json-ld";
+import { InstructorRatingWidget } from "@/components/site/instructor-rating";
+import { getInstructorRating } from "@/lib/luzik-instructor-ratings-server";
 
 type Props = { params: Promise<{ slug: string }> };
 const personFor = (slug: string) => [...luzikTeam, ...luzikOfficeTeam].find(person => person.profile === slug);
@@ -22,6 +24,7 @@ export default async function InstructorProfile({ params }: Props) {
   const profile = profiles.find(profile => profile.slug === slug), person = personFor(slug);
   if (!profile || !person) notFound();
   const { header } = await getLuzikSiteData();
+  const { rating, connected, voting } = await getInstructorRating(slug);
   const url = publicUrl(profileHref(slug));
   return <main id="main-content" className="luzik-profile">
     <JsonLd data={{ "@context": "https://schema.org", "@graph": [
@@ -35,9 +38,10 @@ export default async function InstructorProfile({ params }: Props) {
         <div className="luzik-profile-copy"><p className="home-eyebrow">Poznaj nas bliżej</p><h1>{person.name}</h1><p className="luzik-profile-role">{slug === "mariola-jaros" ? "Biuro · zapisy na kursy" : `${person.role}${"category" in person ? ` · kategoria ${person.category}` : ""}`}</p>
           {profile.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
           {!!profile.skills.length && <><h2>Umiejętności</h2><ul>{profile.skills.map(skill => <li key={skill}><Check size={18} aria-hidden="true" />{skill}</li>)}</ul></>}
+          <InstructorRatingWidget key={slug} slug={slug} name={person.name} initial={rating} connected={connected} voting={voting} />
           <div className="luzik-profile-actions"><Link href="/kontakt" className="home-button">Porozmawiaj o swoim kursie<ArrowRight size={18} aria-hidden="true" /></Link><a href={header.phoneHref}><Phone size={18} aria-hidden="true" />{header.phoneLabel}</a></div>
         </div></div>
     </div></section>
-    <section className="home-section"><div className="luzik-container"><p className="home-eyebrow">Zespół Luzika</p><h2 className="home-title">Poznaj pozostałych instruktorów</h2><div className="luzik-profile-others">{featuredInstructors.filter(other => other.profile !== slug).map(other => <Link key={other.id} href={profileHref(other.profile)}><Image src={other.image} alt={other.name} width={280} height={330} sizes="(max-width: 600px) 85vw, 25vw" /><h3>{other.name}</h3><span>Kategoria {other.category}<ArrowRight size={18} aria-hidden="true" /></span></Link>)}</div></div></section>
+    <section className="home-section"><div className="luzik-container"><p className="home-eyebrow">Zespół Luzika</p><h2 className="home-title">Poznaj pozostałych instruktorów</h2><div className="luzik-profile-others">{luzikTeam.filter(other => other.profile !== slug).map(other => <Link key={other.id} href={profileHref(other.profile)}><Image src={other.image} alt={other.name} width={280} height={330} sizes="(max-width: 600px) 85vw, 25vw" /><h3>{other.name}</h3><span>Kategoria {other.category}<ArrowRight size={18} aria-hidden="true" /></span></Link>)}</div></div></section>
   </main>;
 }

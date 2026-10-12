@@ -17,7 +17,7 @@ export function HomeExamTraining() {
       <div className="luzik-container home-training-layout">
         <div className="home-training-intro">
           <p className="home-eyebrow">Przygotowanie do egzaminu</p>
-          <h2 id="exam-training-title" className="home-title">Poznaj miasto.<br />Oswój egzamin.</h2>
+          <h2 id="exam-training-title" className="home-title">Poznaj miasto.<br />Przygotuj się do egzaminu.</h2>
           <p className="home-copy">Ćwiczymy na kieleckich drogach i w okolicach WORD. Uczysz się rozumieć sytuacje na drodze, podejmować decyzje i prowadzić samodzielnie.</p>
           <div className="home-training-start"><MapPin size={23} aria-hidden="true" /><div><strong>WORD Kielce</strong><span>ul. Domaszowska — ważny punkt Twoich przygotowań</span></div></div>
           <Link href="/jazdy-doszkalajace" className="home-button">Sprawdź jazdy doszkalające <ArrowRight size={18} aria-hidden="true" /></Link>

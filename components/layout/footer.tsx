@@ -47,7 +47,7 @@ export async function Footer() {
         <div className="luzik-footer-grid">
           <div className="luzik-footer-brand">
             <Link href="/" aria-label="Szkoła Jazdy Luzik — strona główna" className="luzik-footer-logo">
-              <Image src="/luzik/logo.png" alt="Szkoła Jazdy Luzik" width={165} height={72} sizes="165px" />
+              <Image src="/luzik/logo.webp" alt="Szkoła Jazdy Luzik" width={165} height={72} sizes="165px" />
             </Link>
             <p>Szkoła jazdy Luzik Kielce. Uczymy jeździć zgodnie z przepisami i skutecznie przygotowujemy do egzaminu w WORD Kielce. Bezpiecznie, profesjonalnie i na luzie.</p>
             <div className="luzik-footer-socials">

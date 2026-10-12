@@ -6,7 +6,7 @@ export function GalleryPage() {
     <SubpageHero eyebrow="Szkoła Jazdy Luzik · Kielce" breadcrumb="Galeria"
       title={<>Galeria.<br /><span><span translate="no">Luzik{"\u00a0"}</span>w obiektywie.</span></>}
       description="Poznaj nasz zespół, samochody szkoleniowe i motocykle. Zobacz też chwile, które cieszą nas najbardziej — uśmiechy naszych kursantów."
-      image="/luzik/gallery/photo-01.jpg" imageAlt="Instruktorzy Szkoły Jazdy Luzik przy samochodzie szkoleniowym na rynku w Kielcach"
+      image="/luzik/gallery/photo-01.webp" imageAlt="Instruktorzy Szkoły Jazdy Luzik przy samochodzie szkoleniowym na rynku w Kielcach"
       imageLabel="Instruktorzy nauki jazdy — Szkoła jazdy Luzik"
       action={{ href: "#zdjecia", label: "Zobacz zdjęcia" }} />
     <section className="home-section luzik-gallery-section" id="zdjecia" aria-labelledby="gallery-title">

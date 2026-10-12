@@ -49,7 +49,10 @@ export function Nav({
       if (!headerRef.current?.contains(event.target as Node)) setMenu(null);
     }
     function closeOnEscape(event: KeyboardEvent) {
-      if (event.key === "Escape") setMenu(null);
+      if (event.key === "Escape") {
+        headerRef.current?.querySelector<HTMLButtonElement>('button[aria-controls^="nav-"][aria-expanded="true"]')?.focus();
+        setMenu(null);
+      }
     }
     document.addEventListener("pointerdown", closeOutside);
     document.addEventListener("keydown", closeOnEscape);
@@ -63,11 +66,11 @@ export function Nav({
     <header
       ref={headerRef}
       onClick={(event) => {
-        if ((event.target as Element).closest("a")) setMenu(null);
+        if ((event.target as Element).closest("a, .luzik-language-trigger")) setMenu(null);
       }}
       id={id}
       className={cn(
-        "sticky top-0 z-[100] w-full bg-white",
+        "luzik-header sticky top-0 z-[100] w-full bg-white",
         className,
       )}
     >
@@ -75,8 +78,8 @@ export function Nav({
       {/* TOP BAR                                             */}
       {/* ================================================== */}
 
-      <div className="hidden h-[38px] bg-[#111214] text-white lg:block">
-        <div className="mx-auto flex h-full w-full max-w-[1500px] items-center justify-between px-8">
+      <div className="luzik-header-top hidden h-[38px] bg-[#111214] text-white lg:block">
+        <div className="luzik-header-top-inner mx-auto flex h-full w-full max-w-[1500px] items-center justify-between px-8">
           {/* Kurs */}
 
           <Link
@@ -138,6 +141,8 @@ export function Nav({
 
             <a
               href={luzikHeaderData.facebookHref}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Facebook"
               className="transition-colors hover:text-[#008bd0]"
             >
@@ -150,6 +155,8 @@ export function Nav({
 
             <a
               href={luzikHeaderData.instagramHref}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Instagram"
               className="transition-colors hover:text-[#008bd0]"
             >
@@ -164,20 +171,22 @@ export function Nav({
       {/* ================================================== */}
 
       <div className="border-b border-[#e9eaec] bg-white shadow-[0_4px_18px_rgba(15,23,42,0.05)]">
-        <div className="mx-auto flex h-[82px] w-full max-w-[1500px] items-center px-6 lg:px-8">
+        <div className="luzik-header-main mx-auto flex h-[82px] w-full max-w-[1500px] items-center px-6 lg:px-8">
           
           {/* LOGO */}
 
-          <div className="flex w-[135px] shrink-0 items-center sm:w-[185px]">
-            <LuzikLogo />
+          <div className="luzik-header-brand flex w-[135px] shrink-0 items-center sm:w-[185px]">
+            <LuzikLogo dark />
           </div>
 
           {children}
 
           {/* DESKTOP */}
 
-          <div className="hidden min-w-0 flex-1 items-center justify-end gap-5 xl:flex">
-            <nav aria-label="Nawigacja główna">
+          <div className="luzik-header-desktop hidden min-w-0 flex-1 items-center justify-end gap-5 xl:flex">
+            <nav aria-label="Nawigacja główna" onBlur={event => {
+              if (!event.currentTarget.contains(event.relatedTarget)) setMenu(null);
+            }}>
               <ul className="flex items-center gap-5">
                 {luzikNavigation.map((item) => {
                   const active =
@@ -221,13 +230,14 @@ export function Nav({
                             />
                           </button>
 
-                          <div id={`nav-${item.href.slice(1)}`} hidden={expandedItem !== item.href} className="absolute left-1/2 top-[33px] z-[120] w-[270px] -translate-x-1/2 pt-3">
+                          <div id={`nav-${item.href.slice(1)}`} hidden={expandedItem !== item.href} className="luzik-desktop-dropdown absolute left-1/2 top-[33px] z-[120] w-[270px] -translate-x-1/2 pt-3">
                             <div className="max-h-[calc(100dvh-170px)] overflow-y-auto rounded-[10px] border border-[#292a2d] bg-[#121315] p-2 shadow-[0_20px_50px_rgba(0,0,0,0.22)]">
                               {item.children.map(
                                 (child) => (
                                   <Link
                                     key={child.href}
                                     href={child.href}
+                                    aria-current={pathname === child.href ? "page" : undefined}
                                     className="block rounded-md px-4 py-3 font-[var(--font-inter)] text-[13px] font-medium text-white/80 no-underline transition-colors hover:bg-white/5 hover:text-[#008bd0]"
                                   >
                                     {child.label}
@@ -240,6 +250,7 @@ export function Nav({
                       ) : (
                         <Link
                           href={item.href}
+                          aria-current={pathname === item.href ? "page" : undefined}
                           className={cn(
                             "relative font-[var(--font-inter)] text-[12px] font-extrabold uppercase tracking-[0.01em] no-underline transition-colors",
                             active

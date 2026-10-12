@@ -37,7 +37,7 @@ export async function PricingPage() {
         title={<>Twój kurs.<br /><span>Jasna cena.</span></>}
         description="Cennik kursów prawa jazdy w Kielcach. Porównaj kategorie, sprawdź liczbę godzin i wybierz szkolenie dla siebie."
         breadcrumb="Cennik"
-        image="/luzik/footer-car.jpg"
+        image="/luzik/footer-car.webp"
         imageAlt="Samochód szkoleniowy Luzik w centrum Kielc"
         imageLabel="Brak ukrytych kosztów"
         action={{ href: "#ceny-kursow", label: "Sprawdź ceny kursów" }}

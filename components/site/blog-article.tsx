@@ -41,7 +41,7 @@ export async function BlogArticle({ post, related, categories, latest, neighbour
         </details>}
         <div dangerouslySetInnerHTML={{ __html: sections.beforeCta }} />
         {sections.showCta && <aside className="luzik-article-promo" aria-label="Zapisy do szkoły jazdy Luzik">
-          <div className="luzik-article-promo-photo"><Image src="/luzik/courses/intro.jpg" alt="Zespół instruktorów szkoły jazdy Luzik w Kielcach" fill sizes="(max-width: 767px) 100vw, 280px" /></div>
+          <div className="luzik-article-promo-photo"><Image src="/luzik/courses/intro.webp" alt="Zespół instruktorów szkoły jazdy Luzik w Kielcach" fill sizes="(max-width: 767px) 100vw, 280px" /></div>
           <div className="luzik-article-promo-content"><span className="home-eyebrow">Szkoła Jazdy Luzik</span><h2>Szukasz szkoły jazdy, która naprawdę Cię nauczy?</h2><p>Dołącz do kursantów Luzik — profesjonalnie, bez stresu, w Kielcach.</p><Link href="/kontakt" className="home-button">Zapisz się<ArrowRight size={17} aria-hidden="true" /></Link></div>
         </aside>}
         {sections.afterCta && <div dangerouslySetInnerHTML={{ __html: sections.afterCta }} />}

@@ -16,7 +16,7 @@ export async function CoursesPage() {
         title={<>Kursy prawa jazdy.<br /><span>Twój kierunek. Twój Luzik.</span></>}
         description="Kursy prawa jazdy w szkole jazdy Luzik Kielce — zapraszamy! Samochód, automat czy motocykl? Wybierz szkolenie i zacznij swoją drogę do samodzielnej jazdy."
         breadcrumb="Kursy prawa jazdy"
-        image="/luzik/courses/intro.jpg"
+        image="/luzik/courses/intro.webp"
         imageAlt="Instruktorzy Szkoły Jazdy Luzik przy samochodzie szkoleniowym w Kielcach"
         imageLabel="Teoria i praktyka · na luzie"
         action={{ href: "#oferta-kursow", label: "Wybierz swój kurs" }}

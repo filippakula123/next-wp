@@ -46,7 +46,7 @@ export const organizationSchema = {
   "@graph": [
     { "@type": ["LocalBusiness", "EducationalOrganization"], "@id": schoolId, name: siteConfig.site_name, url: publicUrl("/"), description: legacyOrganization.description,
       geo: { "@type": "GeoCoordinates", latitude: legacyOrganization.latitude, longitude: legacyOrganization.longitude },
-      telephone: "+48504166557", email: "autoluzik@wp.pl", logo: publicUrl("/luzik/logo.png"), image: publicUrl("/luzik/hero.jpg"),
+      telephone: "+48504166557", email: "autoluzik@wp.pl", logo: publicUrl("/luzik/logo.webp"), image: publicUrl("/luzik/hero.webp"),
       address: { "@type": "PostalAddress", streetAddress: "ul. Warszawska 4", addressLocality: "Kielce", postalCode: "25-306", addressCountry: "PL" },
       hasMap: luzikContactData.mapHref,
       areaServed: { "@type": "City", name: "Kielce" },

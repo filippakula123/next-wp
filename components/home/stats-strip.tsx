@@ -147,7 +147,7 @@ export function StatsStrip() {
                         font-[var(--font-lexend)]
                         text-[17px]
                         font-semibold
-                        text-[#1383ec]
+                        text-[#006da8]
                       "
                     >
                       {stat.suffix}
@@ -162,7 +162,7 @@ export function StatsStrip() {
                     text-[12px]
                     font-medium
                     leading-5
-                    text-[#7a7f84]
+                    text-[#52616e]
                   "
                 >
                   {stat.label}

@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 import { legacyPaths } from "./lib/luzik-redirects";
 import { metadataCrawlerPattern } from "./lib/luzik-crawlers";
+import imageRedirects from "./lib/luzik-image-redirects.json";
 
 const wordpressUrlValue = process.env.WORDPRESS_URL;
 
@@ -36,6 +37,8 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      { source: "/icon.svg", destination: "/icon.png", permanent: true },
+      ...Object.entries(imageRedirects).map(([source, destination]) => ({ source, destination, permanent: true })),
       ...Object.entries(legacyPaths).map(([source, destination]) => ({ source, destination, permanent: true })),
       { source: "/feed", destination: "/feed.xml", permanent: true },
       {

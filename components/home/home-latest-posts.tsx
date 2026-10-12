@@ -87,7 +87,7 @@ export async function HomeLatestPosts() {
                       </span>
                     )}
 
-                    <span className="absolute left-0 top-0 bg-white px-3 py-2 font-heading text-xs font-semibold uppercase tracking-wide text-[#9b8871]">
+                    <span className="absolute left-0 top-0 bg-white px-3 py-2 font-heading text-xs font-semibold uppercase tracking-wide text-[#71604a]">
                       Baza wiedzy
                     </span>
                   </Link>
@@ -97,7 +97,7 @@ export async function HomeLatestPosts() {
                       <CalendarDays
                         size={16}
                         aria-hidden="true"
-                        className="text-[#9b8871]"
+                        className="text-[#71604a]"
                       />
                       {formatPostDate(post.date)}
                     </p>
@@ -118,7 +118,7 @@ export async function HomeLatestPosts() {
                       <ChevronRight
                         size={18}
                         aria-hidden="true"
-                        className="text-[#9b8871]"
+                        className="text-[#71604a]"
                       />
                       Czytaj więcej
                     </Link>

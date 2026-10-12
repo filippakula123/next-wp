@@ -1,0 +1,53 @@
+/* Radix retains the dialog through its CSS exit animation. */
+.luzik-mobile-panel { height: 100dvh; border-left: 1px solid #ffe10130; }
+.luzik-mobile-heading::after { content: ""; position: absolute; bottom: -1px; left: 28px; width: 48px; height: 2px; background: #ffe101; }
+.luzik-mobile-burger { display: grid; gap: 5px; width: 23px; }
+.luzik-mobile-burger span { display: block; height: 2px; border-radius: 2px; background: currentColor; transform-origin: center; }
+.luzik-mobile-trigger[aria-expanded="true"] .luzik-mobile-burger span:first-child { transform: translateY(7px) rotate(45deg); }
+.luzik-mobile-trigger[aria-expanded="true"] .luzik-mobile-burger span:nth-child(2) { opacity: 0; }
+.luzik-mobile-trigger[aria-expanded="true"] .luzik-mobile-burger span:last-child { transform: translateY(-7px) rotate(-45deg); }
+.luzik-mobile-navigation { overscroll-behavior: contain; overflow-x: hidden; }
+.luzik-mobile-submenu { display: grid; grid-template-rows: 0fr; visibility: hidden; }
+.luzik-mobile-submenu[data-expanded="true"] { grid-template-rows: 1fr; visibility: visible; }
+.luzik-mobile-submenu-clip { min-height: 0; overflow: hidden; }
+.luzik-mobile-link { position: relative; }
+.luzik-mobile-link::before { content: ""; position: absolute; left: 0; top: 17px; bottom: 17px; width: 3px; background: #ffe101; transform: scaleY(0); }
+.luzik-mobile-link[aria-current="page"]::before { transform: scaleY(1); }
+.luzik-mobile-child[aria-current="page"] { color: #ffe101; }
+.luzik-mobile-expand[aria-expanded="true"] { background: #ffe101; color: #111214; }
+.luzik-mobile-panel :is(a, button):focus-visible, .luzik-mobile-trigger:focus-visible { outline: 2px solid #ffe101; outline-offset: -3px; }
+.luzik-mobile-panel :is(.luzik-mobile-link, .luzik-mobile-child):active { background: #ffe10112; color: #ffe101; }
+.luzik-mobile-cta:is(:hover, :focus-visible) { background: #ffe101; color: #111214; }
+.luzik-mobile-close:is(:hover, :focus-visible) { background: #ffe101; color: #111214; }
+@media (prefers-reduced-motion: no-preference) {
+  .luzik-mobile-overlay[data-state="open"] { animation: luzik-menu-shade-in 300ms ease both; }
+  .luzik-mobile-overlay[data-state="closed"] { animation: luzik-menu-shade-out 240ms ease both; }
+  .luzik-mobile-panel[data-state="open"] { animation: luzik-menu-in 440ms cubic-bezier(.22,1,.36,1) both; }
+  .luzik-mobile-panel[data-state="closed"] { animation: luzik-menu-out 240ms cubic-bezier(.4,0,1,1) both; pointer-events: none; }
+  .luzik-mobile-panel[data-state="open"] :is(.luzik-mobile-cta-wrap, .luzik-mobile-item, .luzik-mobile-contact) { animation: luzik-menu-row-in 360ms cubic-bezier(.22,1,.36,1) backwards; animation-delay: 90ms; }
+  .luzik-mobile-panel[data-state="open"] .luzik-mobile-item:nth-child(1) { animation-delay: 120ms; }
+  .luzik-mobile-panel[data-state="open"] .luzik-mobile-item:nth-child(2) { animation-delay: 155ms; }
+  .luzik-mobile-panel[data-state="open"] .luzik-mobile-item:nth-child(3) { animation-delay: 190ms; }
+  .luzik-mobile-panel[data-state="open"] .luzik-mobile-item:nth-child(4) { animation-delay: 225ms; }
+  .luzik-mobile-panel[data-state="open"] .luzik-mobile-item:nth-child(5) { animation-delay: 260ms; }
+  .luzik-mobile-panel[data-state="open"] .luzik-mobile-contact { animation-delay: 290ms; }
+  .luzik-mobile-submenu { transition: grid-template-rows 280ms cubic-bezier(.22,1,.36,1), visibility 280ms; }
+  .luzik-mobile-submenu[data-expanded="true"] .luzik-mobile-child { animation: luzik-menu-row-in 260ms ease backwards; }
+  .luzik-mobile-burger span { transition: transform 220ms ease, opacity 150ms ease; }
+  .luzik-mobile-panel :is(a, button), .luzik-mobile-trigger { transition: background-color 180ms ease, color 180ms ease, transform 180ms ease; }
+  .luzik-mobile-link::before { transition: transform 180ms ease; }
+  .luzik-mobile-link:is(:hover, :focus-visible)::before { transform: scaleY(1); }
+  .luzik-mobile-child svg { transition: transform 180ms ease; }
+  .luzik-mobile-child:is(:hover, :focus-visible) svg { transform: translateX(3px); }
+  .luzik-mobile-panel :is(.luzik-mobile-cta, .luzik-mobile-close, .luzik-mobile-expand):active, .luzik-mobile-trigger:active { transform: scale(.95); }
+  .luzik-mobile-close:hover svg { transform: rotate(90deg); }
+  .luzik-mobile-close svg { transition: transform 220ms ease; }
+}
+@keyframes luzik-menu-in { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes luzik-menu-out { from { transform: translateX(0); } to { transform: translateX(100%); } }
+@keyframes luzik-menu-shade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes luzik-menu-shade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes luzik-menu-row-in { from { opacity: 0; transform: translateX(12px); } to { opacity: 1; transform: translateX(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .luzik-mobile-panel, .luzik-mobile-panel *, .luzik-mobile-panel *::before, .luzik-mobile-overlay, .luzik-mobile-trigger, .luzik-mobile-burger span { animation: none !important; transition: none !important; }
+}

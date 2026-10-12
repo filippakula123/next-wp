@@ -61,7 +61,7 @@
       "type": "page",
       "title": "Kursy prawa jazdy",
       "template": "Kursy prawa jazdy w szkole jazdy Luzik Kielce - zapraszamy!",
-      "socialImage": "/luzik/courses/intro.jpg"
+      "socialImage": "/luzik/courses/intro.webp"
     },
     "/kontakt": {
       "type": "page",
@@ -223,35 +223,35 @@
       "title": "Instruktor nauki jazdy kategorii B - Zbigniew Żądło",
       "template": "Instruktor nauki jazdy kategorii B - Zbigniew Żądło sitename%",
       "description": "Instruktor nauki jazdy kategorii B - Zbigniew Żądło | Szkoła jazdy Luzik Kielce",
-      "socialImage": "/luzik/instructors/zbigniew-zadlo.jpg"
+      "socialImage": "/luzik/instructors/zbigniew-zadlo.webp"
     },
     "/team/instruktor-nauki-jazdy-kategoria-b-sandra-baczek": {
       "type": "team",
       "title": "Instruktor nauki jazdy kategoria B – Sandra Bączek",
       "template": "Instruktor nauki jazdy kategoria B – Sandra Bączek | Szkoła Jazdy Luzik Kielce",
       "description": "Instruktor nauki jazdy kategoria B – Sandra Bączek | Szkoła Jazdy Luzik Kielce",
-      "socialImage": "/luzik/instructors/sandra-baczek.jpg"
+      "socialImage": "/luzik/instructors/sandra-baczek.webp"
     },
     "/team/instruktor-nauki-jazdy-kategoria-b-oskar": {
       "type": "team",
       "title": "Instruktor nauki jazdy kategoria B - Oskar Telka",
       "template": "Instruktor nauki jazdy kategoria B Oskar | Szkoła jazdy Luzik Kielce",
       "description": "Instruktor nauki jazdy kategoria B – Oskar | Szkoła jazdy Luzik Kielce",
-      "socialImage": "/luzik/instructors/oskar-telka.jpg"
+      "socialImage": "/luzik/instructors/oskar-telka.webp"
     },
     "/team/instruktor-nauki-jazdy-kategoria-b-i-b-automat-mariola": {
       "type": "team",
       "title": "Instruktor nauki jazdy kategoria B i B automat Mariola Jaros",
       "template": "Instruktor nauki jazdy kategoria B i B automat Mariola Jaros",
       "description": "Instruktor nauki jazdy kategoria B i B automat Mariola Jaros | Szkoła Jazdy Luzik Kielce",
-      "socialImage": "/luzik/instructors/mariola-jaros.jpg"
+      "socialImage": "/luzik/instructors/mariola-jaros.webp"
     },
     "/team/karolina-jaros-specjalistka-ds-floty-samochodowej": {
       "type": "team",
       "title": "Karolina Jaros - specjalistka ds. floty samochodowej",
       "template": "Karolina Jaros specjalistka ds. floty samochodowej %sitename%",
       "description": "Karolina Jaros specjalistka ds. floty samochodowej | Szkoła jazdy Luzik Kielce",
-      "socialImage": "/luzik/instructors/karolina-jaros.jpg"
+      "socialImage": "/luzik/instructors/karolina-jaros.webp"
     },
     "/galeria": {
       "type": "page",

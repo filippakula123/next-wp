@@ -11,6 +11,8 @@ import "./luzik-profiles.css";
 import "./luzik-languages.css";
 import "./luzik-motion.css";
 import "./luzik-footer.css";
+import "./luzik-mobile-nav.css";
+import "./luzik-header-polish.css";
 
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";

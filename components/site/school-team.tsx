@@ -15,10 +15,10 @@ export function SchoolTeam({ contactHref = "/kontakt", detailed = false }: { con
         <div className="luzik-team-grid">
           {people.map((person) => (
             <article key={person.name} id={person.id}>
-              <div className="luzik-team-avatar">
+              <Link href={profileHref(person.profile)} aria-label={`Poznaj instruktora: ${person.name}`} className="luzik-team-avatar">
                 <Image src={person.image} alt={`${person.name} — instruktor nauki jazdy kategorii ${person.category} w Luziku`} fill sizes="(max-width: 767px) 100vw, (max-width: 1100px) 50vw, 25vw" />
-              </div>
-              <div className="luzik-team-info"><h3>{person.name}</h3><p>{person.role} · kat. {person.category}</p>{detailed && <Link className="home-text-link" href={profileHref(person.profile)}>Profil instruktora<ArrowRight size={17} aria-hidden="true" /><span className="sr-only">: {person.name}</span></Link>}</div>
+              </Link>
+              <div className="luzik-team-info"><h3><Link href={profileHref(person.profile)} className="text-inherit no-underline hover:text-[#0075b2]">{person.name}</Link></h3><p>{person.role} · kat. {person.category}</p><Link className="home-text-link" href={profileHref(person.profile)}>Profil instruktora<ArrowRight size={17} aria-hidden="true" /><span className="sr-only">: {person.name}</span></Link></div>
             </article>
           ))}
         </div>

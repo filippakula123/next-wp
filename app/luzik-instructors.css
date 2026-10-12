@@ -1,7 +1,6 @@
 .luzik-team-hero-visual { min-width: 0; }
 .luzik-team-hero-portraits { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; padding-bottom: 24px; }
 .luzik-team-hero-portraits a { position: relative; aspect-ratio: 2 / 3; overflow: hidden; background: #262a30; border-bottom: 3px solid #39a6e5; }
-.luzik-team-hero-portraits a:nth-child(2) { transform: translateY(24px); }
 .luzik-team-hero-portraits img { object-fit: cover; object-position: center 28%; }
 .luzik-team-hero-portraits a span { position: absolute; bottom: 0; inset-inline: 0; padding: 40px 12px 14px; background: linear-gradient(transparent, #000c); font-size: 13px; font-weight: 600; color: #fff; }
 .luzik-team-hero-visual > p { margin: 24px 0 0; font-size: 16px; font-weight: 600; color: #fff; }

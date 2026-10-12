@@ -1,0 +1,13 @@
+import fs from 'node:fs/promises';
+import sharp from 'sharp';
+const source='assets/brand/icon-source.jpg';
+for(const size of [192,512]) await sharp(source).resize(size,size).png({compressionLevel:9}).toFile(`public/luzik/brand/icon-${size}.png`);
+await sharp(source).resize(180,180).png({compressionLevel:9}).toFile('app/apple-icon.png');
+await sharp(source).resize(48,48).png({compressionLevel:9}).toFile('app/icon.png');
+const sizes=[16,32,48,256];
+const images=await Promise.all(sizes.map(size=>sharp(source).resize(size,size).png({compressionLevel:9}).toBuffer()));
+const header=Buffer.alloc(6+16*sizes.length); header.writeUInt16LE(1,2); header.writeUInt16LE(sizes.length,4);
+let offset=header.length;
+sizes.forEach((size,index)=>{const start=6+index*16; header[start]=size===256?0:size; header[start+1]=header[start]; header.writeUInt16LE(1,start+4); header.writeUInt16LE(32,start+6); header.writeUInt32LE(images[index].length,start+8); header.writeUInt32LE(offset,start+12); offset+=images[index].length;});
+await fs.writeFile('app/favicon.ico',Buffer.concat([header,...images]));
+console.log('Prepared favicon 16/32/48/256, PNG icon 48, Apple 180, manifest 192/512.');

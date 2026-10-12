@@ -12,7 +12,6 @@ import {
   ChevronRight,
   Facebook,
   Instagram,
-  Menu,
   Phone,
   X,
 } from "lucide-react";
@@ -35,7 +34,6 @@ export function MobileNav() {
 
   function closeMenu() {
     setOpenPath(null);
-    setExpandedItem(null);
   }
 
   return (
@@ -52,7 +50,7 @@ export function MobileNav() {
         aria-label="Otwórz menu"
         aria-expanded={open}
         className="
-          flex
+          luzik-mobile-trigger flex
           h-[42px]
           w-[46px]
           items-center
@@ -64,10 +62,7 @@ export function MobileNav() {
           shadow-[0_7px_20px_rgba(0,139,208,0.18)]
         "
       >
-        <Menu
-          size={25}
-          strokeWidth={2}
-        />
+        <span className="luzik-mobile-burger" aria-hidden="true"><span /><span /><span /></span>
       </button></Dialog.Trigger>
 
       {/* ================================================== */}
@@ -75,7 +70,7 @@ export function MobileNav() {
       {/* ================================================== */}
 
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-[200] bg-black/60 backdrop-blur-[2px]" />
+        <Dialog.Overlay className="luzik-mobile-overlay fixed inset-0 z-[200] bg-black/60 backdrop-blur-[2px]" />
         <Dialog.Content asChild aria-describedby={undefined}>
           {/* ================================================== */}
           {/* PANEL                                             */}
@@ -83,7 +78,7 @@ export function MobileNav() {
 
           <aside
             className="
-              fixed z-[201]
+              luzik-mobile-panel fixed z-[201]
               right-0
               top-0
               flex
@@ -100,7 +95,7 @@ export function MobileNav() {
             <Dialog.Title className="sr-only">Menu główne</Dialog.Title>
             {/* HEADER */}
 
-            <div className="relative flex h-[105px] shrink-0 items-center border-b border-white/[0.08] px-7">
+            <div className="luzik-mobile-heading relative flex h-[105px] shrink-0 items-center border-b border-white/[0.08] px-7">
               <LuzikLogo />
 
               <button
@@ -108,7 +103,7 @@ export function MobileNav() {
                 onClick={closeMenu}
                 aria-label="Zamknij menu"
                 className="
-                  ml-auto
+                  luzik-mobile-close ml-auto
                   flex
                   h-9
                   w-9
@@ -129,12 +124,12 @@ export function MobileNav() {
 
             {/* CTA */}
 
-            <div className="border-b border-white/[0.08] p-5">
+            <div className="luzik-mobile-cta-wrap border-b border-white/[0.08] p-5">
               <Link
                 href={luzikHeaderData.registrationHref}
                 onClick={closeMenu}
                 className="
-                  flex
+                  luzik-mobile-cta flex
                   h-[50px]
                   items-center
                   justify-center
@@ -155,7 +150,7 @@ export function MobileNav() {
 
             {/* NAVIGATION */}
 
-            <nav className="flex-1 overflow-y-auto">
+            <nav aria-label="Nawigacja mobilna" className="luzik-mobile-navigation min-h-0 flex-1 overflow-y-auto">
               <ul className="m-0 list-none p-0">
                 {luzikNavigation.map(
                   (item) => {
@@ -173,14 +168,15 @@ export function MobileNav() {
                     return (
                       <li
                         key={item.href}
-                        className="border-b border-white/[0.08]"
+                        className="luzik-mobile-item border-b border-white/[0.08]"
                       >
                         <div className="flex min-h-[55px] items-center">
                           <Link
                             href={item.href}
                             onClick={closeMenu}
+                            aria-current={pathname === item.href ? "page" : undefined}
                             className={`
-                              flex
+                              luzik-mobile-link flex
                               min-w-0
                               flex-1
                               items-center
@@ -213,6 +209,7 @@ export function MobileNav() {
                               aria-expanded={
                                 expanded
                               }
+                              aria-controls={`mobile-submenu-${item.href.slice(1)}`}
                               onClick={() =>
                                 setExpandedItem(
                                   expanded
@@ -221,7 +218,7 @@ export function MobileNav() {
                                 )
                               }
                               className="
-                                mr-4
+                                luzik-mobile-expand mr-4
                                 flex
                                 h-8
                                 w-8
@@ -246,8 +243,9 @@ export function MobileNav() {
                           )}
                         </div>
 
-                        {item.children &&
-                          expanded && (
+                        {item.children && (
+                          <div id={`mobile-submenu-${item.href.slice(1)}`} className="luzik-mobile-submenu" data-expanded={expanded} inert={!expanded} aria-hidden={!expanded}>
+                            <div className="luzik-mobile-submenu-clip">
                             <div className="border-t border-white/[0.08] bg-[#18191b] px-3 py-2">
                               {item.children.map(
                                 (child) => (
@@ -260,7 +258,7 @@ export function MobileNav() {
                                       closeMenu
                                     }
                                     className="
-                                      flex
+                                      luzik-mobile-child flex
                                       items-center
                                       gap-2
                                       px-4
@@ -272,6 +270,7 @@ export function MobileNav() {
                                       transition-colors
                                       hover:text-[#008bd0]
                                     "
+                                    aria-current={pathname === child.href ? "page" : undefined}
                                   >
                                     <ChevronRight
                                       size={13}
@@ -285,6 +284,8 @@ export function MobileNav() {
                                 ),
                               )}
                             </div>
+                            </div>
+                          </div>
                           )}
                       </li>
                     );
@@ -295,9 +296,9 @@ export function MobileNav() {
 
             {/* CONTACT */}
 
-            <div className="shrink-0 border-t border-white/[0.08] bg-[#0d0e10] px-6 py-6">
+            <div className="luzik-mobile-contact shrink-0 border-t border-white/[0.08] bg-[#0d0e10] px-6 py-6">
               <div className="mb-4 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#fff6cc] text-[#151617]">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#ffe101] text-[#151617]">
                   <Phone size={18} />
                 </div>
 
@@ -336,6 +337,8 @@ export function MobileNav() {
                     href={
                       luzikHeaderData.facebookHref
                     }
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="Facebook"
                     className="text-white/70 transition-colors hover:text-white"
                   >
@@ -350,6 +353,8 @@ export function MobileNav() {
                     href={
                       luzikHeaderData.instagramHref
                     }
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="Instagram"
                     className="text-white/70 transition-colors hover:text-white"
                   >

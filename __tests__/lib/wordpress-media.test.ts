@@ -7,7 +7,7 @@ describe("WordPress image delivery", () => {
     expect(wordpressImageUnoptimized("http://localhost:80/image.jpg")).toBe(true);
     expect(wordpressImageUnoptimized("http://[::1]/image.jpg")).toBe(true);
     expect(wordpressImageUnoptimized("https://cms.luzikkielce.pl/wp-content/uploads/image.jpg")).toBe(false);
-    expect(wordpressImageUnoptimized("/luzik/hero.jpg")).toBe(false);
+    expect(wordpressImageUnoptimized("/luzik/hero.webp")).toBe(false);
   });
   it("does not expose local WordPress media in social metadata", () => {
     const metadata = luzikMetadata("Artykuł", "Opis", "/artykul", "http://next-wp.local/image.jpg");

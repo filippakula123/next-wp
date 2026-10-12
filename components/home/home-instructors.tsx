@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { featuredInstructors } from "@/lib/luzik-team";
+import { featuredInstructors, profileHref } from "@/lib/luzik-team";
 
 import {
   ArrowUpRight,
@@ -14,7 +14,9 @@ const instructors = featuredInstructors.map(person => ({
     ? 'Doświadczony instruktor i właściciel szkoły. Stawia na spokojną atmosferę i praktyczne przygotowanie do egzaminu.'
     : person.id === 'mariola-jaros'
       ? 'Prowadzi naukę jazdy kategorii B i B automat. Stawia na spokojną atmosferę, cierpliwość i indywidualne podejście.'
-      : 'Prowadzi jazdy w spokojnej atmosferze i pomaga kursantom nabrać pewności za kierownicą.',
+      : person.id === 'sandra-baczek'
+        ? 'Uczy jazdy samochodem z manualną skrzynią biegów. Łączy cierpliwość, indywidualne podejście i pozytywną atmosferę.'
+        : 'Prowadzi jazdy w spokojnej atmosferze i pomaga kursantom nabrać pewności za kierownicą.',
   objectPosition: 'center center',
 }));
 
@@ -154,6 +156,7 @@ export function HomeInstructors() {
               {/* ZDJĘCIE */}
 
               <div className="relative aspect-[4/5] overflow-hidden bg-[#222326]">
+                <Link href={profileHref(instructor.profile)} aria-label={`Poznaj instruktora: ${instructor.name}`} className="absolute inset-0 z-10 focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-[#ffe101]" />
                 <Image
                   src={instructor.image}
                   alt={`Instruktor nauki jazdy - ${instructor.name}`}
@@ -224,7 +227,7 @@ export function HomeInstructors() {
                   </div>
 
                   <h3 className="m-0 font-[var(--font-lexend)] text-[24px] font-semibold leading-tight text-white sm:text-[27px]">
-                    <Link href={`/szkola-jazdy-luzik-instruktorzy#${instructor.id}`} className="text-white no-underline hover:text-[#5bb8ff]">{instructor.name}</Link>
+                    <Link href={profileHref(instructor.profile)} className="relative z-20 text-white no-underline hover:text-[#5bb8ff]">{instructor.name}</Link>
                   </h3>
 
                   <p className="mt-2 font-[var(--font-inter)] text-[12px] font-semibold uppercase tracking-[0.08em] text-[#5bb8ff]">
@@ -236,7 +239,7 @@ export function HomeInstructors() {
               {/* OPIS */}
 
               <div className="flex flex-col gap-5 p-5 sm:p-6">
-                <p className="m-0 min-h-[78px] font-[var(--font-inter)] text-[14px] leading-6 text-white/55">
+                <p className="m-0 min-h-[96px] font-[var(--font-inter)] text-[14px] leading-6 text-white/55">
                   {instructor.description}
                 </p>
 
@@ -247,13 +250,14 @@ export function HomeInstructors() {
                       className="text-[#1383ec]"
                     />
 
-                    <span className="font-[var(--font-inter)] text-[11px] font-semibold uppercase tracking-wide text-white/45">
+                    <span className="font-[var(--font-inter)] text-[11px] font-semibold uppercase tracking-wide text-white/65">
                       Szkolenie kategorii {instructor.category}
                     </span>
                   </div>
 
-                  <span
-                    aria-hidden="true"
+                  <Link
+                    href={profileHref(instructor.profile)}
+                    aria-label={`Profil instruktora: ${instructor.name}`}
                     className="
                       flex
                       h-8
@@ -270,7 +274,7 @@ export function HomeInstructors() {
                     "
                   >
                     <ArrowUpRight size={15} />
-                  </span>
+                  </Link>
                 </div>
               </div>
             </article>

@@ -14,7 +14,7 @@ export function HomeIntro() {
       <div className="luzik-container">
         <div className="home-intro-layout">
           <div className="home-intro-photo">
-            <Image src="/luzik/footer-car.jpg" alt="Samochód Szkoły Jazdy Luzik" fill sizes="(max-width: 767px) 100vw, 45vw" className="object-cover" />
+            <Image src="/luzik/footer-car.webp" alt="Samochód Szkoły Jazdy Luzik" fill sizes="(max-width: 767px) 100vw, 45vw" className="object-cover" />
             <div className="home-photo-label"><span>Twój cel. Nasze wsparcie.</span><strong>Prawo jazdy na luzie.</strong></div>
           </div>
           <div>

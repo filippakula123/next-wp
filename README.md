@@ -34,6 +34,8 @@ Wymagane: Node.js >= 22.13 oraz pnpm w wersji zapisanej w `package.json`.
 
 ## Edycja w WordPressie
 
+Oceny gwiazdkowe instruktorów obsługuje osobna wtyczka `wordpress/luzik-ratings.zip`. Instrukcja aktywacji i klucza serwerowego: [docs/oceny-instruktorow.md](docs/oceny-instruktorow.md). Bez podłączenia pokazujemy jawnie oznaczone datą oceny z kopii i blokujemy głosowanie; oceny nie są pobierane z Google.
+
 - Wpisy, kategorie i zdjęcia wyróżniające edytuj w kokpicie WordPressa.
 - Zachowuj slugi oraz daty przeniesionych artykułów. Wpisy mają adres `/<slug>`; `/posts/<slug>` przekierowuje na właściwy wpis.
 - Rozwijane FAQ dodawaj blokami **Szczegóły**: pytanie w podsumowaniu, odpowiedź wewnątrz bloku. FAQ pojawia się tylko tam, gdzie te bloki istnieją.
@@ -42,7 +44,9 @@ Wymagane: Node.js >= 22.13 oraz pnpm w wersji zapisanej w `package.json`.
 
 Next.js pobiera ustawienia przez `/wp-json/luzik/v1/settings` i używa ich również w opisach cen oraz danych strukturalnych. Lokalnie `WORDPRESS_CACHE_DISABLED=true` pozwala zobaczyć zmiany po odświeżeniu; na produkcji ustawienia mają cache 60 sekund. Gdy CMS jest niedostępny, używane są domyślne wartości.
 
-Zdjęcia wpisów pozostają w bibliotece mediów WordPressa. Zdjęcia wyróżniające i miniatury używają optymalizacji Next.js na publicznym hostingu; dla lokalnego CMS jest ona pomijana. Zdjęcia wewnątrz treści wpisu są wyświetlane z HTML WordPressa.
+Zdjęcia wpisów pozostają w bibliotece mediów WordPressa. Zdjęcia wyróżniające, miniatury i fotografie wewnątrz treści wpisów używają optymalizacji Next.js na publicznym hostingu. Zdjęcia w treści dostają responsywny `srcset`, wymiary, lazy loading i asynchroniczne dekodowanie. Dla lokalnego CMS, GIF/SVG i zdjęć z innych domen optymalizacja HTML jest pomijana.
+
+58 lokalnych grafik przekonwertowano do WebP (8,84 → 4,78 MB). Oryginalne adresy mają przekierowania w `lib/luzik-image-redirects.json`. Oryginały i raport kompresji zachowano poza projektem. PNG favicon/Apple/manifest oraz JPEG obrazów społecznościowych pozostają dla zgodności. Nowe ikony tworzy `scripts/prepare-brand-icons.mjs` z dostarczonego `assets/brand/icon-source.jpg`; plik źródłowy nie jest publikowany.
 
 Formularze obecnie otwierają przygotowaną wiadomość w aplikacji pocztowej użytkownika. Automatyczna wysyłka wymaga jeszcze podłączenia obsługi wiadomości i SMTP.
 
@@ -63,7 +67,7 @@ Przy uruchomionym podglądzie produkcyjnym:
 - `pnpm audit:seo` — dokładny audyt metadanych, HTML dla robotów AI, schematów, wszystkich wpisów i linków; nie sprawdza ani nie modyfikuje sitemapy. Opcjonalnie podaj adres frontendu i CMS, np. `pnpm audit:seo https://luzikkielce.pl https://cms.luzikkielce.pl`. Raport roboczy: `.seo-audit.json`.
 - `pnpm check:release` — sprawdza konfigurację docelowej publikacji; lokalne ustawienia mogą celowo nie spełniać wymagań produkcji.
 
-Favicony, ikony mobilne i domyślne obrazy udostępniania odtwarza `node scripts/generate-brand-assets.mjs`. RSS, sitemapę oraz dane SEO generuje Next.js.
+Favicony i ikony mobilne odtwarza `node scripts/prepare-brand-icons.mjs`. Domyślne obrazy udostępniania znajdują się w `app/opengraph-image.jpeg`, `app/twitter-image.jpeg` i `public/luzik/brand/social.jpg`. RSS, sitemapę oraz dane SEO generuje Next.js.
 
 SEO edytuj w WordPressie w panelu **Rank Math**: dla artykułów w edycji wpisu, a dla strony głównej, podstron i profili instruktorów w menu **SEO podstron**. Wybierz pozycję, użyj **Edytuj fragment**, zmień tytuł lub opis i kliknij **Aktualizuj**. Zakładka społecznościowa pozwala ustawić osobny tytuł, opis i obraz udostępniania. Pozycje SEO nie tworzą dodatkowych publicznych stron WordPressa; treść podstron nadal znajduje się w Next.js.
 
@@ -96,6 +100,10 @@ To tłumaczenie dla odwiedzających: canonical, metadane Rank Math, HTML serwera
 Flagi przełącznika są lokalnymi wektorami SVG, więc nie zależą od obsługi emoji ani zewnętrznego serwera. `body` ma ograniczone do tego elementu `suppressHydrationWarning`, ponieważ rozszerzenie ColorZilla może dodać `cz-shortcut-listen` przed hydratacją. Nie wyłącza to kontroli zgodności komponentów strony. Przy diagnozowaniu innych ostrzeżeń warto porównać podgląd w przeglądarce bez rozszerzeń.
 
 ### Konfiguracja hostingu
+
+Do zakończenia publikacji nadal potrzebne są dane SMTP i klucz Google Places API. Formularze obecnie przygotowują wiadomość w aplikacji pocztowej; nie wysyłają jej automatycznie. Integracja opinii Google i instrukcja `docs/opinie-google.md` pozostają przygotowane. Oceny instruktorów korzystają z osobnej wtyczki i `WORDPRESS_RATINGS_SECRET`.
+
+Paczka Next.js powstaje przez `scripts/package-hostinger.ps1`. Zawiera kod aplikacji, aktywne grafiki i wymaganą konfigurację, bez lokalnych sekretów, testów, narzędzi roboczych i wtyczek WordPressa. Wtyczki mają własne instalatory w `wordpress/`.
 
 1. Przenieś WordPressa wraz ze zdjęciami na publiczny serwer HTTPS. Lokalny adres `next-wp.local` nie będzie dostępny z hostingu Next.js.
    WordPress działa jako CMS: zachowaj ustawienie **Ustawienia → Czytanie → Proś wyszukiwarki o nieindeksowanie tej witryny** (włączone w instalacji roboczej). Publiczną stronę Next.js indeksujemy osobno; jej pola Rank Math pozostają niezależne od blokady CMS. Sprawdź dyrektywy również na docelowym hostingu.

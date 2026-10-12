@@ -34,7 +34,7 @@ export function AboutPage() {
         title={<>Dobra jazda zaczyna się<br /><span>od dobrego zespołu.</span></>}
         description="Szkoła jazdy Luzik Kielce. Uczymy jeździć zgodnie z przepisami i skutecznie przygotowujemy do egzaminu w WORD Kielce. Bezpiecznie, profesjonalnie i na luzie."
         breadcrumb="O nas"
-        image="/luzik/courses/intro.jpg"
+        image="/luzik/courses/intro.webp"
         imageAlt="Arkadiusz, Mariola i Kacper Jaros — zespół Szkoły Jazdy Luzik"
         imageLabel="Szkoła Jazdy Luzik · Kielce"
         action={{ href: "#co-nas-wyroznia", label: "Poznaj naszą szkołę" }}
@@ -52,7 +52,7 @@ export function AboutPage() {
       <section className="home-section luzik-awards-section" aria-labelledby="about-awards-title">
         <div className="luzik-container luzik-awards-layout">
           <div><p className="home-eyebrow">Lata pracy. Realne wyróżnienia.</p><h2 id="about-awards-title" className="home-title">Nasze nagrody</h2><ol className="luzik-award-timeline">{awards.map((award) => <li key={award.year}><span>{award.year}</span><div><Award size={22} aria-hidden="true" /><p>{award.text}</p></div></li>)}</ol></div>
-          <div className="luzik-award-images"><figure><Image src="/luzik/about/award-1.png" width={350} height={332} sizes="(max-width: 767px) 40vw, 220px" alt="Orły Nauki Jazdy — pierwsze miejsce w Kielcach, 2019" /><figcaption>Orły Nauki Jazdy · 1 miejsce · 2019</figcaption></figure><figure><Image src="/luzik/about/award-2.png" width={451} height={607} sizes="(max-width: 767px) 40vw, 220px" alt="Orły Nauki Jazdy — laureat i wyróżnienie Gold, ocena 10 na 10, 2019" /><figcaption>Laureat konkursu · Gold · 2019</figcaption></figure></div>
+          <div className="luzik-award-images"><figure><Image src="/luzik/about/award-1.webp" width={350} height={332} sizes="(max-width: 767px) 40vw, 220px" alt="Orły Nauki Jazdy — pierwsze miejsce w Kielcach, 2019" /><figcaption>Orły Nauki Jazdy · 1 miejsce · 2019</figcaption></figure><figure><Image src="/luzik/about/award-2.webp" width={451} height={607} sizes="(max-width: 767px) 40vw, 220px" alt="Orły Nauki Jazdy — laureat i wyróżnienie Gold, ocena 10 na 10, 2019" /><figcaption>Laureat konkursu · Gold · 2019</figcaption></figure></div>
         </div>
       </section>
 

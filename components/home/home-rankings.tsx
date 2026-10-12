@@ -2,8 +2,8 @@ import Image from "next/image";
 import { ArrowUpRight, Award } from "lucide-react";
 
 const rankings = [
-  { image: "/luzik/rankings/super-prawo-jazdy.png", label: "Super Prawo Jazdy", href: "https://www.superprawojazdy.pl/szkola-jazdy-luzik,20823.htm" },
-  { image: "/luzik/rankings/prawo-jazdy-360.png", label: "Prawo Jazdy 360", href: "https://www.prawo-jazdy-360.pl/ranking-szkol-jazdy/szkola-jazdy-luzik/kielce" },
+  { image: "/luzik/rankings/super-prawo-jazdy.webp", label: "Super Prawo Jazdy", href: "https://www.superprawojazdy.pl/szkola-jazdy-luzik,20823.htm" },
+  { image: "/luzik/rankings/prawo-jazdy-360.webp", label: "Prawo Jazdy 360", href: "https://www.prawo-jazdy-360.pl/ranking-szkol-jazdy/szkola-jazdy-luzik/kielce" },
 ];
 
 export function HomeRankings() {

@@ -17,7 +17,7 @@ interface HomeHeroProps {
 }
 
 export async function HomeHero({
-  imageSrc = "/luzik/hero.jpg",
+  imageSrc = "/luzik/hero.webp",
   imageAlt = "Szkoła Jazdy Luzik w Kielcach",
 }: HomeHeroProps) {
   const { header: luzikHeaderData } = await getLuzikSiteData();
@@ -31,7 +31,7 @@ export async function HomeHero({
         {/* LEWA CZĘŚĆ                                       */}
         {/* ================================================= */}
 
-        <div className="relative flex bg-[#111214] text-white">
+        <div className="relative flex bg-[#f3f8fc] text-[#182632]">
           {/* Delikatny dekor */}
 
           <div
@@ -42,9 +42,9 @@ export async function HomeHero({
               right-0
               top-0
               h-full
-              w-[120px]
+              w-[240px]
               bg-gradient-to-l
-              from-[#1383ec]/10
+              from-[#1383ec]/[0.07]
               to-transparent
             "
           />
@@ -85,7 +85,7 @@ export async function HomeHero({
             <div className="flex items-center gap-3">
               <span className="luzik-accent-line h-[2px] w-10" />
 
-              <span className="font-[var(--font-inter)] text-[11px] font-bold uppercase tracking-[0.16em] text-[#1383ec]">
+              <span className="font-[var(--font-inter)] text-[11px] font-bold uppercase tracking-[0.16em] text-[#0075b2]">
                 Szkoła jazdy • Kielce
               </span>
             </div>
@@ -102,7 +102,7 @@ export async function HomeHero({
                 font-semibold
                 leading-[1.02]
                 tracking-[-0.035em]
-                text-white
+                text-[#182632]
                 sm:text-[58px]
                 md:text-[64px]
                 xl:text-[72px]
@@ -110,7 +110,7 @@ export async function HomeHero({
               "
             >
               Szkoła Jazdy
-              <span className="block text-[#1383ec]">
+              <span className="block text-[#0075b2]">
                 Luzik Kielce
               </span>
             </h1>
@@ -124,7 +124,7 @@ export async function HomeHero({
                 font-[var(--font-inter)]
                 text-[15px]
                 leading-7
-                text-white/60
+                text-[#52616e]
                 sm:text-[16px]
               "
             >
@@ -145,7 +145,7 @@ export async function HomeHero({
                   items-center
                   justify-center
                   gap-3
-                  bg-[#1383ec]
+                  bg-[#0075b2]
                   px-7
                   font-[var(--font-inter)]
                   text-[12px]
@@ -155,7 +155,7 @@ export async function HomeHero({
                   text-white
                   no-underline
                   transition-colors
-                  hover:bg-[#0e76d3]
+                  hover:bg-[#005e91]
                   focus-visible:outline
                   focus-visible:outline-2
                   focus-visible:outline-offset-4
@@ -175,18 +175,18 @@ export async function HomeHero({
                   items-center
                   justify-center
                   border
-                  border-white/15
+                  border-[#182632]/20
                   px-7
                   font-[var(--font-inter)]
                   text-[12px]
                   font-extrabold
                   uppercase
                   tracking-wide
-                  text-white
+                  text-[#182632]
                   no-underline
                   transition-colors
-                  hover:border-white/30
-                  hover:bg-white/[0.04]
+                  hover:border-[#0075b2]/50
+                  hover:bg-white/80
                 "
               >
                 Zobacz kursy
@@ -195,18 +195,18 @@ export async function HomeHero({
 
             {/* INFORMACJE */}
 
-            <div className="mt-10 grid max-w-[620px] grid-cols-1 gap-4 border-t border-white/10 pt-7 sm:grid-cols-2">
+            <div className="mt-10 grid max-w-[620px] grid-cols-1 gap-4 border-t border-[#182632]/10 pt-7 sm:grid-cols-2">
               <div className="flex items-start gap-3">
                 <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#1383ec]/10 text-[#1383ec]">
                   <CalendarDays size={15} />
                 </span>
 
                 <div>
-                  <span className="block font-[var(--font-inter)] text-[10px] font-bold uppercase tracking-[0.12em] text-white/35">
+                  <span className="block font-[var(--font-inter)] text-[10px] font-bold uppercase tracking-[0.12em] text-[#52616e]">
                     Najbliższy kurs
                   </span>
 
-                  <span className="mt-1 block font-[var(--font-inter)] text-[14px] font-semibold text-white">
+                  <span className="mt-1 block font-[var(--font-inter)] text-[14px] font-semibold text-[#182632]">
                     {luzikHeaderData.courseDateLabel}
                     {" • "}
                     {luzikHeaderData.courseTimeLabel}
@@ -220,11 +220,11 @@ export async function HomeHero({
                 </span>
 
                 <div>
-                  <span className="block font-[var(--font-inter)] text-[10px] font-bold uppercase tracking-[0.12em] text-white/35">
+                  <span className="block font-[var(--font-inter)] text-[10px] font-bold uppercase tracking-[0.12em] text-[#52616e]">
                     Biuro
                   </span>
 
-                  <span className="mt-1 block font-[var(--font-inter)] text-[14px] font-semibold text-white">
+                  <span className="mt-1 block font-[var(--font-inter)] text-[14px] font-semibold text-[#182632]">
                     {luzikHeaderData.contactAddress}
                   </span>
                 </div>
@@ -255,20 +255,6 @@ export async function HomeHero({
             className="object-cover object-center"
           />
 
-          {/* Gradient */}
-
-          <div
-            aria-hidden="true"
-            className="
-              absolute
-              inset-0
-              bg-gradient-to-t
-              from-black/55
-              via-black/5
-              to-transparent
-            "
-          />
-
           {/* Górna etykieta */}
 
           <div className="luzik-hero-route" aria-hidden="true">
@@ -290,7 +276,7 @@ export async function HomeHero({
               flex
               items-center
               gap-2
-              bg-[#111214]/85
+              bg-white/90
               px-4
               py-3
               backdrop-blur-sm
@@ -300,7 +286,7 @@ export async function HomeHero({
           >
             <span className="luzik-accent-dot h-2 w-2 rounded-full" />
 
-            <span className="font-[var(--font-inter)] text-[10px] font-bold uppercase tracking-[0.14em] text-white">
+            <span className="font-[var(--font-inter)] text-[10px] font-bold uppercase tracking-[0.14em] text-[#182632]">
               Nauka jazdy bez stresu
             </span>
           </div>
@@ -314,26 +300,26 @@ export async function HomeHero({
               left-0
               w-full
               bg-gradient-to-t
-              from-[#111214]
-              via-[#111214]/90
+              from-[#102b40]/95
+              via-[#102b40]/55
               to-transparent
               px-5
               pb-6
-              pt-20
+              pt-12
               sm:px-8
               sm:pb-8
-              sm:pt-28
+              sm:pt-16
             "
           >
             <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
               <div>
-                <p className="m-0 font-[var(--font-inter)] text-[10px] font-bold uppercase tracking-[0.15em] text-[#1383ec]">
+                <p className="m-0 font-[var(--font-inter)] text-[10px] font-bold uppercase tracking-[0.15em] text-[#ffe101]">
                   Szkoła Jazdy Luzik
                 </p>
 
                 <p className="mt-2 max-w-[500px] font-[var(--font-lexend)] text-[21px] font-semibold leading-tight text-white sm:text-[26px]">
                   Bezpiecznie. Profesjonalnie.
-                  <span className="block text-white/65">
+                  <span className="block text-white/85">
                     Na luzie.
                   </span>
                 </p>
@@ -363,7 +349,7 @@ export async function HomeHero({
               >
                 <Phone
                   size={16}
-                  className="text-[#1383ec]"
+                  className="text-[#ffe101]"
                 />
 
                 {luzikHeaderData.phoneLabel}
@@ -401,12 +387,12 @@ export async function HomeHero({
               <Check size={13} strokeWidth={3} />
             </span>
 
-            <span className="font-[var(--font-inter)] text-[12px] font-medium text-[#6d7277]">
+            <span className="font-[var(--font-inter)] text-[12px] font-medium text-[#52616e]">
               Prawo jazdy od 17 lat
             </span>
           </div>
 
-          <div className="font-[var(--font-inter)] text-[12px] text-[#8a8e92]">
+          <div className="font-[var(--font-inter)] text-[12px] text-[#52616e]">
             Zajęcia prowadzone w języku polskim i angielskim
           </div>
         </div>
@@ -426,7 +412,7 @@ function HeroPoint({
         <Check size={12} strokeWidth={3} />
       </span>
 
-      <span className="font-[var(--font-inter)] text-[11px] font-medium text-white/55">
+      <span className="font-[var(--font-inter)] text-[11px] font-medium text-[#52616e]">
         {text}
       </span>
     </div>
