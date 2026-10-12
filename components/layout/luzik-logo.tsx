@@ -31,7 +31,6 @@ export function LuzikLogo({
         src={dark ? "/luzik/logo-outline.webp" : "/luzik/logo.webp"}
         alt="Szkoła Jazdy Luzik"
         fill
-        priority
         sizes={dark ? "(min-width: 1280px) 152px, 116px" : "128px"}
         className={cn(
           "object-contain object-left",

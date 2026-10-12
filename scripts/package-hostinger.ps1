@@ -28,6 +28,7 @@ if ($ValidateOnly) {
 New-Item -ItemType Directory -Path $outputDirectory -Force | Out-Null
 
 Add-Type -AssemblyName System.IO.Compression
+Add-Type -AssemblyName System.IO.Compression.FileSystem
 $archive = [IO.Compression.ZipFile]::Open($archivePath, [IO.Compression.ZipArchiveMode]::Create)
 try {
     foreach ($sourceFile in $sourceFiles) {

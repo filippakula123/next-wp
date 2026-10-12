@@ -1,11 +1,11 @@
 import { cookies } from 'next/headers';
 import { createHash, randomUUID } from 'node:crypto';
 import { parseInstructorRating, ratingSlug } from '@/lib/luzik-instructor-ratings';
+import { isSameOriginRequest, publicRequestOrigin } from '@/lib/request-origin';
 export const dynamic = 'force-dynamic';
 const headers = { 'Cache-Control': 'private, no-store', 'X-Content-Type-Options': 'nosniff' };
 export async function POST(request: Request) {
-  const origin = request.headers.get('origin');
-  if (!origin || origin !== new URL(request.url).origin || request.headers.get('sec-fetch-site') === 'cross-site') return Response.json({ error: 'Niedozwolone żądanie.' }, { status: 403, headers });
+  if (!isSameOriginRequest(request)) return Response.json({ error: 'Niedozwolone żądanie.' }, { status: 403, headers });
   if ((Number(request.headers.get('content-length')) || 0) > 1024) return Response.json({ error: 'Nieprawidłowe żądanie.' }, { status: 413, headers });
   const secret = process.env.WORDPRESS_RATINGS_SECRET;
   const base = process.env.WORDPRESS_URL;
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
     const result = await response.json();
     const data = response.ok ? parseInstructorRating(result) : null;
     const output = data ? Response.json(data, { headers }) : Response.json({ error: response.status === 409 ? 'Już oceniłeś tego instruktora.' : response.status === 429 ? 'Odczekaj chwilę przed kolejną oceną.' : 'Nie udało się zapisać oceny. Spróbuj ponownie.' }, { status: [409,429].includes(response.status) ? response.status : 502, headers });
-    jar.set('luzik-rating-visitor', visitor, { httpOnly: true, sameSite: 'strict', secure: new URL(request.url).protocol === 'https:', maxAge: 31536000, path: '/' });
+    jar.set('luzik-rating-visitor', visitor, { httpOnly: true, sameSite: 'strict', secure: publicRequestOrigin(request)?.startsWith('https:') ?? false, maxAge: 31536000, path: '/' });
     return output;
   } catch { return Response.json({ error: 'Nie udało się połączyć z systemem ocen. Spróbuj ponownie.' }, { status: 503, headers }); }
 }

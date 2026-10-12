@@ -33,4 +33,14 @@ describe('instructor voting proxy', () => {
     vi.stubGlobal('fetch',vi.fn().mockRejectedValue(new Error('unavailable')));
     expect((await POST(request({slug,rating:5}))).status).toBe(503);
   });
+  it('accepts votes through the hosting proxy and keeps the visitor cookie secure', async () => {
+    const fetcher=vi.fn().mockResolvedValue(Response.json({count:6,sum:30})); vi.stubGlobal('fetch',fetcher);
+    const proxied=new Request('http://localhost:3000/api/instructor-ratings', {
+      method:'POST', headers: { origin:'https://preview.hostingersite.com', 'x-forwarded-host':'preview.hostingersite.com', 'x-forwarded-proto':'https', 'sec-fetch-site':'same-origin', 'Content-Type':'application/json' }, body:JSON.stringify({slug,rating:5}),
+    });
+    const response=await POST(proxied);
+    expect(response.status).toBe(200);
+    expect(fetcher).toHaveBeenCalledOnce();
+    expect(cookieSet).toHaveBeenCalledWith('luzik-rating-visitor',expect.any(String),expect.objectContaining({secure:true}));
+  });
 });

@@ -20,15 +20,24 @@ export function MotionRuntime() {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     const animations = new Map<Element, Animation>();
     let watched = new WeakSet<Element>();
+    let initialObserverDelivery = true;
     const observer = new IntersectionObserver(entries => {
-      const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-      visible.forEach((entry, index) => {
+      // Leave content already visible at page load alone. IntersectionObserver
+      // supplies this first viewport snapshot, so no per-element layout reads
+      // are needed while the initial page is settling.
+      if (initialObserverDelivery) {
+        initialObserverDelivery = false;
+        entries.forEach(entry => { if (entry.isIntersecting) observer.unobserve(entry.target); });
+        return;
+      }
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
         observer.unobserve(entry.target);
         if (reduced.matches || document.visibilityState === "hidden" || entry.target.contains(document.activeElement)) return;
         const animation = entry.target.animate([
           { opacity: 0.35, transform: "translateY(22px)" },
           { opacity: 1, transform: "translateY(0)" },
-        ], { duration: 580, delay: Math.min(index, 3) * 65, easing: "cubic-bezier(.22,1,.36,1)", fill: "backwards" });
+        ], { duration: 580, easing: "cubic-bezier(.22,1,.36,1)", fill: "backwards" });
         animations.set(entry.target, animation);
         animation.onfinish = () => animations.delete(entry.target);
       });
@@ -41,8 +50,9 @@ export function MotionRuntime() {
         const markedParent = element.closest("[data-luzik-reveal]");
         if (watched.has(element) || (markedParent && markedParent !== element)) continue;
         watched.add(element);
-        // Don't animate the initial viewport or an anchor destination; keep LCP steady.
-        if (element.getBoundingClientRect().top >= window.innerHeight - 24) observer.observe(element);
+        // The first observer delivery filters the initial viewport; later
+        // intersections animate as the visitor scrolls.
+        observer.observe(element);
       }
     }
     register(main);
@@ -58,7 +68,7 @@ export function MotionRuntime() {
     }
     function onPreferenceChange() {
       if (reduced.matches) { observer.disconnect(); cancelMotion(); }
-      else { watched = new WeakSet(); register(main!); }
+      else { initialObserverDelivery = true; watched = new WeakSet(); register(main!); }
     }
     function onFocus(event: FocusEvent) {
       animations.forEach((animation, element) => {

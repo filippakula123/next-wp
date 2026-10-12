@@ -52,7 +52,7 @@ const CACHE_TTL = 3600; // 1 hour
 function wordpressCacheOptions(tags: string[]): RequestInit {
   // Local editing can bypass the persistent cache without changing production.
   return process.env.WORDPRESS_CACHE_DISABLED === "true"
-    ? { cache: "no-store" }
+    ? { cache: "no-store", signal: AbortSignal.timeout(10000) }
     : { next: { tags, revalidate: CACHE_TTL } };
 }
 
@@ -72,7 +72,6 @@ async function wordpressFetch<T>(
   const url = `${baseUrl}${path}${query ? `?${querystring.stringify(query)}` : ""}`;
 
   const response = await fetch(url, {
-    signal: AbortSignal.timeout(10000),
     headers: { "User-Agent": USER_AGENT },
     ...wordpressCacheOptions(tags),
   });
@@ -119,7 +118,6 @@ async function wordpressFetchPaginated<T>(
   const url = `${baseUrl}${path}${query ? `?${querystring.stringify(query)}` : ""}`;
 
   const response = await fetch(url, {
-    signal: AbortSignal.timeout(10000),
     headers: { "User-Agent": USER_AGENT },
     ...wordpressCacheOptions(tags),
   });

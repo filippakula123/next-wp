@@ -4,7 +4,7 @@ import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react"
 import { ChevronDown } from "lucide-react";
 import { LanguageFlag } from "./language-flag";
 import { isLuzikLanguage, languageStorageKey, luzikLanguages } from "@/lib/luzik-languages";
-import { subscribeTranslation, translationSnapshot, translationServerSnapshot } from "./translation-runtime";
+import { subscribeTranslation, translationSnapshot, translationServerSnapshot } from "./translation-store";
 
 export function LanguageSwitcher({ dark = false }: { dark?: boolean }) {
   const { language, status } = useSyncExternalStore(subscribeTranslation, translationSnapshot, translationServerSnapshot);

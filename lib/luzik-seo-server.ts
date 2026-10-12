@@ -15,7 +15,12 @@ export const getCmsSeo = cache(async () => {
   const base = process.env.WORDPRESS_URL;
   if (!base) return undefined;
   try {
-    const response = await fetch(new URL("/wp-json/luzik/v1/seo", base), { signal: AbortSignal.timeout(5000), ...(process.env.WORDPRESS_CACHE_DISABLED === "true" ? { cache: "no-store" as const } : { next: { revalidate: 60, tags: ["wordpress", "luzik-seo"] } }) });
+    const localNoCache = process.env.WORDPRESS_CACHE_DISABLED === "true";
+    const response = await fetch(new URL("/wp-json/luzik/v1/seo", base), {
+      ...(localNoCache
+        ? { cache: "no-store" as const, signal: AbortSignal.timeout(5000) }
+        : { next: { revalidate: 60, tags: ["wordpress", "luzik-seo"] } }),
+    });
     if (!response.ok) throw new Error(`SEO HTTP ${response.status}`);
     const result = parseCmsSeo(await response.json());
     if (!result) throw new Error("Invalid SEO response");

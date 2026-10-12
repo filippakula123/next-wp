@@ -1,13 +1,6 @@
 import "./globals.css";
 import "./luzik.css";
-import "./luzik-subpages.css";
-import "./luzik-course-details.css";
-import "./luzik-instructors.css";
-import "./luzik-contact.css";
-import "./luzik-gallery.css";
-import "./luzik-blog.css";
 import "./luzik-accents.css";
-import "./luzik-profiles.css";
 import "./luzik-languages.css";
 import "./luzik-motion.css";
 import "./luzik-footer.css";
@@ -26,7 +19,7 @@ import { JsonLd } from "@/components/site/json-ld";
 import { organizationSchemaFor } from "@/lib/luzik-seo";
 import { getLuzikSiteData } from "@/lib/luzik-settings-server";
 import { LuzikSettingsProvider } from "@/components/site/luzik-settings-provider";
-import { TranslationRuntime } from "@/components/site/translation-runtime";
+import { TranslationRuntimeLoader } from "@/components/site/translation-runtime-loader";
 import { MotionRuntime } from "@/components/site/motion-runtime";
 
 const inter = Inter({
@@ -83,7 +76,7 @@ export default async function RootLayout({
           <Nav />
           {children}
           <Footer />
-          <TranslationRuntime />
+          <TranslationRuntimeLoader />
           <MotionRuntime />
           </LuzikSettingsProvider>
       </body>

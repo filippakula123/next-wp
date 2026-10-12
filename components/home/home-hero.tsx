@@ -250,7 +250,8 @@ export async function HomeHero({
             src={imageSrc}
             alt={imageAlt}
             fill
-            priority
+            preload
+            fetchPriority="high"
             sizes="(max-width: 1023px) 100vw, 58vw"
             className="object-cover object-center"
           />

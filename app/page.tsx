@@ -6,7 +6,7 @@ import { HomeInstructors } from "@/components/home/home-instructors";
 import { HomeIntro } from "@/components/home/home-intro";
 import { HomeRankings } from "@/components/home/home-rankings";
 import { HomeExamTraining } from "@/components/home/home-exam-training";
-import { HomeReviews } from "@/components/home/home-reviews";
+import { HomeReviewsLoader } from "@/components/home/home-reviews-loader";
 import { googleReviewsConfigured } from "@/lib/luzik-reviews-server";
 import { HomeImportantPlaces } from "@/components/home/home-important-places";
 import { HomeHighlights } from "@/components/home/home-highlights";
@@ -30,7 +30,7 @@ export default async function HomePage() {
   <HomeRankings />
   <HomeInstructors />
   <HomeExamTraining />
-  <HomeReviews enabled={googleReviewsConfigured()} />
+  <HomeReviewsLoader enabled={googleReviewsConfigured()} />
   <HomeImportantPlaces />
   <HomeHighlights />
   <HomeLatestPosts />
