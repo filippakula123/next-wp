@@ -1,6 +1,6 @@
 import { getLuzikSiteData } from "@/lib/luzik-settings-server";
-import Image from "next/image";
-import Link from "next/link";
+import Image from "@/components/site/static-image";
+import Link from "@/components/site/site-link";
 
 import {
   ArrowRight,
@@ -8,7 +8,7 @@ import {
   Check,
   MapPin,
   Phone,
-} from "lucide-react";
+} from "@/components/site/icons";
 
 
 interface HomeHeroProps {
@@ -36,49 +36,16 @@ export async function HomeHero({
 
           <div
             aria-hidden="true"
-            className="
-              pointer-events-none
-              absolute
-              right-0
-              top-0
-              h-full
-              w-[240px]
-              bg-gradient-to-l
-              from-[#1383ec]/[0.07]
-              to-transparent
-            "
+            className="pointer-events-none absolute right-0 top-0 h-full w-[240px] bg-gradient-to-l from-[#1383ec]/[0.07] to-transparent"
           />
 
           <div
             aria-hidden="true"
-            className="
-              pointer-events-none
-              absolute
-              bottom-0
-              left-0
-              h-[5px]
-              w-full
-              luzik-hero-underline
-            "
+            className="pointer-events-none absolute bottom-0 left-0 h-[5px] w-full luzik-hero-underline"
           />
 
           <div
-            className="
-              relative
-              z-10
-              flex
-              w-full
-              flex-col
-              justify-center
-              px-6
-              py-14
-              sm:px-10
-              sm:py-16
-              md:px-14
-              lg:px-12
-              xl:px-20
-              2xl:px-24
-            "
+            className="relative z-10 flex w-full flex-col justify-center px-6 py-14 sm:px-10 sm:py-16 md:px-14 lg:px-12 xl:px-20 2xl:px-24"
           >
             {/* MAŁY NAGŁÓWEK */}
 
@@ -94,20 +61,7 @@ export async function HomeHero({
 
             <h1
               id="home-hero-title"
-              className="
-                mt-7
-                max-w-[620px]
-                font-[var(--font-lexend)]
-                text-[48px]
-                font-semibold
-                leading-[1.02]
-                tracking-[-0.035em]
-                text-[#182632]
-                sm:text-[58px]
-                md:text-[64px]
-                xl:text-[72px]
-                2xl:text-[78px]
-              "
+              className="mt-7 max-w-[620px] font-[var(--font-lexend)] text-[48px] font-semibold leading-[1.02] tracking-[-0.035em] text-[#182632] sm:text-[58px] md:text-[64px] xl:text-[72px] 2xl:text-[78px]"
             >
               Szkoła Jazdy
               <span className="block text-[#0075b2]">
@@ -118,15 +72,7 @@ export async function HomeHero({
             {/* OPIS */}
 
             <p
-              className="
-                mt-7
-                max-w-[570px]
-                font-[var(--font-inter)]
-                text-[15px]
-                leading-7
-                text-[#52616e]
-                sm:text-[16px]
-              "
+              className="mt-7 max-w-[570px] font-[var(--font-inter)] text-[15px] leading-7 text-[#52616e] sm:text-[16px]"
             >
               Kompleksowo przygotowujemy przyszłych
               kierowców do egzaminu WORD Kielce.
@@ -139,28 +85,7 @@ export async function HomeHero({
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href={luzikHeaderData.registrationHref}
-                className="
-                  inline-flex
-                  min-h-[54px]
-                  items-center
-                  justify-center
-                  gap-3
-                  bg-[#0075b2]
-                  px-7
-                  font-[var(--font-inter)]
-                  text-[12px]
-                  font-extrabold
-                  uppercase
-                  tracking-wide
-                  text-white
-                  no-underline
-                  transition-colors
-                  hover:bg-[#005e91]
-                  focus-visible:outline
-                  focus-visible:outline-2
-                  focus-visible:outline-offset-4
-                  focus-visible:outline-[#1383ec]
-                "
+                className="inline-flex min-h-[54px] items-center justify-center gap-3 bg-[#0075b2] px-7 font-[var(--font-inter)] text-[12px] font-extrabold uppercase tracking-wide text-white no-underline transition-colors hover:bg-[#005e91] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1383ec]"
               >
                 Zapisz się na kurs
 
@@ -169,25 +94,7 @@ export async function HomeHero({
 
               <Link
                 href="/kursy-prawa-jazdy"
-                className="
-                  inline-flex
-                  min-h-[54px]
-                  items-center
-                  justify-center
-                  border
-                  border-[#182632]/20
-                  px-7
-                  font-[var(--font-inter)]
-                  text-[12px]
-                  font-extrabold
-                  uppercase
-                  tracking-wide
-                  text-[#182632]
-                  no-underline
-                  transition-colors
-                  hover:border-[#0075b2]/50
-                  hover:bg-white/80
-                "
+                className="inline-flex min-h-[54px] items-center justify-center border border-[#182632]/20 px-7 font-[var(--font-inter)] text-[12px] font-extrabold uppercase tracking-wide text-[#182632] no-underline transition-colors hover:border-[#0075b2]/50 hover:bg-white/80"
               >
                 Zobacz kursy
               </Link>
@@ -251,7 +158,7 @@ export async function HomeHero({
             alt={imageAlt}
             fill
             preload
-            fetchPriority="high"
+            preloadMedia="(min-width: 1024px)"
             sizes="(max-width: 1023px) 100vw, 58vw"
             className="object-cover object-center"
           />
@@ -270,20 +177,7 @@ export async function HomeHero({
           </div>
 
           <div
-            className="
-              absolute
-              left-5
-              top-5
-              flex
-              items-center
-              gap-2
-              bg-white/90
-              px-4
-              py-3
-              backdrop-blur-sm
-              sm:left-7
-              sm:top-7
-            "
+            className="absolute left-5 top-5 flex items-center gap-2 bg-white/90 px-4 py-3 backdrop-blur-sm sm:left-7 sm:top-7"
           >
             <span className="luzik-accent-dot h-2 w-2 rounded-full" />
 
@@ -295,22 +189,7 @@ export async function HomeHero({
           {/* DOLNA INFORMACJA */}
 
           <div
-            className="
-              absolute
-              bottom-0
-              left-0
-              w-full
-              bg-gradient-to-t
-              from-[#102b40]/95
-              via-[#102b40]/55
-              to-transparent
-              px-5
-              pb-6
-              pt-12
-              sm:px-8
-              sm:pb-8
-              sm:pt-16
-            "
+            className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-[#102b40]/95 via-[#102b40]/55 to-transparent px-5 pb-6 pt-12 sm:px-8 sm:pb-8 sm:pt-16"
           >
             <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
               <div>
@@ -328,25 +207,7 @@ export async function HomeHero({
 
               <a
                 href={luzikHeaderData.phoneHref}
-                className="
-                  inline-flex
-                  w-fit
-                  items-center
-                  gap-3
-                  border
-                  border-white/15
-                  bg-white/[0.06]
-                  px-4
-                  py-3
-                  font-[var(--font-inter)]
-                  text-[13px]
-                  font-semibold
-                  text-white
-                  no-underline
-                  backdrop-blur-sm
-                  transition-colors
-                  hover:bg-white/10
-                "
+                className="inline-flex w-fit items-center gap-3 border border-white/15 bg-white/[0.06] px-4 py-3 font-[var(--font-inter)] text-[13px] font-semibold text-white no-underline backdrop-blur-sm transition-colors hover:bg-white/10"
               >
                 <Phone
                   size={16}
@@ -366,22 +227,7 @@ export async function HomeHero({
 
       <div className="border-t border-[#e4e6e8] bg-[#f7f8f9]">
         <div
-          className="
-            mx-auto
-            flex
-            w-full
-            max-w-[1500px]
-            flex-col
-            gap-3
-            px-5
-            py-4
-            sm:px-7
-            md:flex-row
-            md:items-center
-            md:justify-between
-            lg:px-8
-            xl:px-10
-          "
+          className="mx-auto flex w-full max-w-[1500px] flex-col gap-3 px-5 py-4 sm:px-7 md:flex-row md:items-center md:justify-between lg:px-8 xl:px-10"
         >
           <div className="flex items-center gap-2">
             <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#1383ec]/10 text-[#1383ec]">

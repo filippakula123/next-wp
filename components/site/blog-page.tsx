@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { BookOpen, Search, ArrowLeft, ArrowRight } from "lucide-react";
+import Link from "@/components/site/site-link";
+import { BookOpen, Search, ArrowLeft, ArrowRight } from "@/components/site/icons";
 import { getAllCategories, getPostsPaginated } from "@/lib/wordpress";
 import { blogCategory } from "@/lib/luzik-blog";
 import { SubpageHero, SubpageCta } from "./subpage-hero";

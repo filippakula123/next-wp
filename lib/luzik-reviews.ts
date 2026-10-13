@@ -14,6 +14,7 @@ export type GoogleReview = {
   url?: string;
 };
 export type GoogleReviews = {
+  source?: 'google' | 'trustindex';
   name: string;
   rating?: number;
   count?: number;
@@ -21,6 +22,15 @@ export type GoogleReviews = {
   reviews: GoogleReview[];
   attributions: { name: string; url?: string }[];
 };
+
+/** The bridge supplies only saved public reviews, in the same display format as Places. */
+export function parseTrustindexReviews(value: unknown): GoogleReviews | null {
+  const data = record(value);
+  if (data.version !== 1 || data.source !== 'trustindex') return null;
+  const result = parseGoogleReviews(data.place);
+  if (!result || result.reviews.length === 0) return null;
+  return { ...result, source: 'trustindex', attributions: [{ name: 'Opinie Google pobrane przez Trustindex', url: 'https://www.trustindex.io/' }] };
+}
 
 function record(value: unknown): Record<string, unknown> {
   return value && typeof value === "object" && !Array.isArray(value) ? value as Record<string, unknown> : {};

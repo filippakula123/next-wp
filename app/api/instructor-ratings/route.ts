@@ -1,4 +1,5 @@
 import { cookies } from 'next/headers';
+import { revalidateTag } from 'next/cache';
 import { createHash, randomUUID } from 'node:crypto';
 import { parseInstructorRating, ratingSlug } from '@/lib/luzik-instructor-ratings';
 import { isSameOriginRequest, publicRequestOrigin } from '@/lib/request-origin';
@@ -28,6 +29,7 @@ export async function POST(request: Request) {
     });
     const result = await response.json();
     const data = response.ok ? parseInstructorRating(result) : null;
+    if (data) revalidateTag(`luzik-rating-${slug}`, { expire: 0 });
     const output = data ? Response.json(data, { headers }) : Response.json({ error: response.status === 409 ? 'Już oceniłeś tego instruktora.' : response.status === 429 ? 'Odczekaj chwilę przed kolejną oceną.' : 'Nie udało się zapisać oceny. Spróbuj ponownie.' }, { status: [409,429].includes(response.status) ? response.status : 502, headers });
     jar.set('luzik-rating-visitor', visitor, { httpOnly: true, sameSite: 'strict', secure: publicRequestOrigin(request)?.startsWith('https:') ?? false, maxAge: 31536000, path: '/' });
     return output;

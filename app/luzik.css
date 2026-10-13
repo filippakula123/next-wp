@@ -37,6 +37,12 @@
   padding-inline: 15px;
 }
 
+/* Keep all section content in HTML, while skipping offscreen layout and paint. */
+.home-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
 header :is(a,button):focus-visible, [role="dialog"] :is(a,button):focus-visible {
   outline: 3px solid #39a6e5;
   outline-offset: 4px;

@@ -4,7 +4,7 @@ import { useLuzikSettings } from "@/components/site/luzik-settings-provider";
 import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 
-import Link from "next/link";
+import Link from "@/components/site/site-link";
 import { usePathname } from "next/navigation";
 
 import {
@@ -14,7 +14,7 @@ import {
   Instagram,
   Phone,
   X,
-} from "lucide-react";
+} from "@/components/site/icons";
 
 import { LuzikLogo } from "@/components/layout/luzik-logo";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
@@ -57,20 +57,7 @@ export function MobileNavDialog({ open, onOpenChange }: MobileNavDialogProps) {
 
           <aside
             id="mobile-navigation-dialog"
-            className="
-              luzik-mobile-panel fixed z-[201]
-              right-0
-              top-0
-              flex
-              h-full
-              w-[390px]
-              max-w-[calc(100vw-20px)]
-              flex-col
-              overflow-hidden
-              bg-[#111214]
-              shadow-[-20px_0_60px_rgba(0,0,0,0.3)]
-              max-[480px]:w-[calc(100vw-10px)]
-            "
+            className="luzik-mobile-panel fixed z-[201] right-0 top-0 flex h-full w-[390px] max-w-[calc(100vw-20px)] flex-col overflow-hidden bg-[#111214] shadow-[-20px_0_60px_rgba(0,0,0,0.3)] max-[480px]:w-[calc(100vw-10px)]"
           >
             <Dialog.Title className="sr-only">Menu główne</Dialog.Title>
             {/* HEADER */}
@@ -82,21 +69,7 @@ export function MobileNavDialog({ open, onOpenChange }: MobileNavDialogProps) {
                 type="button"
                 onClick={closeMenu}
                 aria-label="Zamknij menu"
-                className="
-                  luzik-mobile-close ml-auto
-                  flex
-                  h-9
-                  w-9
-                  items-center
-                  justify-center
-                  rounded-full
-                  border
-                  border-white/10
-                  bg-white/5
-                  text-white
-                  transition-colors
-                  hover:bg-white/10
-                "
+                className="luzik-mobile-close ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-colors hover:bg-white/10"
               >
                 <X size={20} />
               </button>
@@ -108,21 +81,7 @@ export function MobileNavDialog({ open, onOpenChange }: MobileNavDialogProps) {
               <Link
                 href={luzikHeaderData.registrationHref}
                 onClick={closeMenu}
-                className="
-                  luzik-mobile-cta flex
-                  h-[50px]
-                  items-center
-                  justify-center
-                  rounded-[2px]
-                  bg-[#008bd0]
-                  font-[var(--font-inter)]
-                  text-[12px]
-                  font-extrabold
-                  uppercase
-                  tracking-wide
-                  text-white
-                  no-underline
-                "
+                className="luzik-mobile-cta flex h-[50px] items-center justify-center rounded-[2px] bg-[#008bd0] font-[var(--font-inter)] text-[12px] font-extrabold uppercase tracking-wide text-white no-underline"
               >
                 Zapisz się na kurs
               </Link>
@@ -197,19 +156,7 @@ export function MobileNavDialog({ open, onOpenChange }: MobileNavDialogProps) {
                                     : item.href,
                                 )
                               }
-                              className="
-                                luzik-mobile-expand mr-4
-                                flex
-                                h-8
-                                w-8
-                                shrink-0
-                                items-center
-                                justify-center
-                                rounded-[2px]
-                                border-0
-                                bg-white/[0.07]
-                                text-white
-                              "
+                              className="luzik-mobile-expand mr-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-[2px] border-0 bg-white/[0.07] text-white"
                             >
                               <ChevronDown
                                 size={17}
@@ -237,19 +184,7 @@ export function MobileNavDialog({ open, onOpenChange }: MobileNavDialogProps) {
                                     onClick={
                                       closeMenu
                                     }
-                                    className="
-                                      luzik-mobile-child flex
-                                      items-center
-                                      gap-2
-                                      px-4
-                                      py-3
-                                      font-[var(--font-inter)]
-                                      text-[13px]
-                                      text-white/65
-                                      no-underline
-                                      transition-colors
-                                      hover:text-[#008bd0]
-                                    "
+                                    className="luzik-mobile-child flex items-center gap-2 px-4 py-3 font-[var(--font-inter)] text-[13px] text-white/65 no-underline transition-colors hover:text-[#008bd0]"
                                     aria-current={pathname === child.href ? "page" : undefined}
                                   >
                                     <ChevronRight

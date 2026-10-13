@@ -2,8 +2,8 @@
 import { useLuzikSettings } from "@/components/site/luzik-settings-provider";
 
 import { useState, type FormEvent } from "react";
-import Link from "next/link";
-import { ArrowRight, Mail } from "lucide-react";
+import Link from "@/components/site/site-link";
+import { ArrowRight, Mail } from "@/components/site/icons";
 
 export function CourseContactForm({ subject, mode = "course" }: { subject: string; mode?: "course" | "contact" }) {
   const { header: luzikHeaderData } = useLuzikSettings();

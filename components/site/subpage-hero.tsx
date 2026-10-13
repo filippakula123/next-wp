@@ -1,7 +1,7 @@
 import { getLuzikSiteData } from "@/lib/luzik-settings-server";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, ChevronRight, Phone } from "lucide-react";
+import Image from "@/components/site/static-image";
+import Link from "@/components/site/site-link";
+import { ArrowRight, ChevronRight, Phone } from "@/components/site/icons";
 import type { ReactNode } from "react";
 
 

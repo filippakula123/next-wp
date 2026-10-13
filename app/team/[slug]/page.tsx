@@ -1,7 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "@/components/site/static-image";
+import Link from "@/components/site/site-link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Check, Phone } from "lucide-react";
+import { ArrowRight, Check, Phone } from "@/components/site/icons";
 import profiles from "@/lib/luzik-profiles.json";
 import { luzikTeam, luzikOfficeTeam, profileHref } from "@/lib/luzik-team";
 import { getLuzikSiteData } from "@/lib/luzik-settings-server";

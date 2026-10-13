@@ -62,3 +62,7 @@
 .luzik-instructor-rating .luzik-rating-message { color: #ffe101; }
 @media(prefers-reduced-motion:no-preference) { .luzik-rating-stars button { transition: transform 160ms ease; } .luzik-rating-stars button:not(:disabled):hover { transform: translateY(-2px) scale(1.08); } }
 @media(max-width:400px) { .luzik-instructor-rating { padding: 18px; } .luzik-rating-stars { gap: 2px; } }
+/* The static header is enhanced by a small delegated controller. */
+[data-nav-primary][data-active="true"], [data-nav-toggle][aria-expanded="true"] { color: #008bd0; }
+[data-nav-toggle][aria-expanded="true"] .luzik-nav-chevron { transform: rotate(180deg); }
+.luzik-nav-link[data-active="true"]::after { content: ''; position: absolute; left: 0; right: 0; bottom: -15px; height: 3px; border-radius: 999px; background: #008bd0; }

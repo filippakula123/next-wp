@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight, Quote, Star } from "@/components/site/icons";
 import { luzikGoogleReviewsUrl, type GoogleReviews } from "@/lib/luzik-reviews";
 
 function Stars({ rating }: { rating: number }) {
@@ -78,8 +78,8 @@ export function HomeReviews({ enabled = false }: { enabled?: boolean }) {
                     <a className="home-review-source" href={review.url || review.authorUrl || url} target="_blank" rel="noopener noreferrer">Przeczytaj w Google Maps <ArrowUpRight size={14} aria-hidden="true" /></a>
                   </article>)}
                 </div>
-                <div className="home-review-controls"><span>Opinie według trafności w Google.</span>{data.reviews.length > 1 && <div><button type="button" onClick={() => scrollReviews(-1)} aria-label="Poprzednia opinia" aria-controls="home-review-track"><ChevronLeft size={20} aria-hidden="true" /></button><button type="button" onClick={() => scrollReviews(1)} aria-label="Następna opinia" aria-controls="home-review-track"><ChevronRight size={20} aria-hidden="true" /></button></div>}</div>
-                <p className="home-review-policy">Pokazujemy opinie udostępnione przez Google, bez filtrowania po ocenie. <a href="https://support.google.com/contributionpolicy/answer/7400114" target="_blank" rel="noopener noreferrer">Zasady publikowania opinii</a>.</p>
+                <div className="home-review-controls"><span>{data.source === 'trustindex' ? 'Pobrane opinie — od najnowszych.' : 'Opinie według trafności w Google.'}</span>{data.reviews.length > 1 && <div><button type="button" onClick={() => scrollReviews(-1)} aria-label="Poprzednia opinia" aria-controls="home-review-track"><ChevronLeft size={20} aria-hidden="true" /></button><button type="button" onClick={() => scrollReviews(1)} aria-label="Następna opinia" aria-controls="home-review-track"><ChevronRight size={20} aria-hidden="true" /></button></div>}</div>
+                <p className="home-review-policy">{data.source === 'trustindex' ? 'Pokazujemy do 10 opinii Google zapisanych przez Trustindex. Wszystkie opinie i aktualną ocenę sprawdzisz w Google Maps.' : 'Pokazujemy opinie udostępnione przez Google, bez filtrowania po ocenie.'} <a href="https://support.google.com/contributionpolicy/answer/7400114" target="_blank" rel="noopener noreferrer">Zasady publikowania opinii</a>.</p>
               </> : <p>Sprawdź opinie kursantów bezpośrednio w Google Maps.</p>}
               {data.attributions.map(item => <p key={item.name} className="home-review-policy" translate="no">{item.url ? <a href={item.url} target="_blank" rel="noopener noreferrer">{item.name}</a> : item.name}</p>)}
             </div>

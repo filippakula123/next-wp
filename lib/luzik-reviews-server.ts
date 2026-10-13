@@ -1,11 +1,39 @@
 import "server-only";
-import { luzikGooglePlaceId, parseGoogleReviews } from "./luzik-reviews";
+import { luzikGooglePlaceId, parseGoogleReviews, parseTrustindexReviews } from "./luzik-reviews";
+import { wordpressCacheDisabled } from './wordpress-cache';
 
 export function googleReviewsConfigured(): boolean {
-  return Boolean(process.env.GOOGLE_PLACES_API_KEY?.trim());
+  return Boolean(process.env.GOOGLE_PLACES_API_KEY?.trim() || process.env.WORDPRESS_URL?.trim());
+}
+
+async function getWordPressReviews() {
+  const base = process.env.WORDPRESS_URL;
+  if (!base) return null;
+  try {
+    const localNoCache = wordpressCacheDisabled();
+    const response = await fetch(new URL('/wp-json/luzik/v1/google-reviews', base), {
+      ...(localNoCache
+        ? { cache: 'no-store' as const, signal: AbortSignal.timeout(6000) }
+        : { next: { revalidate: 60, tags: ['wordpress', 'luzik-reviews'] } }),
+    });
+    if (!response.ok) {
+      console.warn(`Opinie WordPressa niedostępne (HTTP ${response.status}).`);
+      return null;
+    }
+    const reviews = parseTrustindexReviews(await response.json());
+    if (!reviews) console.warn('Niepoprawny format opinii WordPressa.');
+    return reviews;
+  } catch {
+    console.warn('Nie udało się pobrać opinii z WordPressa.');
+    return null;
+  }
 }
 
 export async function getGoogleReviews() {
+  // Prefer the configured WordPress bridge, including deployments that still
+  // have an old/placeholder Places key in their environment variables.
+  const wordpressReviews = await getWordPressReviews();
+  if (wordpressReviews) return wordpressReviews;
   const key = process.env.GOOGLE_PLACES_API_KEY?.trim();
   if (!key) return null;
   try {

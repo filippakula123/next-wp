@@ -1,6 +1,7 @@
 import "server-only";
 import { cache } from "react";
 import { unstable_rethrow } from "next/navigation";
+import { wordpressCacheDisabled } from './wordpress-cache';
 import { luzikMetadata } from "./luzik-seo";
 import { luzikPages, completedLuzikSlugs, type LuzikPageSlug } from "./luzik-pages";
 import { courseHref, coursePresentation } from "./luzik-course-details";
@@ -15,7 +16,7 @@ export const getCmsSeo = cache(async () => {
   const base = process.env.WORDPRESS_URL;
   if (!base) return undefined;
   try {
-    const localNoCache = process.env.WORDPRESS_CACHE_DISABLED === "true";
+    const localNoCache = wordpressCacheDisabled();
     const response = await fetch(new URL("/wp-json/luzik/v1/seo", base), {
       ...(localNoCache
         ? { cache: "no-store" as const, signal: AbortSignal.timeout(5000) }

@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import Link from "@/components/site/site-link";
 export default function ErrorPage({ reset }: { error: Error & { digest?: string }; reset: () => void }) {
   return <main id="main-content" className="home-section"><div className="luzik-container">
     <p className="home-eyebrow">Spróbujmy jeszcze raz</p><h1 className="home-title">Nie udało się wczytać strony</h1>

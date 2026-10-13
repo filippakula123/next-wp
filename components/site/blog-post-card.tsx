@@ -1,7 +1,7 @@
-import Image from "next/image";
+import Image from "@/components/site/static-image";
 import { wordpressImageUnoptimized } from "@/lib/wordpress-media";
-import Link from "next/link";
-import { ArrowRight, BookOpen, Clock3 } from "lucide-react";
+import Link from "@/components/site/site-link";
+import { ArrowRight, BookOpen, Clock3 } from "@/components/site/icons";
 import type { Post } from "@/lib/wordpress.d";
 import { blogCategory, postDate, postExcerpt, postHref, postTitle, readingMinutes } from "@/lib/luzik-blog";
 

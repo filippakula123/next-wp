@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./luzik-fonts.css";
 import "./luzik.css";
 import "./luzik-accents.css";
 import "./luzik-languages.css";
@@ -8,10 +9,10 @@ import "./luzik-mobile-nav.css";
 import "./luzik-header-polish.css";
 
 import type { Metadata, Viewport } from "next";
-import type { ReactNode } from "react";
-import { Inter, Lexend } from "next/font/google";
+import { Suspense, type ReactNode } from "react";
 
 import { Nav } from "@/components/layout/nav";
+import { LuzikLogo } from "@/components/layout/luzik-logo";
 import { Footer } from "@/components/layout/footer";
 import { siteConfig } from "@/site.config";
 import { cn } from "@/lib/utils";
@@ -21,18 +22,6 @@ import { getLuzikSiteData } from "@/lib/luzik-settings-server";
 import { LuzikSettingsProvider } from "@/components/site/luzik-settings-provider";
 import { TranslationRuntimeLoader } from "@/components/site/translation-runtime-loader";
 import { MotionRuntime } from "@/components/site/motion-runtime";
-
-const inter = Inter({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const lexend = Lexend({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-lexend",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.site_domain),
@@ -60,22 +49,24 @@ export default async function RootLayout({
   const data = await getLuzikSiteData();
   return (
     <html lang="pl" className="light">
+      <head>
+        <link rel="preload" href="/luzik/fonts/inter-v1.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/luzik/fonts/lexend-v1.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      </head>
       <body
         // ColorZilla adds cz-shortcut-listen before React hydrates. Suppress
         // attribute differences on this element only; children remain checked.
         suppressHydrationWarning
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          inter.variable,
-          lexend.variable,
         )}
       >
         <a href="#main-content" className="luzik-skip-link">Przejdź do treści</a>
           <JsonLd data={organizationSchemaFor(data)} />
           <LuzikSettingsProvider value={{ header: data.header, contact: data.contact }}>
-          <Nav />
+          <Nav brand={<LuzikLogo dark />} />
           {children}
-          <Footer />
+          <Suspense fallback={null}><Footer /></Suspense>
           <TranslationRuntimeLoader />
           <MotionRuntime />
           </LuzikSettingsProvider>

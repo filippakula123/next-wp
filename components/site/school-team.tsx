@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import Image from "@/components/site/static-image";
+import Link from "@/components/site/site-link";
+import { ArrowRight } from "@/components/site/icons";
 import { luzikTeam, featuredInstructors, profileHref } from "@/lib/luzik-team";
 
 export function SchoolTeam({ contactHref = "/kontakt", detailed = false }: { contactHref?: string; detailed?: boolean } = {}) {

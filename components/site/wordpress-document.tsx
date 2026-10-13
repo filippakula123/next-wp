@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/site/site-link";
 import type { Page } from "@/lib/wordpress.d";
 import { blogText } from "@/lib/luzik-blog";
 import { SubpageHero } from "./subpage-hero";

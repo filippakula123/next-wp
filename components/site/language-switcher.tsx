@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown } from "@/components/site/icons";
 import { LanguageFlag } from "./language-flag";
 import { isLuzikLanguage, languageStorageKey, luzikLanguages } from "@/lib/luzik-languages";
 import { subscribeTranslation, translationSnapshot, translationServerSnapshot } from "./translation-store";

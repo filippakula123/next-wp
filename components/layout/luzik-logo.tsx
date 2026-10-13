@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "@/components/site/static-image";
+import Link from "@/components/site/site-link";
 
 import { cn } from "@/lib/utils";
 

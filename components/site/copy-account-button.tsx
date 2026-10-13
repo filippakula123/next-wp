@@ -2,7 +2,7 @@
 import { useLuzikSettings } from "@/components/site/luzik-settings-provider";
 
 import { useState } from "react";
-import { Check, Copy } from "lucide-react";
+import { Check, Copy } from "@/components/site/icons";
 
 export function CopyAccountButton() {
   const { contact: luzikContactData } = useLuzikSettings();

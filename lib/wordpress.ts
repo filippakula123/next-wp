@@ -5,6 +5,7 @@
 import querystring from "query-string";
 import { cache } from "react";
 import { unstable_rethrow } from "next/navigation";
+import { wordpressCacheDisabled } from './wordpress-cache';
 import type {
   Post,
   Category,
@@ -51,7 +52,7 @@ const CACHE_TTL = 3600; // 1 hour
 
 function wordpressCacheOptions(tags: string[]): RequestInit {
   // Local editing can bypass the persistent cache without changing production.
-  return process.env.WORDPRESS_CACHE_DISABLED === "true"
+  return wordpressCacheDisabled()
     ? { cache: "no-store", signal: AbortSignal.timeout(10000) }
     : { next: { tags, revalidate: CACHE_TTL } };
 }

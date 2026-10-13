@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { ArrowRight, BookOpen, CarFront, Clock3, HeartHandshake, ShieldCheck, Trophy } from "lucide-react";
+import Link from "@/components/site/site-link";
+import { ArrowRight, BookOpen, CarFront, Clock3, HeartHandshake, ShieldCheck, Trophy } from "@/components/site/icons";
 
 const highlights = [
   { icon: BookOpen, title: "Wiedza i doświadczenie", description: "Praktyczne wskazówki od instruktorów, którzy znają kieleckie drogi i potrafią jasno wyjaśnić nawet trudne manewry." },

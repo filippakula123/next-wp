@@ -2,12 +2,13 @@ import "server-only";
 import { cache } from "react";
 import { unstable_rethrow } from "next/navigation";
 import { buildLuzikSiteData } from "./luzik-settings";
+import { wordpressCacheDisabled } from './wordpress-cache';
 
 export const getLuzikSiteData = cache(async () => {
   const base = process.env.WORDPRESS_URL;
   if (!base) return buildLuzikSiteData();
   try {
-    const localNoCache = process.env.WORDPRESS_CACHE_DISABLED === "true";
+    const localNoCache = wordpressCacheDisabled();
     const response = await fetch(new URL("/wp-json/luzik/v1/settings", base), {
       ...(localNoCache
         ? { cache: "no-store" as const, signal: AbortSignal.timeout(5000) }

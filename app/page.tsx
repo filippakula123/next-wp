@@ -1,5 +1,6 @@
 import { getLuzikSiteData } from "@/lib/luzik-settings-server";
 import type { Metadata } from "next";
+import { Suspense } from 'react';
 
 import { HomeHero } from "@/components/home/home-hero";
 import { HomeInstructors } from "@/components/home/home-instructors";
@@ -26,14 +27,14 @@ export default async function HomePage() {
   <JsonLd data={pageSchema(undefined, data.courses)} />
   <HomeHero />
   <StatsStrip />
-  <HomeIntro />
-  <HomeRankings />
-  <HomeInstructors />
-  <HomeExamTraining />
-  <HomeReviewsLoader enabled={googleReviewsConfigured()} />
-  <HomeImportantPlaces />
-  <HomeHighlights />
-  <HomeLatestPosts />
+  <Suspense fallback={null}><HomeIntro /></Suspense>
+  <Suspense fallback={null}><HomeRankings /></Suspense>
+  <Suspense fallback={null}><HomeInstructors /></Suspense>
+  <Suspense fallback={null}><HomeExamTraining /></Suspense>
+  <Suspense fallback={null}><HomeReviewsLoader enabled={googleReviewsConfigured()} /></Suspense>
+  <Suspense fallback={null}><HomeImportantPlaces /></Suspense>
+  <Suspense fallback={null}><HomeHighlights /></Suspense>
+  <Suspense fallback={null}><HomeLatestPosts /></Suspense>
 </main>
   );
 }

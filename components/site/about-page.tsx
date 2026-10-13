@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { Award, CarFront, HeartHandshake, MapPin, ShieldCheck, UserRoundCheck, WalletCards } from "lucide-react";
+import Image from "@/components/site/static-image";
+import { Award, CarFront, HeartHandshake, MapPin, ShieldCheck, UserRoundCheck, WalletCards } from "@/components/site/icons";
 
 import { SchoolTeam } from "./school-team";
 import { SubpageCta, SubpageHero } from "./subpage-hero";

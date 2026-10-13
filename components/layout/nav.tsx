@@ -1,10 +1,9 @@
-"use client";
-import { useLuzikSettings } from "@/components/site/luzik-settings-provider";
+import { getLuzikSiteData } from "@/lib/luzik-settings-server";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from "@/components/site/site-link";
+import { DesktopNavRuntime } from "@/components/nav/desktop-nav-runtime";
 
 import {
   ChevronDown,
@@ -15,9 +14,8 @@ import {
   Phone,
   Share2,
   Timer,
-} from "lucide-react";
+} from "@/components/site/icons";
 
-import { LuzikLogo } from "@/components/layout/luzik-logo";
 import { MobileNav } from "@/components/nav/mobile-nav";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
 
@@ -25,49 +23,26 @@ import {
   luzikNavigation,
 } from "@/lib/luzik-navigation";
 
-import { cn } from "@/lib/utils";
+import { clsx as cn } from "clsx";
 
 interface NavProps {
   className?: string;
   children?: ReactNode;
   id?: string;
+  brand: ReactNode;
 }
 
-export function Nav({
+export async function Nav({
   className,
   children,
   id,
+  brand,
 }: NavProps) {
-  const { header: luzikHeaderData } = useLuzikSettings();
-  const pathname = usePathname();
-  const [menu, setMenu] = useState<{ href: string; pathname: string } | null>(null);
-  const headerRef = useRef<HTMLElement>(null);
-  const expandedItem = menu?.pathname === pathname ? menu.href : null;
-
-  useEffect(() => {
-    function closeOutside(event: PointerEvent) {
-      if (!headerRef.current?.contains(event.target as Node)) setMenu(null);
-    }
-    function closeOnEscape(event: KeyboardEvent) {
-      if (event.key === "Escape") {
-        headerRef.current?.querySelector<HTMLButtonElement>('button[aria-controls^="nav-"][aria-expanded="true"]')?.focus();
-        setMenu(null);
-      }
-    }
-    document.addEventListener("pointerdown", closeOutside);
-    document.addEventListener("keydown", closeOnEscape);
-    return () => {
-      document.removeEventListener("pointerdown", closeOutside);
-      document.removeEventListener("keydown", closeOnEscape);
-    };
-  }, []);
+  const { header: luzikHeaderData } = await getLuzikSiteData();
 
   return (
     <header
-      ref={headerRef}
-      onClick={(event) => {
-        if ((event.target as Element).closest("a, .luzik-language-trigger")) setMenu(null);
-      }}
+      data-luzik-header
       id={id}
       className={cn(
         "luzik-header sticky top-0 z-[100] w-full bg-white",
@@ -176,7 +151,7 @@ export function Nav({
           {/* LOGO */}
 
           <div className="luzik-header-brand flex w-[135px] shrink-0 items-center sm:w-[185px]">
-            <LuzikLogo dark />
+            {brand}
           </div>
 
           {children}
@@ -184,31 +159,23 @@ export function Nav({
           {/* DESKTOP */}
 
           <div className="luzik-header-desktop hidden min-w-0 flex-1 items-center justify-end gap-5 xl:flex">
-            <nav aria-label="Nawigacja główna" onBlur={event => {
-              if (!event.currentTarget.contains(event.relatedTarget)) setMenu(null);
-            }}>
+            <nav aria-label="Nawigacja główna" data-desktop-nav>
               <ul className="flex items-center gap-5">
                 {luzikNavigation.map((item) => {
-                  const active =
-                    pathname === item.href ||
-                    (item.href === "/blog" && pathname.startsWith("/posts/")) ||
-                    item.children?.some(child => pathname === child.href) ||
-                    pathname.startsWith(
-                      `${item.href}/`,
-                    );
-
                   return (
                     <li
                       key={item.href}
+                      data-nav-item
                       className="relative"
                     >
                       {item.children ? (
                         <div>
                           <button
                             type="button"
-                            aria-expanded={expandedItem === item.href}
+                            data-nav-toggle
+                            data-nav-primary
+                            aria-expanded={false}
                             aria-controls={`nav-${item.href.slice(1)}`}
-                            onClick={() => setMenu(expandedItem === item.href ? null : { href: item.href, pathname })}
                             className={cn(
                               "flex cursor-pointer list-none items-center gap-1.5",
                               "font-[var(--font-inter)] text-[12px]",
@@ -216,9 +183,7 @@ export function Nav({
                               "tracking-[0.01em]",
                               "transition-colors",
                               "border-0 bg-transparent p-0",
-                              active || expandedItem === item.href
-                                ? "text-[#008bd0]"
-                                : "text-[#191a1c]",
+                              "text-[#191a1c]",
                             )}
                           >
                             {item.label}
@@ -226,18 +191,17 @@ export function Nav({
                             <ChevronDown
                               size={13}
                               strokeWidth={2.5}
-                              className={cn("text-[#95979a] transition-transform", expandedItem === item.href && "rotate-180")}
+                              className="luzik-nav-chevron text-[#95979a] transition-transform"
                             />
                           </button>
 
-                          <div id={`nav-${item.href.slice(1)}`} hidden={expandedItem !== item.href} className="luzik-desktop-dropdown absolute left-1/2 top-[33px] z-[120] w-[270px] -translate-x-1/2 pt-3">
+                          <div id={`nav-${item.href.slice(1)}`} hidden className="luzik-desktop-dropdown absolute left-1/2 top-[33px] z-[120] w-[270px] -translate-x-1/2 pt-3">
                             <div className="max-h-[calc(100dvh-170px)] overflow-y-auto rounded-[10px] border border-[#292a2d] bg-[#121315] p-2 shadow-[0_20px_50px_rgba(0,0,0,0.22)]">
                               {item.children.map(
                                 (child) => (
                                   <Link
                                     key={child.href}
                                     href={child.href}
-                                    aria-current={pathname === child.href ? "page" : undefined}
                                     className="block rounded-md px-4 py-3 font-[var(--font-inter)] text-[13px] font-medium text-white/80 no-underline transition-colors hover:bg-white/5 hover:text-[#008bd0]"
                                   >
                                     {child.label}
@@ -250,19 +214,14 @@ export function Nav({
                       ) : (
                         <Link
                           href={item.href}
-                          aria-current={pathname === item.href ? "page" : undefined}
+                          data-nav-primary
                           className={cn(
-                            "relative font-[var(--font-inter)] text-[12px] font-extrabold uppercase tracking-[0.01em] no-underline transition-colors",
-                            active
-                              ? "text-[#008bd0]"
-                              : "text-[#191a1c] hover:text-[#008bd0]",
+                            "luzik-nav-link relative font-[var(--font-inter)] text-[12px] font-extrabold uppercase tracking-[0.01em] no-underline transition-colors",
+                            "text-[#191a1c] hover:text-[#008bd0]",
                           )}
                         >
                           {item.label}
 
-                          {active && (
-                            <span className="absolute -bottom-[15px] left-0 right-0 h-[3px] rounded-full bg-[#008bd0]" />
-                          )}
                         </Link>
                       )}
                     </li>
@@ -311,6 +270,7 @@ export function Nav({
           </div>
         </div>
       </div>
+      <DesktopNavRuntime />
     </header>
   );
 }

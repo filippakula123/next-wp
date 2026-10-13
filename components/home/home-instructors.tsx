@@ -1,12 +1,12 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "@/components/site/static-image";
+import Link from "@/components/site/site-link";
 import { featuredInstructors, profileHref } from "@/lib/luzik-team";
 
 import {
   ArrowUpRight,
   Award,
   CheckCircle2,
-} from "lucide-react";
+} from "@/components/site/icons";
 
 const instructors = featuredInstructors.map(person => ({
   ...person,
@@ -30,32 +30,12 @@ export function HomeInstructors() {
 
       <div
         aria-hidden="true"
-        className="
-          pointer-events-none
-          absolute
-          right-[-180px]
-          top-[-180px]
-          h-[500px]
-          w-[500px]
-          rounded-full
-          bg-[#1383ec]/[0.06]
-          blur-3xl
-        "
+        className="pointer-events-none absolute right-[-180px] top-[-180px] h-[500px] w-[500px] rounded-full bg-[#1383ec]/[0.06] blur-3xl"
       />
 
       <div
         aria-hidden="true"
-        className="
-          pointer-events-none
-          absolute
-          bottom-[-220px]
-          left-[-180px]
-          h-[450px]
-          w-[450px]
-          rounded-full
-          bg-[#1383ec]/[0.04]
-          blur-3xl
-        "
+        className="pointer-events-none absolute bottom-[-220px] left-[-180px] h-[450px] w-[450px] rounded-full bg-[#1383ec]/[0.04] blur-3xl"
       />
 
       <div className="relative mx-auto w-full max-w-[1500px] px-5 sm:px-7 lg:px-8 xl:px-10">
@@ -75,17 +55,7 @@ export function HomeInstructors() {
 
             <h2
               id="home-instructors-title"
-              className="
-                m-0
-                font-[var(--font-lexend)]
-                text-[36px]
-                font-semibold
-                leading-[1.12]
-                tracking-[-0.025em]
-                text-white
-                sm:text-[44px]
-                lg:text-[52px]
-              "
+              className="m-0 font-[var(--font-lexend)] text-[36px] font-semibold leading-[1.12] tracking-[-0.025em] text-white sm:text-[44px] lg:text-[52px]"
             >
               Poznaj instruktorów,
               <span className="block text-white/55">
@@ -105,27 +75,7 @@ export function HomeInstructors() {
 
           <Link
             href="/szkola-jazdy-luzik-instruktorzy"
-            className="
-              inline-flex
-              w-fit
-              shrink-0
-              items-center
-              gap-3
-              border
-              border-white/15
-              px-5
-              py-3.5
-              font-[var(--font-inter)]
-              text-[11px]
-              font-extrabold
-              uppercase
-              tracking-wide
-              text-white
-              no-underline
-              transition-all
-              hover:border-[#1383ec]
-              hover:bg-[#1383ec]
-            "
+            className="inline-flex w-fit shrink-0 items-center gap-3 border border-white/15 px-5 py-3.5 font-[var(--font-inter)] text-[11px] font-extrabold uppercase tracking-wide text-white no-underline transition-all hover:border-[#1383ec] hover:bg-[#1383ec]"
           >
             Poznaj cały zespół
 
@@ -142,16 +92,7 @@ export function HomeInstructors() {
             <article
               data-luzik-reveal="card"
               key={instructor.id}
-              className="
-                group
-                overflow-hidden
-                border
-                border-white/10
-                bg-[#17181a]
-                transition-transform
-                duration-300
-                hover:-translate-y-1
-              "
+              className="group overflow-hidden border border-white/10 bg-[#17181a] transition-transform duration-300 hover:-translate-y-1"
             >
               {/* ZDJĘCIE */}
 
@@ -162,14 +103,7 @@ export function HomeInstructors() {
                   alt={`Instruktor nauki jazdy - ${instructor.name}`}
                   fill
                   sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 25vw"
-                  className="
-                    object-cover
-                    brightness-[0.93]
-                    grayscale-[0.08]
-                    transition-transform
-                    duration-700
-                    group-hover:scale-[1.035]
-                  "
+                  className="object-cover brightness-[0.93] grayscale-[0.08] transition-transform duration-700 group-hover:scale-[1.035]"
                   style={{
                     objectPosition:
                       instructor.objectPosition,
@@ -180,30 +114,14 @@ export function HomeInstructors() {
 
                 <div
                   aria-hidden="true"
-                  className="
-                    absolute
-                    inset-0
-                    bg-gradient-to-t
-                    from-black/85
-                    via-black/10
-                    to-transparent
-                  "
+                  className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"
                 />
 
                 {/* Numer */}
 
                 <div
                   aria-hidden="true"
-                  className="
-                    absolute
-                    right-5
-                    top-5
-                    font-[var(--font-lexend)]
-                    text-[28px]
-                    font-semibold
-                    leading-none
-                    text-white/20
-                  "
+                  className="absolute right-5 top-5 font-[var(--font-lexend)] text-[28px] font-semibold leading-none text-white/20"
                 >
                   {String(
                     instructors.findIndex(
@@ -258,20 +176,7 @@ export function HomeInstructors() {
                   <Link
                     href={profileHref(instructor.profile)}
                     aria-label={`Profil instruktora: ${instructor.name}`}
-                    className="
-                      flex
-                      h-8
-                      w-8
-                      items-center
-                      justify-center
-                      border
-                      border-white/10
-                      text-white/50
-                      transition-all
-                      group-hover:border-[#1383ec]
-                      group-hover:bg-[#1383ec]
-                      group-hover:text-white
-                    "
+                    className="flex h-8 w-8 items-center justify-center border border-white/10 text-white/50 transition-all group-hover:border-[#1383ec] group-hover:bg-[#1383ec] group-hover:text-white"
                   >
                     <ArrowUpRight size={15} />
                   </Link>
@@ -299,21 +204,7 @@ export function HomeInstructors() {
 
           <Link
             href="/szkola-jazdy-luzik-instruktorzy"
-            className="
-              inline-flex
-              w-fit
-              items-center
-              gap-2
-              font-[var(--font-inter)]
-              text-[11px]
-              font-extrabold
-              uppercase
-              tracking-wide
-              text-white
-              no-underline
-              transition-colors
-              hover:text-[#1383ec]
-            "
+            className="inline-flex w-fit items-center gap-2 font-[var(--font-inter)] text-[11px] font-extrabold uppercase tracking-wide text-white no-underline transition-colors hover:text-[#1383ec]"
           >
             Zobacz wszystkich instruktorów
 

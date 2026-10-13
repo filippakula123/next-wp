@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import * as Dialog from "@radix-ui/react-dialog";
-import { ArrowLeft, ArrowRight, Expand, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Expand, X } from "@/components/site/icons";
 import { galleryPhotos, galleryCategories } from "@/lib/luzik-gallery";
 
 export function GalleryGrid() {

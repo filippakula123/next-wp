@@ -1,4 +1,4 @@
-import { ArrowUpRight, MapPin, Navigation } from "lucide-react";
+import { ArrowUpRight, MapPin, Navigation } from "@/components/site/icons";
 import { getLuzikSiteData } from "@/lib/luzik-settings-server";
 import { luzikContactData } from "@/lib/luzik-contact";
 

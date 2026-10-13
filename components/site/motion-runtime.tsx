@@ -15,6 +15,8 @@ const targets = [
 export function MotionRuntime() {
   const pathname = usePathname();
   useEffect(() => {
+    let cleanup: (() => void) | undefined;
+    function enhance() {
     const main = document.querySelector("main");
     if (!main || typeof IntersectionObserver === "undefined" || typeof Element.prototype.animate !== "function") return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -81,6 +83,15 @@ export function MotionRuntime() {
       observer.disconnect(); mutations.disconnect(); cancelMotion();
       reduced.removeEventListener("change", onPreferenceChange);
       main.removeEventListener("focusin", onFocus);
+    };
+    }
+    const start = () => { cleanup = enhance(); };
+    const idle = typeof window.requestIdleCallback === 'function';
+    const handle = idle ? window.requestIdleCallback(start, { timeout: 1500 }) : window.setTimeout(start, 0);
+    return () => {
+      if (idle) window.cancelIdleCallback(handle);
+      else window.clearTimeout(handle);
+      cleanup?.();
     };
   }, [pathname]);
   return null;

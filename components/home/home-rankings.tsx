@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { ArrowUpRight, Award } from "lucide-react";
+import Image from "@/components/site/static-image";
+import { ArrowUpRight, Award } from "@/components/site/icons";
 
 const rankings = [
   { image: "/luzik/rankings/super-prawo-jazdy.webp", label: "Super Prawo Jazdy", href: "https://www.superprawojazdy.pl/szkola-jazdy-luzik,20823.htm" },

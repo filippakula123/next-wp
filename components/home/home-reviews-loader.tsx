@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Quote } from "lucide-react";
+import { ArrowUpRight, Quote } from "@/components/site/icons";
 import { luzikGoogleReviewsUrl } from "@/lib/luzik-reviews";
 
 const DeferredReviews = dynamic(

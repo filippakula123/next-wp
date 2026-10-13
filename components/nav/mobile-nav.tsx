@@ -33,18 +33,7 @@ export function MobileNav() {
         aria-expanded={open}
         aria-controls="mobile-navigation-dialog"
         onClick={openMenu}
-        className="
-          luzik-mobile-trigger flex
-          h-[42px]
-          w-[46px]
-          items-center
-          justify-center
-          rounded-[2px]
-          border-0
-          bg-[#008bd0]
-          text-white
-          shadow-[0_7px_20px_rgba(0,139,208,0.18)]
-        "
+        className="luzik-mobile-trigger flex h-[42px] w-[46px] items-center justify-center rounded-[2px] border-0 bg-[#008bd0] text-white shadow-[0_7px_20px_rgba(0,139,208,0.18)]"
       >
         <span className="luzik-mobile-burger" aria-hidden="true"><span /><span /><span /></span>
       </button>

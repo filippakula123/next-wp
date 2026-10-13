@@ -1,8 +1,8 @@
 import type { LuzikSiteData } from "@/lib/luzik-settings";
 import { getLuzikSiteData } from "@/lib/luzik-settings-server";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, BookOpen, Check, ChevronDown, ClipboardCheck, HeartPulse, Phone, ShieldCheck } from "lucide-react";
+import Image from "@/components/site/static-image";
+import Link from "@/components/site/site-link";
+import { ArrowRight, BookOpen, Check, ChevronDown, ClipboardCheck, HeartPulse, Phone, ShieldCheck } from "@/components/site/icons";
 import { courseContent, courseHref, coursePresentation, type CourseContent, type CourseId, type SourceBlock, type SourceSection } from "@/lib/luzik-course-details";
 import { formatLuzikPrice, luzikCourses } from "@/lib/luzik-offer";
 import { SubpageCta, SubpageHero } from "./subpage-hero";

@@ -1,8 +1,8 @@
 import { getLuzikSiteData } from "@/lib/luzik-settings-server";
-import Image from "next/image";
+import Image from "@/components/site/static-image";
 import { wordpressImageUnoptimized } from "@/lib/wordpress-media";
-import Link from "next/link";
-import { ArrowLeft, ArrowRight, ChevronRight, Clock3, Phone, Search } from "lucide-react";
+import Link from "@/components/site/site-link";
+import { ArrowLeft, ArrowRight, ChevronRight, Clock3, Phone, Search } from "@/components/site/icons";
 import type { Category, Post } from "@/lib/wordpress.d";
 import { getPostBySlug } from "@/lib/wordpress";
 import { articleImages } from "@/lib/luzik-article-images";

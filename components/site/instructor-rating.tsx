@@ -1,6 +1,6 @@
 "use client";
 import { useId, useState } from 'react';
-import { Star } from 'lucide-react';
+import { Star } from "@/components/site/icons";
 import type { InstructorRating } from '@/lib/luzik-instructor-ratings';
 export function InstructorRatingWidget({ slug, name, initial, connected, voting }: { slug: string; name: string; initial: InstructorRating; connected: boolean; voting: boolean }) {
   const title = useId();

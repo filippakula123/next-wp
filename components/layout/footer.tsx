@@ -1,7 +1,7 @@
 import { getLuzikSiteData } from "@/lib/luzik-settings-server";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Clock3, CreditCard, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import Image from "@/components/site/static-image";
+import Link from "@/components/site/site-link";
+import { ArrowRight, ArrowUpRight, Clock3, CreditCard, Facebook, Instagram, Mail, MapPin, Phone } from "@/components/site/icons";
 import { CopyAccountButton } from "@/components/site/copy-account-button";
 
 interface FooterLink { label: string; href: string }

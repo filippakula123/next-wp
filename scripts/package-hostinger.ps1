@@ -12,7 +12,7 @@ if (Test-Path -LiteralPath $archivePath) { throw "Archive already exists: $archi
 # Ship runtime sources and required build configuration only.
 # Filter deleted Git entries; exclude tooling, tests, private env and generated caches.
 $sourceFiles = @(git -C $projectRoot ls-files --cached --others --exclude-standard | Where-Object {
-    $_ -match '^(app|components|lib|public)/' -or
+    $_ -match '^(app|components|lib|public|patches)/' -or
     $_ -in @('package.json','pnpm-lock.yaml','pnpm-workspace.yaml','next.config.ts','tsconfig.json','postcss.config.js','site.config.ts','.env.example','LICENSE')
 } | Where-Object {
     Test-Path -LiteralPath (Join-Path $projectRoot $_) -PathType Leaf

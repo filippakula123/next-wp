@@ -1,0 +1,5 @@
+@font-face { font-family: LuzikInter; src: url('/luzik/fonts/inter-v1.woff2') format('woff2'); font-style: normal; font-weight: 400 800; font-display: swap; }
+@font-face { font-family: LuzikLexend; src: url('/luzik/fonts/lexend-v1.woff2') format('woff2'); font-style: normal; font-weight: 400 800; font-display: swap; }
+@font-face { font-family: LuzikInterFallback; src: local('Arial'); ascent-override: 90.44%; descent-override: 22.52%; line-gap-override: 0%; size-adjust: 107.12%; }
+@font-face { font-family: LuzikLexendFallback; src: local('Arial'); ascent-override: 90.98%; descent-override: 22.74%; line-gap-override: 0%; size-adjust: 109.91%; }
+:root { --font-inter: LuzikInter, LuzikInterFallback, sans-serif; --font-lexend: LuzikLexend, LuzikLexendFallback, sans-serif; }

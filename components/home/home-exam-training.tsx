@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { ArrowRight, MapPin, Route } from "lucide-react";
+import Link from "@/components/site/site-link";
+import { ArrowRight, MapPin, Route } from "@/components/site/icons";
 
 const routes = [
   { title: "Domaszowska · okolice WORD", text: "Włączanie się do ruchu, obserwacja znaków i pierwsze decyzje za kierownicą." },

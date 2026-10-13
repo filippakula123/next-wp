@@ -1,6 +1,6 @@
 import { getLuzikSiteData } from "@/lib/luzik-settings-server";
-import Link from "next/link";
-import { ArrowRight, BookOpen, CarFront, Check, Clock3, WalletCards } from "lucide-react";
+import Link from "@/components/site/site-link";
+import { ArrowRight, BookOpen, CarFront, Check, Clock3, WalletCards } from "@/components/site/icons";
 
 import { formatLuzikPrice } from "@/lib/luzik-offer";
 import { SchoolTeam } from "./school-team";

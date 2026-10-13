@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
-import { CalendarDays, ChevronRight } from "lucide-react";
+import Image from "@/components/site/static-image";
+import Link from "@/components/site/site-link";
+import { CalendarDays, ChevronRight } from "@/components/site/icons";
 
 import { getPostsPaginated } from "@/lib/wordpress";
 import { blogText, postHref } from "@/lib/luzik-blog";
