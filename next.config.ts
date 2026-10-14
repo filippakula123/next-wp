@@ -20,6 +20,8 @@ if (
 }
 
 const nextConfig: NextConfig = {
+  // Keep prerendering from flooding the shared WordPress hosting with requests.
+  experimental: { cpus: 1, staticGenerationMaxConcurrency: 1 },
   poweredByHeader: false,
   htmlLimitedBots: metadataCrawlerPattern,
   images: {

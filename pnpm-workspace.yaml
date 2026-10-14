@@ -1,5 +1,8 @@
 packages:
   - "."
+# Hostinger can invoke a different pnpm patch through Corepack during builds.
+# Keep the lockfile and package pin, but allow that runner with a warning.
+pmOnFail: warn
 # Hosted builds cannot answer interactive prompts after dependency staging.
 confirmModulesPurge: false
 # Use real package directories so the hosting runtime can relocate dependencies.
