@@ -1,0 +1,426 @@
+{
+  "base": "http://localhost:3001",
+  "checkedAt": "2026-10-09T16:12:10.780Z",
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "title": "Szkoła Jazdy Kielce Luzik - nauka na prawo jazdy Kielce!",
+      "failures": []
+    },
+    {
+      "path": "/kursy-prawa-jazdy",
+      "status": 200,
+      "title": "Kursy prawa jazdy w szkole jazdy Luzik Kielce - zapraszamy!",
+      "failures": []
+    },
+    {
+      "path": "/kursy-prawa-jazdy-kategorii-b",
+      "status": 200,
+      "title": "Kurs na prawo jazdy kat. B Kielce Szkoła nr 1 – Luzik",
+      "failures": []
+    },
+    {
+      "path": "/kursy-prawa-jazdy-kategorii-b-automat",
+      "status": 200,
+      "title": "Kursy prawa jazdy kategorii B automat",
+      "failures": []
+    },
+    {
+      "path": "/kursy-prawa-jazdy-kategorii-a",
+      "status": 200,
+      "title": "Kursy prawa jazdy kategorii A",
+      "failures": []
+    },
+    {
+      "path": "/kursy-prawa-jazdy-kategorii-a1",
+      "status": 200,
+      "title": "Kursy prawa jazdy kategorii A1",
+      "failures": []
+    },
+    {
+      "path": "/kursy-prawa-jazdy-kategorii-a2",
+      "status": 200,
+      "title": "Kursy prawa jazdy kategorii A2",
+      "failures": []
+    },
+    {
+      "path": "/kursy-prawa-jazdy-kategorii-am",
+      "status": 200,
+      "title": "Kursy prawa jazdy kategorii AM",
+      "failures": []
+    },
+    {
+      "path": "/jazdy-doszkalajace",
+      "status": 200,
+      "title": "Jazdy doszkalające w Kielcach - kat. B i B automat",
+      "failures": []
+    },
+    {
+      "path": "/badania-lekarskie-na-prawo-jazdy-kielce",
+      "status": 200,
+      "title": "Badania lekarskie na prawo jazdy Kielce - jak zrobić w 2026 ?",
+      "failures": []
+    },
+    {
+      "path": "/cennik",
+      "status": 200,
+      "title": "Cennik - Szkoła jazdy Luzik Kielce",
+      "failures": []
+    },
+    {
+      "path": "/o-nas",
+      "status": 200,
+      "title": "O nas",
+      "failures": []
+    },
+    {
+      "path": "/szkola-jazdy-luzik-instruktorzy",
+      "status": 200,
+      "title": "Instruktorzy nauki jazdy - Szkoła jazdy Luzik Kielce Poznaj nas!",
+      "failures": []
+    },
+    {
+      "path": "/kontakt",
+      "status": 200,
+      "title": "Kontakt",
+      "failures": []
+    },
+    {
+      "path": "/galeria",
+      "status": 200,
+      "title": "Galeria",
+      "failures": []
+    },
+    {
+      "path": "/blog",
+      "status": 200,
+      "title": "Blog",
+      "failures": []
+    },
+    {
+      "path": "/polityka-prywatnosci",
+      "status": 200,
+      "title": "Polityka prywatności",
+      "failures": []
+    },
+    {
+      "path": "/okres-probny-dla-mlodych-kierowcow-2026",
+      "status": 200,
+      "title": "Okres próbny dla młodych kierowców 2026. Nowe przepisy od 3 września",
+      "failures": []
+    },
+    {
+      "path": "/kiss-and-ride-k-r-przepisy-znaki-postoj-mandat",
+      "status": 200,
+      "title": "Kiss and Ride (K+R) - co to jest, przepisy, znaki i czas postoju",
+      "failures": []
+    },
+    {
+      "path": "/parkowanie-prostopadle-techniki-i-wskazowki",
+      "status": 200,
+      "title": "Parkowanie prostopadłe: techniki, zasady i błędy",
+      "failures": []
+    },
+    {
+      "path": "/zapisy-na-egzamin-na-prawo-jazdy-word-kielce",
+      "status": 200,
+      "title": "Zapisy na egzamin na prawo jazdy WORD Kielce 2026",
+      "failures": []
+    },
+    {
+      "path": "/profil-kandydata-na-kierowce-pkk-co-to-jest-i-jak-go-uzyskac",
+      "status": 200,
+      "title": "Profil kandydata na kierowcę (PKK) – co to jest i jak go uzyskać?",
+      "failures": []
+    },
+    {
+      "path": "/egzamin-wewnetrzny-praktyczny-i-teoretyczny-na-prawo-jazdy-jak-wyglada-i-czy-trzeba-go-zdac",
+      "status": 200,
+      "title": "Egzamin wewnętrzny praktyczny i teoretyczny na prawo jazdy – jak wygląda i czy trzeba go zdać? - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/prawo-jazdy-od-17-lat-i-zmiany-przepisow-od-2026-roku",
+      "status": 200,
+      "title": "Prawo jazdy od 17 lat i zmiany przepisów od 2026 roku - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/egzamin-wewnetrzny-praktyczny-i-teoretyczny-na-prawo-jazdy-jak-wyglada-i-czy-trzeba-go-zdac-2",
+      "status": 200,
+      "title": "Egzamin wewnętrzny praktyczny i teoretyczny na prawo jazdy – jak wygląda i czy trzeba go zdać? - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/egzamin-na-prawo-jazdy-kategorii-b-przewodnik-2026",
+      "status": 200,
+      "title": "Egzamin na prawo jazdy kategorii B: Przewodnik 2026",
+      "failures": []
+    },
+    {
+      "path": "/egzamin-teoretyczny-na-prawo-jazdy-ile-trwa-egzamin-i-jak-wyglada",
+      "status": 200,
+      "title": "Jak wygląda egzamin teoretyczny na prawo jazdy 2026? - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/parkowanie-rownolegle-jak-wykonac-je-poprawnie",
+      "status": 200,
+      "title": "Parkowanie równoległe jak wykonać je poprawnie? - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/czym-rondo-turbinowe-rozni-sie-od-zwyklego",
+      "status": 200,
+      "title": "Czym rondo turbinowe różni się od zwykłego? - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/skrzyzowanie-rownorzedne-zasady-i-praktyka",
+      "status": 200,
+      "title": "Skrzyżowanie równorzędne – zasady, pierwszeństwo, znaki 2026",
+      "failures": []
+    },
+    {
+      "path": "/jak-zdac-egzamin-na-prawo-jazdy",
+      "status": 200,
+      "title": "Jak zdać egzamin na prawo jazdy? - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/team/instruktor-nauki-jazdy-arek",
+      "status": 200,
+      "title": "Instruktor nauki jazdy Arek | Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/team/instruktor-nauki-jazdy-kategoria-b-i-b-automat-mariola",
+      "status": 200,
+      "title": "Instruktor nauki jazdy kategoria B i B automat Mariola Jaros",
+      "failures": []
+    },
+    {
+      "path": "/team/instruktor-nauki-jazdy-kategoria-b-kacper-jaros",
+      "status": 200,
+      "title": "Instruktor nauki jazdy kategoria B Kacper Jaros",
+      "failures": []
+    },
+    {
+      "path": "/team/instruktor-nauki-jazdy-kategoria-b-sandra-baczek",
+      "status": 200,
+      "title": "Instruktor nauki jazdy kategoria B – Sandra Bączek | Szkoła Jazdy Luzik Kielce",
+      "failures": []
+    },
+    {
+      "path": "/team/instruktor-nauki-jazdy-kategoria-b-oskar",
+      "status": 200,
+      "title": "Instruktor nauki jazdy kategoria B Oskar | Szkoła jazdy Luzik Kielce",
+      "failures": []
+    },
+    {
+      "path": "/team/instruktor-nauki-jazdy-kategorii-b-zbigniew-zadlo",
+      "status": 200,
+      "title": "Instruktor nauki jazdy kategorii B - Zbigniew Żądło Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/team/mariola-jaros",
+      "status": 200,
+      "title": "Mariola Jaros - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/team/karolina-jaros-specjalistka-ds-floty-samochodowej",
+      "status": 200,
+      "title": "Karolina Jaros specjalistka ds. floty samochodowej Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/odbior-prawa-jazdy-w-polsce",
+      "status": 200,
+      "title": "Odbiór prawa jazdy w Polsce - dokumenty, terminy i opłaty 2026",
+      "failures": []
+    },
+    {
+      "path": "/wniosek-o-wydanie-prawa-jazdy-2026",
+      "status": 200,
+      "title": "Wniosek o wydanie prawa jazdy: kompletny przewodnik 2026",
+      "failures": []
+    },
+    {
+      "path": "/parkowanie-na-wzniesieniu",
+      "status": 200,
+      "title": "Parkowanie na wzniesieniu: Jak bezpiecznie zostawić auto?",
+      "failures": []
+    },
+    {
+      "path": "/kierunkowskazy-na-rondzie",
+      "status": 200,
+      "title": "Kierunkowskazy na rondzie – zasady, przepisy i błędy",
+      "failures": []
+    },
+    {
+      "path": "/blog?page=2",
+      "status": 200,
+      "title": "Blog — strona 2",
+      "failures": []
+    },
+    {
+      "path": "/blog?page=5",
+      "status": 200,
+      "title": "Blog — strona 5",
+      "failures": []
+    },
+    {
+      "path": "/jak-wyglada-egzamin-teoretyczny-na-prawo-jazdy-2026",
+      "status": 200,
+      "title": "Jak wygląda egzamin teoretyczny na prawo jazdy 2026? - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/ile-razy-mozna-zdawac-egzamin-na-prawo-jazdy",
+      "status": 200,
+      "title": "Ile razy można zdawać egzamin na prawo jazdy? - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/wada-wzroku-a-prawo-jazdy-najwazniejsze-informacje-dla-przyszlych-kierowcow",
+      "status": 200,
+      "title": "Wada wzroku a prawo jazdy – najważniejsze informacje dla przyszłych kierowców - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/badanie-wzroku-na-prawo-jazdy-na-czym-polega-i-kiedy-je-wykonac",
+      "status": 200,
+      "title": "Badanie wzroku na prawo jazdy – na czym polega i kiedy je wykonać? - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/jazda-na-suwak-na-czym-polega",
+      "status": 200,
+      "title": "Jazda na suwak – na czym polega? - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/kiedy-tramwaj-ma-pierwszenstwo",
+      "status": 200,
+      "title": "Kiedy tramwaj ma pierwszeństwo? - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/ile-wazny-jest-egzamin-teoretyczny-na-prawo-jazdy-w-2026-roku",
+      "status": 200,
+      "title": "ile ważny jest egzamin teoretyczny na prawo jazdy w 2026?",
+      "failures": []
+    },
+    {
+      "path": "/dopuszczalne-bledy-na-egzaminie-praktycznym-na-prawo-jazdy",
+      "status": 200,
+      "title": "Dopuszczalne błędy na egzaminie praktycznym na prawo jazdy - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/centralna-ewidencja-pojazdow-i-kierowcow-cepik",
+      "status": 200,
+      "title": "CEPiK – co to jest i jakie dane zawiera? | Szkoła jazdy Luzik",
+      "failures": []
+    },
+    {
+      "path": "/nowe-przepisy-drogowe-2026-06-03",
+      "status": 200,
+      "title": "Nowe przepisy drogowe 2026. Jak nie stracić prawa jazdy w kilka minut?",
+      "failures": []
+    },
+    {
+      "path": "/czy-mozna-rozpoczac-nauke-jazdy-i-zdac-egzamin-na-prawo-jazdy-przed-18-rokiem-zycia",
+      "status": 200,
+      "title": "Czy można rozpocząć naukę jazdy i zdać egzamin na prawo jazdy przed 18. rokiem życia? - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/rewolucja-na-polskich-drogach-co-zmienia-sie-w-przepisach-ruchu-drogowego-w-2026-roku",
+      "status": 200,
+      "title": "Rewolucja na polskich drogach – co zmienia się w przepisach ruchu drogowego w 2026 roku? - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/ile-naprawde-trwa-egzamin-praktyczny-na-prawo-jazdy-i-dlaczego-czas-to-nie-wszystko",
+      "status": 200,
+      "title": "Ile naprawdę trwa egzamin praktyczny na prawo jazdy – i dlaczego czas to nie wszystko? - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/jazda-bez-prawa-jazdy-w-2025-roku-jaka-kara-ci-za-nia-grozi",
+      "status": 200,
+      "title": "Jazda bez prawa jazdy w 2025 roku – jaka kara Ci za nią grozi? - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/rodzaje-paliwa-kompleksowy-przewodnik",
+      "status": 200,
+      "title": "Rodzaje paliwa: kompleksowy przewodnik - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/warunki-techniczne-dopuszczenia-pojazdu-do-ruchu",
+      "status": 200,
+      "title": "Warunki techniczne dopuszczenia pojazdu do ruchu - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/blog?page=3",
+      "status": 200,
+      "title": "Blog — strona 3",
+      "failures": []
+    },
+    {
+      "path": "/blog?page=4",
+      "status": 200,
+      "title": "Blog — strona 4",
+      "failures": []
+    },
+    {
+      "path": "/droga-definicja-rodzaje-i-elementy",
+      "status": 200,
+      "title": "Droga – definicja, rodzaje i elementy - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/zmiany-w-egzaminie-na-prawo-jazdy-do-1-lipca-2025-roku-sprawdz-co-sie-zmienilo",
+      "status": 200,
+      "title": "Zmiany w egzaminie na prawo jazdy do 1 lipca 2025 roku – sprawdź co się zmieniło - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/swiatla-kolizyjne-i-bezkolizyjne-roznice-w-sygnalizacji-swietlnej",
+      "status": 200,
+      "title": "Światła kolizyjne i bezkolizyjne – różnice w sygnalizacji świetlnej - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/obowiazkowe-wyposazenie-samochodu-co-zawiera",
+      "status": 200,
+      "title": "Obowiązkowe wyposażenie samochodu – co zawiera - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/zielona-strzalka-na-sygnalizatorze-co-oznacza",
+      "status": 200,
+      "title": "Zielona strzałka na sygnalizatorze – co oznacza? - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    },
+    {
+      "path": "/zmiana-biegow-w-samochodzie-krok-po-kroku",
+      "status": 200,
+      "title": "Zmiana biegów w samochodzie – krok po kroku - Szkoła Jazdy Kielce Luzik",
+      "failures": []
+    }
+  ],
+  "failures": [],
+  "crawl": {
+    "pages": 69,
+    "assets": 67,
+    "fragments": 792
+  }
+}

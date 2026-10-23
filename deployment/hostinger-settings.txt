@@ -1,0 +1,32 @@
+USTAWIENIA HOSTINGERA — PIERWSZE WDROZENIE TESTOWE
+Dodaj nowa strone > Web App / Node.js > przeslij luzik-hostinger-v4.zip.
+Framework: Next.js (aplikacja serwerowa, nie eksport statyczny).
+Node.js: 22.x lub 24.x (projekt wymaga minimum 22.13).
+Menedzer pakietow: pnpm; wersja w package.json: 11.20.0.
+Instalacja: pnpm install --frozen-lockfile
+Build: pnpm build
+Start: pnpm start
+Root directory: katalog glowny ZIP; output directory: .next.
+
+ZMIENNE SRODOWISKOWE (wpisz w panelu przed kompilacja):
+WORDPRESS_URL=https://darkred-anteater-756144.hostingersite.com
+WORDPRESS_HOSTNAME=darkred-anteater-756144.hostingersite.com
+WORDPRESS_CACHE_DISABLED=false
+CI=true
+NEXT_PUBLIC_SITE_URL=https://mediumslateblue-porpoise-987005.hostingersite.com
+SITE_INDEXABLE=false
+BLOG_INDEXABLE=false
+WORDPRESS_WEBHOOK_SECRET="F480281C40832D3C5EC56E488A6BF1DC9C7768CAFE16B282CF5B66BFA835105D"
+GOOGLE_PLACES_API_KEY=
+
+Zmienna NEXT_PUBLIC_SITE_URL musi zawierac faktyczny adres frontendu, nie WordPressa.
+Jesli adres testowy otrzymasz dopiero po wdrozeniu, uzupelnij go i wykonaj ponowny build.
+Opinie Google bez klucza pokazuja odnosnik do wizytowki.
+Formularze nadal otwieraja aplikacje pocztowa; automatyczna wysylka wymaga osobnej integracji.
+
+Po wdrozeniu: WordPress > Ustawienia > Next.js Revalidation > adres nowego frontendu.
+Sekret we wtyczce musi byc taki sam jak WORDPRESS_WEBHOOK_SECRET powyzej.
+Ten plik zawiera sekret: nie wrzucaj go do ZIP, repozytorium ani publicznego katalogu.
+
+
+
