@@ -81,7 +81,7 @@ export async function Footer() {
         <div className="luzik-footer-bottom">
           <p>© {currentYear} Szkoła Jazdy Luzik.</p>
           <Link href="/polityka-prywatnosci">Polityka prywatności</Link>
-          <p className="luzik-footer-credit">Projekt strony <span translate="no">Business HERO</span></p>
+          <p className="luzik-footer-credit">Projekt i wykonanie od podstaw: <a href="https://arribamedia.pl" target="_blank" rel="noopener noreferrer"><span translate="no">Arriba Media</span></a></p>
         </div>
       </div>
     </footer>
