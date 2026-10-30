@@ -1,0 +1,31 @@
+UZUPEŁNIENIE BLOGA I PUBLICZNEGO WIDOKU CMS — 29.10.2026
+
+Wykonane przez wbudowaną przeglądarkę:
+- Opublikowano pozostałe 11 brakujących wpisów w WordPressie.
+- Ustawiono tytuły, uproszczone nazwy zgodne z oryginałem, kategorię Baza Wiedzy, zajawki i obrazki wyróżniające.
+- Uzupełniono frazy kluczowe, tytuły SEO i opisy meta w Rank Math.
+- Naprawiono 8 odnośników file:///C:/ w pierwszym wpisie dodanym przez użytkownika.
+- Uzupełniono brakujący tytuł SEO, opis i zajawkę pierwszego wpisu, zachowując jego frazy kluczowe.
+- Zachowano wszystkie 7 tabel z osobnych elementów HTML oryginału w 6 artykułach.
+
+Weryfikacja:
+- WordPress: 50 opublikowanych wpisów, bez pozostawionych szkiców nowych artykułów.
+- Blog Next.js: 50 artykułów.
+- Sprawdzono każdy z 11 dodanych wpisów na stronie Next.js: wszystkie fragmenty tekstu obecne, liczba tabel zgodna z oryginałem, brak lokalnych odnośników file://.
+- Potwierdzono tytuły SEO odczytane z Rank Math na stronie Next.js.
+- Potwierdzono działanie obrazu i artykułu o autostradzie w przeglądarce.
+- Sprawdzono publiczną stronę główną CMS i adres przykładowego wpisu: oba pokazują tylko komunikat CMS, bez listy wpisów i bez motywu WordPressa.
+- Panel administracyjny działa. Pobieranie treści przez Next.js działa po zmianie publicznego widoku CMS.
+
+Publiczna strona:
+https://mediumslateblue-porpoise-987005.hostingersite.com/blog
+
+CMS:
+https://darkred-anteater-756144.hostingersite.com/
+
+Wdrożenie widoku CMS:
+public_html/wp-content/mu-plugins/luzik-headless.php
+Kopia w projekcie: wordpress/luzik-headless/luzik-headless.php
+Sprawdzono składnię przy użyciu php -l przed wysłaniem przez menedżer plików Hostingera.
+
+Treści pochodzą z oryginalnego bloga, bez osobnej aktualizacji merytorycznej. Nowe wpisy opublikowano z datą 29.10.2026; datę wpisu dodanego przez użytkownika zachowano.

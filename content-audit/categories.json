@@ -1,0 +1,17 @@
+[
+  {
+    "id": 32,
+    "name": "Baza Wiedzy",
+    "slug": "baza-wiedzy"
+  },
+  {
+    "id": 2,
+    "name": "Driving Tips",
+    "slug": "driving-tips"
+  },
+  {
+    "id": 1,
+    "name": "Uncategorized",
+    "slug": "uncategorized"
+  }
+]

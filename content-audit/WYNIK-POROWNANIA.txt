@@ -1,0 +1,80 @@
+PORÓWNANIE BLOGÓW LUZIKA — 28.10.2026
+
+Źródła:
+https://luzikkielce.pl/wp-json/wp/v2/posts?per_page=100
+https://darkred-anteater-756144.hostingersite.com/wp-json/wp/v2/posts?per_page=100
+https://mediumslateblue-porpoise-987005.hostingersite.com/blog (strony 1–5)
+
+Wynik: oryginał 50 wpisów, obecny WordPress 38 wpisów. Wszystkie 38 wpisów potwierdzono w odnośnikach na 5 stronach obecnego bloga. Brakuje 12 wpisów z 20–22.10.2026.
+
+Starszy wpis o teorii egzaminacyjnej jest już obecny pod inną nazwą. Porównanie: 30/30 długich akapitów zgodnych (próg podobieństwa 94%). Nie należy dodawać duplikatu.
+Oryginał: /egzamin-teoretyczny-na-prawo-jazdy-ile-trwa-egzamin-i-jak-wyglada/
+Obecnie: /jak-wyglada-egzamin-teoretyczny-na-prawo-jazdy-2026
+
+BRAKUJĄCE WPISY:
+
+1. Jazda automatem: 9 błędów początkujących i jak ich unikać. Poradnik Luzika
+Data oryginału: 2026-10-22T13:22:48
+Uproszczona nazwa: jazda-automatem-bledy-poczatkujacych
+Źródło: https://luzikkielce.pl/jazda-automatem-bledy-poczatkujacych/
+
+2. Hyundai i20 przed egzaminem. Światła, płyny i przygotowanie do jazdy
+Data oryginału: 2026-10-22T13:00:27
+Uproszczona nazwa: hyundai-i20-swiatla-plyny-egzamin
+Źródło: https://luzikkielce.pl/hyundai-i20-swiatla-plyny-egzamin/
+
+3. Zmiana szkoły jazdy w trakcie kursu. Jak przenieść naukę do innego OSK?
+Data oryginału: 2026-10-22T12:46:13
+Uproszczona nazwa: zmiana-szkoly-jazdy-w-trakcie-kursu
+Źródło: https://luzikkielce.pl/zmiana-szkoly-jazdy-w-trakcie-kursu/
+
+4. Powrót za kierownicę po kilku latach. Jak zacząć ponownie jeździć w Kielcach?
+Data oryginału: 2026-10-22T11:22:40
+Uproszczona nazwa: powrot-za-kierownice-po-latach-kielce
+Źródło: https://luzikkielce.pl/powrot-za-kierownice-po-latach-kielce/
+
+5. Kurs prawa jazdy jesienią i zimą w Kielcach. Zaczynać teraz czy czekać do wiosny?
+Data oryginału: 2026-10-22T10:56:06
+Uproszczona nazwa: kurs-prawa-jazdy-jesienia-zima-kielce
+Źródło: https://luzikkielce.pl/kurs-prawa-jazdy-jesienia-zima-kielce/
+
+6. Jak wybrać szkołę jazdy w Kielcach? 10 pytań, które warto zadać przed zapisem
+Data oryginału: 2026-10-22T10:31:29
+Uproszczona nazwa: jak-wybrac-szkole-jazdy-kielce
+Źródło: https://luzikkielce.pl/jak-wybrac-szkole-jazdy-kielce/
+
+7. Jak przygotować samochód do zimy – Poradnik Luzika
+Data oryginału: 2026-10-22T09:47:46
+Uproszczona nazwa: jak-przygotowac-samochod-do-zimy
+Źródło: https://luzikkielce.pl/jak-przygotowac-samochod-do-zimy/
+
+8. Jak ustawić trójkąt ostrzegawczy? Odległości i plan działania po awarii
+Data oryginału: 2026-10-21T09:22:04
+Uproszczona nazwa: jak-ustawic-trojkat-ostrzegawczy
+Źródło: https://luzikkielce.pl/jak-ustawic-trojkat-ostrzegawczy/
+
+9. Sygnalizacja świetlna: jak czytać światła i bezpiecznie przejechać skrzyżowanie?
+Data oryginału: 2026-10-21T09:21:18
+Uproszczona nazwa: sygnalizacja-swietlna-znaczenie-i-zasady-jazdy
+Źródło: https://luzikkielce.pl/sygnalizacja-swietlna-znaczenie-i-zasady-jazdy/
+
+10. Prawo jazdy na automat w Kielcach. Kurs, egzamin i kod 78
+Data oryginału: 2026-10-20T13:55:59
+Uproszczona nazwa: prawo-jazdy-na-automat-kielce-kurs-egzamin-i-kod-78
+Źródło: https://luzikkielce.pl/prawo-jazdy-na-automat-kielce-kurs-egzamin-i-kod-78/
+
+11. Jazdy doszkalające w Kielcach. Dla kogo są i co warto przećwiczyć?
+Data oryginału: 2026-10-20T13:15:57
+Uproszczona nazwa: jazdy-doszkalajace-w-kielcach
+Źródło: https://luzikkielce.pl/jazdy-doszkalajace-w-kielcach/
+
+12. Minimalna i maksymalna prędkość na autostradzie. Jak jechać zgodnie z przepisami?
+Data oryginału: 2026-10-20T11:32:11
+Uproszczona nazwa: minimalna-i-maksymalna-predkosc-na-autostradzie
+Źródło: https://luzikkielce.pl/minimalna-i-maksymalna-predkosc-na-autostradzie/
+
+INSTRUKCJA: Otwórz GOTOWE-WPISY.html. Każdy wpis ma przycisk kopiowania treści do Gutenberga, tytuł, uproszczoną nazwę, kategorię, datę i odnośnik do obrazka wyróżniającego.
+Alternatywa: pliki .gutenberg.html zawierają kod bloków do edytora kodu Gutenberga; pliki .txt to zapasowa wersja tekstowa.
+Teksty pochodzą z oryginalnego bloga. Zachowano całą treść nagłówków i edytorów tekstu; sprawdzono zgodność tekstu po usunięciu formatowania. Usunięto układ Elementora, automatyczny spis treści, banery i obrazy w treści. Zachowano końcowe wezwania do kontaktu, FAQ i źródła. Linki wewnętrzne zmieniono na ścieżki obecnej strony.
+Nie przeprowadzano aktualizacji ani odrębnej weryfikacji merytorycznej przepisów lub porad. To przygotowanie materiałów do migracji.
+Materiały nie zostały opublikowane w WordPressie.
