@@ -1,288 +1,101 @@
 "use client";
-import { useLuzikSettings } from "@/components/site/luzik-settings-provider";
 
-import { useState } from "react";
+import { useEffect, useState, type CSSProperties, type RefObject } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-
 import Link from "@/components/site/site-link";
 import { usePathname } from "next/navigation";
-
-import {
-  ChevronDown,
-  ChevronRight,
-  Facebook,
-  Instagram,
-  Phone,
-  X,
-} from "@/components/site/icons";
-
+import { ArrowRight, ArrowUpRight, Facebook, Instagram, Phone } from "@/components/site/icons";
 import { LuzikLogo } from "@/components/layout/luzik-logo";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
+import { useLuzikSettings } from "@/components/site/luzik-settings-provider";
+import { NavigationGroups, NavigationVehicleIcon } from "@/components/nav/navigation-groups";
+import { luzikNavigation } from "@/lib/luzik-navigation";
 
-import {
-  luzikNavigation,
-} from "@/lib/luzik-navigation";
-
-interface MobileNavDialogProps {
+type MobileNavDialogProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-}
+  session: number;
+  triggerRef: RefObject<HTMLButtonElement | null>;
+};
 
-export function MobileNavDialog({ open, onOpenChange }: MobileNavDialogProps) {
-  const { header: luzikHeaderData } = useLuzikSettings();
+export function MobileNavDialog({ open, onOpenChange, session, triggerRef }: MobileNavDialogProps) {
+  const { header } = useLuzikSettings();
   const pathname = usePathname();
+  const [expandedGroup, setExpandedGroup] = useState<{ session: number; href: string } | null>(null);
+  const expandedItem = expandedGroup?.session === session ? expandedGroup.href : null;
 
-  const [expandedItem, setExpandedItem] =
-    useState<string | null>(null);
+  function closeMenu() { onOpenChange(false); }
 
-  function closeMenu() {
-    onOpenChange(false);
-  }
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1280px)");
+    const onResize = () => { if (desktop.matches) onOpenChange(false); };
+    desktop.addEventListener("change", onResize);
+    return () => desktop.removeEventListener("change", onResize);
+  }, [onOpenChange]);
 
-  return (
-    <Dialog.Root open={open} onOpenChange={nextOpen => {
-      if (!nextOpen) closeMenu();
-      else { setExpandedItem(null); onOpenChange(true); }
-    }}>
-      {/* ================================================== */}
-      {/* OVERLAY                                             */}
-      {/* ================================================== */}
-
-      <Dialog.Portal>
-        <Dialog.Overlay className="luzik-mobile-overlay fixed inset-0 z-[200] bg-black/60 backdrop-blur-[2px]" />
-        <Dialog.Content asChild aria-describedby={undefined}>
-          {/* ================================================== */}
-          {/* PANEL                                             */}
-          {/* ================================================== */}
-
-          <aside
-            id="mobile-navigation-dialog"
-            className="luzik-mobile-panel fixed z-[201] right-0 top-0 flex h-full w-[390px] max-w-[calc(100vw-20px)] flex-col overflow-hidden bg-[#111214] shadow-[-20px_0_60px_rgba(0,0,0,0.3)] max-[480px]:w-[calc(100vw-10px)]"
-          >
-            <Dialog.Title className="sr-only">Menu główne</Dialog.Title>
-            {/* HEADER */}
-
-            <div className="luzik-mobile-heading relative flex h-[105px] shrink-0 items-center border-b border-white/[0.08] px-7">
-              <LuzikLogo />
-
-              <button
-                type="button"
-                onClick={closeMenu}
-                aria-label="Zamknij menu"
-                className="luzik-mobile-close ml-auto flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-colors hover:bg-white/10"
-              >
-                <X size={20} />
+  return <Dialog.Root open={open} onOpenChange={onOpenChange}>
+    <Dialog.Portal>
+      <Dialog.Overlay className="luzik-mobile-overlay" />
+      <Dialog.Content asChild aria-describedby={undefined} onCloseAutoFocus={event => {
+        event.preventDefault();
+        triggerRef.current?.focus();
+      }}>
+        <aside id="mobile-navigation-dialog" className="luzik-mobile-panel" onPointerMove={event => {
+          if (event.pointerType !== "mouse" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+          const bounds = event.currentTarget.getBoundingClientRect();
+          event.currentTarget.style.setProperty("--glow-x", `${(event.clientX / bounds.width - .5) * 30}px`);
+          event.currentTarget.style.setProperty("--glow-y", `${(event.clientY / bounds.height - .5) * 30}px`);
+        }}>
+          <div className="luzik-mobile-glow" aria-hidden="true" />
+          <div className="luzik-mobile-heading">
+            <div onClick={closeMenu}><LuzikLogo /></div>
+            <Dialog.Close asChild>
+              <button type="button" aria-label="Zamknij menu" className="luzik-mobile-close">
+                <span className="luzik-mobile-burger" aria-hidden="true"><span /><span /><span /></span>
               </button>
-            </div>
-
-            {/* CTA */}
-
-            <div className="luzik-mobile-cta-wrap border-b border-white/[0.08] p-5">
-              <Link
-                href={luzikHeaderData.registrationHref}
-                onClick={closeMenu}
-                className="luzik-mobile-cta flex h-[50px] items-center justify-center rounded-[2px] bg-[#008bd0] font-[var(--font-inter)] text-[12px] font-extrabold uppercase tracking-wide text-white no-underline"
-              >
-                Zapisz się na kurs
-              </Link>
-            </div>
-
-            {/* NAVIGATION */}
-
-            <nav aria-label="Nawigacja mobilna" className="luzik-mobile-navigation min-h-0 flex-1 overflow-y-auto">
-              <ul className="m-0 list-none p-0">
-                {luzikNavigation.map(
-                  (item) => {
-                    const active =
-                      pathname === item.href ||
-                      (item.href === "/blog" && pathname.startsWith("/posts/")) ||
-                      item.children?.some(child => pathname === child.href) ||
-                      pathname.startsWith(
-                        `${item.href}/`,
-                      );
-
-                    const expanded =
-                      expandedItem === item.href;
-
-                    return (
-                      <li
-                        key={item.href}
-                        className="luzik-mobile-item border-b border-white/[0.08]"
-                      >
-                        <div className="flex min-h-[55px] items-center">
-                          <Link
-                            href={item.href}
-                            onClick={closeMenu}
-                            aria-current={pathname === item.href ? "page" : undefined}
-                            className={`
-                              luzik-mobile-link flex
-                              min-w-0
-                              flex-1
-                              items-center
-                              px-6
-                              py-4
-                              font-[var(--font-inter)]
-                              text-[13px]
-                              font-extrabold
-                              uppercase
-                              tracking-wide
-                              no-underline
-                              ${
-                                active
-                                  ? "text-[#008bd0]"
-                                  : "text-white"
-                              }
-                            `}
-                          >
-                            {item.label}
+            </Dialog.Close>
+          </div>
+          <div className="luzik-mobile-scroll">
+            <div className="luzik-mobile-intro"><span>Nawigacja · Luzik Kielce</span><Dialog.Title>Gdzie teraz<span>?</span></Dialog.Title><p>Wybierz kierunek. Reszta na luzie.</p></div>
+            <nav aria-label="Nawigacja mobilna">
+              <ul className="luzik-mobile-list">
+                {luzikNavigation.map((item, index) => {
+                  const active = pathname === item.href || pathname.startsWith(`${item.href}/`) ||
+                    (item.href === "/blog" && pathname.startsWith("/posts/")) ||
+                    item.children?.some(child => pathname === child.href);
+                  const expanded = expandedItem === item.href;
+                  const label = <><span className="luzik-mobile-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>{item.vehicle && <span className="luzik-mobile-vehicle-icon" data-vehicle={item.vehicle}><NavigationVehicleIcon vehicle={item.vehicle} /></span>}<span className="luzik-mobile-label">{item.label}</span><ArrowUpRight className="luzik-mobile-arrow" size={23} aria-hidden="true" /></>;
+                  return <li key={item.id ?? item.href} style={{ "--item-index": index } as CSSProperties}>
+                    {item.children ? <>
+                      <button type="button" className="luzik-mobile-item" aria-expanded={expanded}
+                        aria-controls={`mobile-nav-${item.id ?? item.href.slice(1)}`} data-active={active || undefined}
+                        onClick={() => setExpandedGroup(expanded ? null : { session, href: item.href })}>
+                        {label}
+                      </button>
+                      <div id={`mobile-nav-${item.id ?? item.href.slice(1)}`} className="luzik-mobile-submenu" data-expanded={expanded} inert={!expanded} aria-hidden={!expanded}>
+                        <div className="luzik-mobile-submenu-clip"><div className="luzik-mobile-submenu-content">
+                          <NavigationGroups item={item} pathname={pathname} onNavigate={closeMenu} />
+                          <Link href={item.href} onClick={closeMenu} className="luzik-mobile-overview">
+                            {item.overviewLabel ?? (item.groups ? "Zobacz wszystkie kursy" : "O naszej szkole")}<ArrowRight size={16} aria-hidden="true" />
                           </Link>
-
-                          {item.children && (
-                            <button
-                              type="button"
-                              aria-label={
-                                expanded
-                                  ? `Zwiń ${item.label}`
-                                  : `Rozwiń ${item.label}`
-                              }
-                              aria-expanded={
-                                expanded
-                              }
-                              aria-controls={`mobile-submenu-${item.href.slice(1)}`}
-                              onClick={() =>
-                                setExpandedItem(
-                                  expanded
-                                    ? null
-                                    : item.href,
-                                )
-                              }
-                              className="luzik-mobile-expand mr-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-[2px] border-0 bg-white/[0.07] text-white"
-                            >
-                              <ChevronDown
-                                size={17}
-                                className={
-                                  expanded
-                                    ? "rotate-180 transition-transform"
-                                    : "transition-transform"
-                                }
-                              />
-                            </button>
-                          )}
-                        </div>
-
-                        {item.children && (
-                          <div id={`mobile-submenu-${item.href.slice(1)}`} className="luzik-mobile-submenu" data-expanded={expanded} inert={!expanded} aria-hidden={!expanded}>
-                            <div className="luzik-mobile-submenu-clip">
-                            <div className="border-t border-white/[0.08] bg-[#18191b] px-3 py-2">
-                              {item.children.map(
-                                (child) => (
-                                  <Link
-                                    key={child.href}
-                                    href={
-                                      child.href
-                                    }
-                                    onClick={
-                                      closeMenu
-                                    }
-                                    className="luzik-mobile-child flex items-center gap-2 px-4 py-3 font-[var(--font-inter)] text-[13px] text-white/65 no-underline transition-colors hover:text-[#008bd0]"
-                                    aria-current={pathname === child.href ? "page" : undefined}
-                                  >
-                                    <ChevronRight
-                                      size={13}
-                                      className="text-[#008bd0]"
-                                    />
-
-                                    {
-                                      child.label
-                                    }
-                                  </Link>
-                                ),
-                              )}
-                            </div>
-                            </div>
-                          </div>
-                          )}
-                      </li>
-                    );
-                  },
-                )}
+                        </div></div>
+                      </div>
+                    </> : <Link href={item.href} onClick={closeMenu} className="luzik-mobile-item" aria-current={active ? "page" : undefined}>{label}</Link>}
+                  </li>;
+                })}
               </ul>
             </nav>
-
-            {/* CONTACT */}
-
-            <div className="luzik-mobile-contact shrink-0 border-t border-white/[0.08] bg-[#0d0e10] px-6 py-6">
-              <div className="mb-4 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#ffe101] text-[#151617]">
-                  <Phone size={18} />
-                </div>
-
-                <div>
-                  <span className="block font-[var(--font-inter)] text-[10px] font-semibold uppercase tracking-wide text-white/40">
-                    Zadzwoń
-                  </span>
-
-                  <a
-                    href={
-                      luzikHeaderData.phoneHref
-                    }
-                    className="font-[var(--font-inter)] text-[15px] font-extrabold text-white no-underline"
-                  >
-                    {luzikHeaderData.phoneLabel}
-                  </a>
-                </div>
-              </div>
-
-              <div className="mb-5 flex flex-col gap-1 font-[var(--font-inter)] text-[13px] leading-5 text-white/60">
-                <span>
-                  {luzikHeaderData.contactAddress}
-                </span>
-
-                <a
-                  href={`mailto:${luzikHeaderData.email}`}
-                  className="text-white/60 no-underline"
-                >
-                  {luzikHeaderData.email}
-                </a>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <a
-                    href={
-                      luzikHeaderData.facebookHref
-                    }
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Facebook"
-                    className="text-white/70 transition-colors hover:text-white"
-                  >
-                    <Facebook
-                      size={17}
-                      fill="currentColor"
-                      strokeWidth={0}
-                    />
-                  </a>
-
-                  <a
-                    href={
-                      luzikHeaderData.instagramHref
-                    }
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                    className="text-white/70 transition-colors hover:text-white"
-                  >
-                    <Instagram size={18} />
-                  </a>
-                </div>
-
+            <div className="luzik-mobile-contact">
+              <a href={header.phoneHref} className="luzik-mobile-phone"><Phone size={18} aria-hidden="true" /><span><small>Porozmawiajmy o Twoim kursie</small>{header.phoneLabel}</span><ArrowUpRight size={18} aria-hidden="true" /></a>
+              <div className="luzik-mobile-socials">
+                <div><a href={header.facebookHref} aria-label="Facebook" target="_blank" rel="noopener noreferrer"><Facebook size={19} /></a><a href={header.instagramHref} aria-label="Instagram" target="_blank" rel="noopener noreferrer"><Instagram size={19} /></a></div>
                 <LanguageSwitcher dark />
               </div>
             </div>
-          </aside>
-        </Dialog.Content>
-      </Dialog.Portal>
-    </Dialog.Root>
-  );
+          </div>
+          <div className="luzik-mobile-action"><Link href={header.registrationHref} onClick={closeMenu} className="luzik-mobile-cta"><span>Zapisz się na kurs<small>Twój pierwszy krok do prawa jazdy</small></span><ArrowUpRight size={24} aria-hidden="true" /></Link></div>
+        </aside>
+      </Dialog.Content>
+    </Dialog.Portal>
+  </Dialog.Root>;
 }

@@ -1,0 +1,25 @@
+{
+  "sourceArchive": "deployment/luzik-hostinger-v6-2026-10-23-security.zip",
+  "sourceGitCommit": "2b6a7b05adee93ec3dd53e213786b27d06861551",
+  "archiveSha256": "e543c538f9a4a0b99058ea46900ed05f767186ff1b27e3f53a66b87a000e06ab",
+  "recoveredOn": "2026-10-30",
+  "nextVersion": "16.4.3",
+  "securityFilesMatchArchive": [
+    "package.json",
+    "next.config.ts",
+    "patches/braces@3.0.3.patch"
+  ],
+  "securityUpdates": [
+    {
+      "advisory": "CVE-2026-118664",
+      "package": "decode-uri-component",
+      "fixedVersion": "0.5.1",
+      "files": ["pnpm-workspace.yaml", "pnpm-lock.yaml"]
+    }
+  ],
+  "additionalChanges": [
+    "Vehicle-specific navigation colors and motorcycle SVG icon",
+    "Separate top-level car and motorcycle menus on desktop and mobile",
+    "LF checkout rule for pnpm patches on Windows"
+  ]
+}

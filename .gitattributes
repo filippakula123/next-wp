@@ -1,0 +1,2 @@
+# pnpm patches must retain LF line endings when checked out on Windows.
+patches/*.patch text eol=lf

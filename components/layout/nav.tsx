@@ -17,6 +17,7 @@ import {
 } from "@/components/site/icons";
 
 import { MobileNav } from "@/components/nav/mobile-nav";
+import { NavigationGroups, NavigationVehicleIcon } from "@/components/nav/navigation-groups";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
 
 import {
@@ -164,9 +165,10 @@ export async function Nav({
                 {luzikNavigation.map((item) => {
                   return (
                     <li
-                      key={item.href}
+                      key={item.id ?? item.href}
                       data-nav-item
-                      className="relative"
+                      data-nav-vehicle={item.vehicle}
+                      className="luzik-nav-item"
                     >
                       {item.children ? (
                         <div>
@@ -175,17 +177,20 @@ export async function Nav({
                             data-nav-toggle
                             data-nav-primary
                             aria-expanded={false}
-                            aria-controls={`nav-${item.href.slice(1)}`}
+                            aria-controls={`nav-${item.id ?? item.href.slice(1)}`}
+                            data-vehicle={item.vehicle}
                             className={cn(
-                              "flex cursor-pointer list-none items-center gap-1.5",
+                              "luzik-nav-trigger flex cursor-pointer list-none items-center gap-1.5",
                               "font-[var(--font-inter)] text-[12px]",
                               "font-extrabold uppercase",
                               "tracking-[0.01em]",
                               "transition-colors",
                               "border-0 bg-transparent p-0",
                               "text-[#191a1c]",
+                              item.vehicle && "luzik-nav-vehicle-trigger",
                             )}
                           >
+                            {item.vehicle && <NavigationVehicleIcon vehicle={item.vehicle} size={18} />}
                             {item.label}
 
                             <ChevronDown
@@ -195,19 +200,19 @@ export async function Nav({
                             />
                           </button>
 
-                          <div id={`nav-${item.href.slice(1)}`} hidden className="luzik-desktop-dropdown absolute left-1/2 top-[33px] z-[120] w-[270px] -translate-x-1/2 pt-3">
-                            <div className="max-h-[calc(100dvh-170px)] overflow-y-auto rounded-[10px] border border-[#292a2d] bg-[#121315] p-2 shadow-[0_20px_50px_rgba(0,0,0,0.22)]">
-                              {item.children.map(
-                                (child) => (
-                                  <Link
-                                    key={child.href}
-                                    href={child.href}
-                                    className="block rounded-md px-4 py-3 font-[var(--font-inter)] text-[13px] font-medium text-white/80 no-underline transition-colors hover:bg-white/5 hover:text-[#008bd0]"
-                                  >
-                                    {child.label}
-                                  </Link>
-                                ),
-                              )}
+                          <div id={`nav-${item.id ?? item.href.slice(1)}`} hidden className="luzik-mega-panel" data-vehicle={item.vehicle}>
+                            <div className="luzik-mega-inner">
+                              <div className={cn("luzik-mega-body", !item.groups && "luzik-mega-school", item.vehicle && "luzik-mega-vehicle")}>
+                                {item.intro && <div className="luzik-mega-intro"><span>{item.vehicle === "car" ? "Prawo jazdy · kategoria B" : "Prawo jazdy · AM, A1, A2, A"}</span><h2>{item.intro.title}</h2><p>{item.intro.description}</p></div>}
+                                {!item.groups && <div className="luzik-mega-intro"><span>Szkoła jazdy Luzik</span><h2>Poznaj nas.<br />Ruszaj z pewnością.</h2><p>Sprawdź, z kim będziesz się uczyć i wybierz kurs dla siebie.</p></div>}
+                                <NavigationGroups item={item} />
+                              </div>
+                              <div className="luzik-mega-footer">
+                                <span>{item.groups ? "Twoja droga do prawa jazdy zaczyna się tutaj." : "Nauka jazdy w Kielcach. Po prostu Luzik."}</span>
+                                <a href={luzikHeaderData.phoneHref}><Phone size={16} aria-hidden="true" />{luzikHeaderData.phoneLabel}</a>
+                                <Link href={item.groups ? "/kursy-prawa-jazdy" : item.href}>{item.groups ? "Wszystkie kursy" : "O naszej szkole"}<ChevronRight size={16} aria-hidden="true" /></Link>
+                                <Link href={luzikHeaderData.registrationHref} className="luzik-header-register">Zapisz się na kurs</Link>
+                              </div>
                             </div>
                           </div>
                         </div>

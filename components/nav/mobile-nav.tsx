@@ -1,7 +1,8 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useRef, useState } from "react";
 
 const MobileNavDialog = dynamic(
   () => import("@/components/nav/mobile-nav-dialog").then((module) => module.MobileNavDialog),
@@ -9,18 +10,18 @@ const MobileNavDialog = dynamic(
 );
 
 export function MobileNav() {
-  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const [menuOpen, setOpen] = useState(false);
+  const [openedPath, setOpenedPath] = useState<string | null>(null);
+  const open = menuOpen && openedPath === pathname;
   const [hasOpened, setHasOpened] = useState(false);
+  const [session, setSession] = useState(0);
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const wasOpen = useRef(false);
-
-  useEffect(() => {
-    if (wasOpen.current && !open) triggerRef.current?.focus();
-    wasOpen.current = open;
-  }, [open]);
 
   function openMenu() {
     setHasOpened(true);
+    setOpenedPath(pathname);
+    setSession(value => value + 1);
     setOpen(true);
   }
 
@@ -37,7 +38,7 @@ export function MobileNav() {
       >
         <span className="luzik-mobile-burger" aria-hidden="true"><span /><span /><span /></span>
       </button>
-      {hasOpened && <MobileNavDialog open={open} onOpenChange={setOpen} />}
+      {hasOpened && <MobileNavDialog open={open} onOpenChange={setOpen} session={session} triggerRef={triggerRef} />}
     </>
   );
 }

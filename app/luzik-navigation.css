@@ -1,0 +1,54 @@
+.luzik-nav-trigger { position: relative; min-height: 44px; }
+.luzik-nav-trigger[aria-expanded="true"]::after { content: ""; position: absolute; bottom: -19px; left: 0; right: 0; height: 3px; background: #008bd0; }
+.luzik-mega-panel { position: absolute; top: 100%; inset-inline: 0; border-top: 3px solid #008bd0; background: #111214; color: #fff; box-shadow: 0 24px 40px #0003; }
+.luzik-mega-inner { max-width: 1600px; margin-inline: auto; padding: 30px 32px 0; max-height: calc(100dvh - 141px); overflow-y: auto; overscroll-behavior: contain; }
+.luzik-mega-body { padding-bottom: 28px; }
+.luzik-nav-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; }
+.luzik-nav-group h3 { display: flex; align-items: center; gap: 9px; margin: 0 0 16px; color: #a7abb2; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.luzik-nav-group h3::before { content: ""; width: 6px; height: 6px; flex-shrink: 0; border-radius: 50%; background: #008bd0; }
+.luzik-nav-group ul { display: grid; gap: 5px; margin: 0; padding: 0; list-style: none; }
+.luzik-nav-card { display: flex; align-items: center; gap: 13px; min-height: 68px; padding: 12px; margin-inline: -12px; border-radius: 6px; text-decoration: none; color: #f5f6f7; transition: background .15s; }
+.luzik-nav-card:hover, .luzik-nav-card[aria-current="page"] { background: #ffffff08; }
+.luzik-nav-card-icon { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; flex-shrink: 0; border-radius: 6px; background: #008bd017; color: #20a7e8; }
+.luzik-nav-card-copy { display: grid; gap: 4px; min-width: 0; }
+.luzik-nav-card-copy strong { font-size: 14px; line-height: 1.4; font-weight: 700; }
+.luzik-nav-card-copy > span { color: #a7abb2; font-size: 12px; line-height: 1.5; }
+.luzik-nav-card-arrow { margin-left: auto; flex-shrink: 0; color: #79818a; }
+.luzik-nav-card:hover .luzik-nav-card-arrow { color: #20a7e8; }
+.luzik-mega-footer { display: flex; align-items: center; gap: 24px; padding: 20px 0; border-top: 1px solid #ffffff1a; }
+.luzik-mega-footer > span { margin-right: auto; color: #a7abb2; font-size: 12px; }
+.luzik-mega-footer > a:not(.luzik-header-register) { display: inline-flex; align-items: center; gap: 9px; color: #e2e5e8; font-size: 13px; font-weight: 600; text-decoration: none; }
+.luzik-mega-footer > a:hover { color: #20a7e8; }
+.luzik-mega-school { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; }
+.luzik-mega-school .luzik-nav-groups { display: block; }
+.luzik-mega-school .luzik-nav-group ul { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.luzik-mega-intro > span { color: #20a7e8; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+.luzik-mega-intro h2 { margin: 12px 0; color: #fff; font-size: 27px; line-height: 1.2; font-weight: 750; }
+.luzik-mega-intro p { max-width: 300px; color: #a7abb2; font-size: 13px; line-height: 1.6; }
+.luzik-mega-panel :is(a, button):focus-visible, .luzik-nav-trigger:focus-visible { outline: 2px solid #20a7e8; outline-offset: 4px; }
+
+/* Vehicle families share the same layout and have distinct brand accents. */
+.luzik-nav-group[data-vehicle="car"] { --vehicle-color: #70ceff; --vehicle-tint: #20a7e814; }
+.luzik-nav-group[data-vehicle="bike"] { --vehicle-color: #ffe101; --vehicle-tint: #ffe10112; }
+.luzik-nav-group[data-vehicle] h3::before { background: var(--vehicle-color, #008bd0); }
+.luzik-nav-group[data-vehicle] .luzik-nav-card-icon { color: var(--vehicle-color, #20a7e8); background: var(--vehicle-tint, #008bd017); }
+.luzik-nav-group[data-vehicle] .luzik-nav-card:is(:hover,:focus-visible,[aria-current="page"]) { background: var(--vehicle-tint, #ffffff08); }
+.luzik-nav-group[data-vehicle] .luzik-nav-card:is(:hover,:focus-visible,[aria-current="page"]) .luzik-nav-card-arrow { color: var(--vehicle-color, #20a7e8); }
+.luzik-nav-group[data-vehicle] .luzik-nav-card:focus-visible { outline-color: var(--vehicle-color, #20a7e8); }
+
+/* Vehicle choices are visible in the main navigation before opening a panel. */
+.luzik-header-desktop .luzik-nav-vehicle-trigger { padding-inline: 10px; border-radius: 5px; border-bottom: 2px solid #008bd0; background: #008bd00a; }
+.luzik-header-desktop .luzik-nav-vehicle-trigger[data-vehicle="bike"] { border-bottom-color: #ffe101; background: #ffe10118; }
+.luzik-nav-vehicle-trigger > svg:first-child { flex-shrink: 0; color: #008bd0; }
+.luzik-nav-vehicle-trigger[data-vehicle="bike"] > svg:first-child { color: #8a7700; }
+.luzik-mega-vehicle { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; }
+.luzik-mega-vehicle > .luzik-nav-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.luzik-mega-panel[data-vehicle="bike"] .luzik-mega-vehicle > .luzik-nav-groups { grid-template-columns: 1fr; }
+.luzik-mega-panel[data-vehicle="bike"] .luzik-nav-group ul { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 36px; }
+.luzik-mega-panel[data-vehicle="bike"] .luzik-mega-intro > span { color: #ffe101; }
+.luzik-mobile-vehicle-icon { display: grid; place-items: center; flex-shrink: 0; width: 30px; height: 30px; border-radius: 6px; color: #70ceff; background: #20a7e814; }
+.luzik-mobile-vehicle-icon[data-vehicle="bike"] { color: #ffe101; background: #ffe10112; }
+@media (min-width: 1280px) and (max-width: 1399px) {
+  .luzik-header-desktop nav > ul { gap: 14px; }
+  .luzik-header-desktop .luzik-nav-vehicle-trigger { padding-inline: 8px; }
+}

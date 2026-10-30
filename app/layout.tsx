@@ -7,6 +7,7 @@ import "./luzik-motion.css";
 import "./luzik-footer.css";
 import "./luzik-mobile-nav.css";
 import "./luzik-header-polish.css";
+import "./luzik-navigation.css";
 
 import type { Metadata, Viewport } from "next";
 import { Suspense, type ReactNode } from "react";
